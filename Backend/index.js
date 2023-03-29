@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const { UserRouter } = require("./Routers/Login_Sign_Up_Routes");
+const { UserRouter } = require("./Routers/UserRouter");
+const { AdminRouter } = require("./Routers/AdminRouter");
 const { connection } = require("./config/db");
 const app = express();
 app.use(express.json());
@@ -10,6 +11,7 @@ app.get("/", (req,res)=>{
     res.send("HOME")
 });  
 app.use("/user", UserRouter);  
+app.use("/admin", AdminRouter);  
 
 app.listen(9168, async () => {
     try {

@@ -1,19 +1,19 @@
 const express = require("express");
 require("dotenv").config();
-const { UserModel } = require("../Model/UserModel");
-const {authentication}=require("../Middleware/Authentication")
+const { AdminModel } = require("../Model/AdminModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const UserRouter = express.Router();
-const fs=require("fs")
+const AdminRouter = express.Router();
 const app = express()
 app.use(express.json())
 
-// **************REGISTER*****************
+AdminRouter.get("/allusers", async (req, res) => {
+    let data = await AdminModel.find()
+    res.send(data);
+});
 
-UserRouter.post("/register", async (req, res) => {
+AdminRouter.post("/register", async (req, res) => {
     let payload = req.body;
-    let check = await UserModel.find({ email: payload.email });
     if (check.length !== 0) {
         res.send({ "msg": "Email already registered" })
     } else {
@@ -23,10 +23,10 @@ UserRouter.post("/register", async (req, res) => {
                     res.send({ message: err.message });
                 } else {
                     payload.password = hash;
-                    payload.role = `user`
-                    const User = new UserModel(payload);
+                    payload.role = `admin`
+                    const User = new AdminModel(payload);
                     await User.save();
-                    res.send({ "message": `User Register Sucessfull` });
+                    res.send({ "message": `Admin Register Sucessfull` });
                 }
             });
         } catch (error) {
@@ -37,19 +37,16 @@ UserRouter.post("/register", async (req, res) => {
 
 });
 
-
-// **************LOGIN*****************
-
-UserRouter.post("/login", async (req, res) => {
+AdminRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
-        let User = await UserModel.findOne({ email: email });
+        let User = await AdminModel.findOne({ email: email });
+        console.log(User);
         if (User) {
             bcrypt.compare(password, User.password, async (err, result) => {
                 if (result) {
+                    console.log(User._id);
                     const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
-                    //Store In Cookies
-
                     console.log("Login Sucessfull");
                     res.send({ message: "Login Sucessfull", token: token });
                 } else {
@@ -66,24 +63,7 @@ UserRouter.post("/login", async (req, res) => {
 });
 
 
-// **************LOGOUT*****************
-
-UserRouter.post("/logout",(req,res)=>{
-    let data=JSON.parse(fs.readFileSync("./blacklist.json","utf8")) || [];
-    let token=req.headers.token;
-    console.log(token,data)
-    data.push(token);
-    fs.writeFileSync("./blacklist.json",`${JSON.stringify(data)}`);
-    res.send("Logout Successful")
-});
-
-
-//**************AUTHENTICATE DEMO******************
-
-UserRouter.get("/check",authentication,(req,res)=>{
-   res.send("PASSED")
-})
-module.exports = { UserRouter };
+module.exports = { AdminRouter };
 
 
 

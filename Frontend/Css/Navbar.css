@@ -1,0 +1,39 @@
+.nav-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(230,222,227,0.9);
+    color: black;
+    position: fixed;
+    padding: 5px;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-bar li 
+{
+    margin-left: 15px;
+}
+
+.nav-bar button 
+{
+    border: 1px solid #ccaf37;
+    padding: 5px 10px;
+    color: #ccaf37;
+    font-size: 15px;
+    background-color: black;
+}
+.nav-bar>div:nth-child(2)>div:nth-child(1)
+{
+    margin-left: 390px;
+    margin-bottom: 10px;
+}
+
+.nav-bar i
+{
+    color: black;
+    font-size: 20px;
+}

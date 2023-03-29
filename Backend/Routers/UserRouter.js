@@ -2,6 +2,8 @@ const express = require("express");
 require("dotenv").config();
 const { UserModel } = require("../Model/UserModel");
 const {authentication}=require("../Middleware/Authentication")
+const client=require("../config/redis");
+
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const UserRouter = express.Router();
@@ -68,14 +70,11 @@ UserRouter.post("/login", async (req, res) => {
 
 // **************LOGOUT*****************
 
-UserRouter.post("/logout",(req,res)=>{
-    let data=JSON.parse(fs.readFileSync("./blacklist.json","utf8")) || [];
-    let token=req.headers.token;
-    console.log(token,data)
-    data.push(token);
-    fs.writeFileSync("./blacklist.json",`${JSON.stringify(data)}`);
-    res.send("Logout Successful")
-});
+userrouter.get("/logout",async(req,res)=>{
+    let token=req.headers.authorization;
+   await client.SETEX(`${token}`,60*60,"true")
+   res.status(200).send({"msg":"logout successfull"});
+})
 
 
 //**************AUTHENTICATE DEMO******************

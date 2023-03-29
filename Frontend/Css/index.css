@@ -1,0 +1,116 @@
+*{margin:0px;padding:0px;  box-sizing: border-box;}
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+img{
+    cursor:pointer
+}
+              /* ----hero section--- */
+.hero{
+    width:100%;
+    border: 2px solid red;
+}
+.hero img,.trend-card img,.category img{
+    width:100%
+}
+.hero img{
+    cursor:auto !important
+}
+
+           /* ---trend section */
+.trend,.category,.partner,.footer{
+    width:100%;
+    border: 2px solid red;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    margin-top: 20px
+}
+.trend-card{
+    /* width:100%; */
+    border: 2px solid blue;
+    max-width:fit-content;
+} 
+.trend-card img:hover{
+    filter: opacity(30%);
+    
+}         
+
+
+           /* ---category section--- */
+.category{
+    display:grid; grid-template-columns:repeat(2,1fr)!important;
+}
+#category h1,#partner h1{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+} 
+.category-card img:hover{
+    filter: sepia(50%);
+}
+
+           /* ---about section---*/
+.about,.partner{
+     width:80%;
+     margin: auto;
+}        
+.about-header{
+    margin-top: 20px;
+}   
+.about-para,.about-header{
+  margin-bottom: 10px;
+}
+
+           /* --partner section-- */
+.partner{
+    grid-template-columns:repeat(4,1fr)!important;
+    margin-top: 20px;
+}
+.partner-card{
+    border-bottom-style: dotted;
+    border-bottom-color:grey;
+    border-bottom-width:1px;
+    border-right-color: grey;
+    border-right-width: 1px;
+    border-right-style: dotted;
+}
+.partner-card img{
+    transition: transform .5s ease-in-out;
+    width:80%;
+    overflow: hidden;
+}
+.partner-card img:hover{
+   transform: scale(1.05)  translateX(10%);
+}
+
+          /* footer section */
+.footer{
+    background-color: grey;
+    grid-template-columns:repeat(1,1fr)!important;
+    text-align: center;
+    padding-top:40px;
+    padding-bottom: 40px;
+}
+.footer h1{
+  font-size: 40px;
+  font-weight: 600;
+}
+.footer p{
+    margin: 20px 0px 20px 0px
+}
+.footer-contact{
+    cursor: pointer;
+}
+
+.last-para{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:10px;
+    font-weight: 600;
+}
+
+
+                                        /*-----responsiveness---- */
+
+                                        

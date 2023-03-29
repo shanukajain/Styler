@@ -13,7 +13,7 @@ let authentication = (req, res, next) => {
     if (token) {
         var decoded = jwt.verify(token, "9168");
         if (decoded) {
-            
+
             // req.body.userID = decoded.userID;
             next();
         }
@@ -25,4 +25,4 @@ let authentication = (req, res, next) => {
     }
 };
 
-module.exports(authentication)
+module.exports={authentication}

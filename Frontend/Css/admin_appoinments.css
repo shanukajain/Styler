@@ -1,0 +1,227 @@
+#sreach-div{
+    width: 90%;
+    margin: auto;
+    height: 90px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#form-div{
+    width: 50%;
+}
+#form-div form{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    /* width: 40%; */
+}
+#form-div form>label{
+    width: 13rem;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.datetime-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    border: 0.5px solid #0066cc;
+    border-radius: 5px;
+    /* border-bottom: 2px solid #ccc; */
+    background-color: #a4ffff;
+    /* background-color: transparent; */
+    transition: border-bottom-color 0.2s ease-in-out;
+  }
+  
+  .datetime-input:focus {
+    outline: none;
+    width: 500px;
+    border-bottom-color: #0066cc;
+  }
+  input[type="submit"]{
+    width: 10rem;
+    background-color: #009abc;
+    color: whitesmoke;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+  }
+
+  #select-status-div{
+    width: 20%;
+  }
+  #select-status{
+    width: 100%;
+    padding: 10px 10%;
+    border-radius: 5px;
+    border:  none;
+    background: #009abc;
+    font-size: 20px;
+    font-weight: 500;
+    color:whitesmoke;
+  }
+  /* #select-status>option{
+    width: 100%;
+    padding: 10px 10%;
+    border-radius: 5px;
+    border:  none;
+    background: #009abc;
+  } */
+#appointments-div{
+    margin: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px 30px;
+}
+.app-child-div{
+    background-color: #5a76c1;
+    /* background-color: #bedae8; */
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    /* color: aliceblue; */
+}
+.app-child-div>h2{
+    margin-top: 5px;
+}
+.point{
+    /* padding: 3px; */
+    /* background: white; */
+    color: #252230;
+    border-radius: 5px;
+}
+.text{
+
+    color:#fff ;
+}
+/* .app-child-button{
+    width: 40%;
+} */
+.app-child-button>button{
+    padding: 10px 2rem;
+    border-radius: 5px;
+    border: none;
+    color: whitesmoke;
+
+    font-weight: 500;
+}
+.app-child-button>button:nth-child(1){
+    background-color: #209f80;
+
+
+}
+.app-child-button>button:nth-child(1):hover{
+    background-color: #135847;
+
+
+}
+.app-child-button>button:nth-child(2){
+
+    background-color: #bf3c00;
+
+}
+.app-child-button>button:nth-child(2):hover{
+    background-color: #802f0a;
+
+}
+
+.show-status{
+    display: none;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    /* background-color:black ; */
+    /* color: ; */
+}
+@media only screen and (max-width:1351px){
+    #form-div{
+        width:65%;
+    }
+    #select-status-div{
+        width: 20%;
+    }
+    .app-child-details{
+        width: 80%;
+    }
+    .app-child-button{
+        width: 20%;
+    }
+    .app-child-button>button{
+        
+        width: 100%;
+    }
+    .show-status{
+        width: 200%;
+    }
+}
+@media only screen and (max-width:1174px){
+    #dash{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .app-child-details{
+        width: 75%;
+    }
+    .app-child-button{
+        width: 25%;
+    }
+}
+@media only screen and (max-width:1080px){
+    #dash>div{
+        height: auto;
+    }
+.app-child-div{
+    display: block;
+}
+.app-child-details{
+    width: 100%;
+}
+.app-child-button{
+    width: 100%;
+}
+.app-child-button{
+    display: flex;
+}
+.app-child-button>button{
+        
+    width: 50%;
+}
+}
+@media only screen and (max-width:650px){
+
+    #sreach-div{
+        display: block;
+        height: auto;
+    }
+    #form-div{
+        width:100%;
+    }
+    #select-status-div{
+        margin: auto;
+        margin-top: 20px;
+        width: 70%;
+      }
+      /* #form-div form>label{
+        width: fit-content
+    } */
+    #dash{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #appointments-div{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+@media only screen and (max-width:400px){
+    
+    #dash{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

@@ -1,0 +1,156 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+#dash{
+    margin: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+}
+#dash>div{
+    /* width: 18%; */
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 120px;
+    border-radius: 20px;
+    /* border: 1px solid red; */
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+#dash>div:nth-child(1){
+    background:#0353f9 ;
+}
+#dash>div:nth-child(2){
+    background:#0aa745 ;
+}
+#dash>div:nth-child(3){
+    background:#ea4858 ;
+}
+#dash>div:nth-child(4){
+    background:#3f697c ;
+}
+#dash>div:nth-child(5){
+    background:#0353f9 ;
+}
+
+#appointments-div{
+    margin: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px 30px;
+}
+.app-child-div{
+    background-color: #5a76c1;
+    /* background-color: #bedae8; */
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    /* color: aliceblue; */
+}
+.app-child-div>h2{
+    margin-top: 5px;
+}
+.point{
+    /* padding: 3px; */
+    /* background: white; */
+    color: #252230;
+    border-radius: 5px;
+}
+.text{
+
+    color:#fff ;
+}
+.app-child-button>button{
+    padding: 10px 2rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    color: whitesmoke;
+}
+.app-child-button>button:nth-child(1){
+    background-color: #209f80;
+
+}
+.app-child-button>button:nth-child(1):hover{
+    background-color: #135847;
+
+}
+.app-child-button>button:nth-child(2){
+    background-color: #bf3c00;
+
+}
+.app-child-button>button:nth-child(2):hover{
+    background-color: #802f0a;
+
+}
+
+
+@media only screen and (max-width:1351px){
+    .app-child-details{
+        width: 80%;
+    }
+    .app-child-button{
+        width: 20%;
+    }
+    .app-child-button>button{
+        
+        width: 100%;
+    }
+    
+}
+@media only screen and (max-width:1174px){
+    #dash{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .app-child-details{
+        width: 75%;
+    }
+    .app-child-button{
+        width: 25%;
+    }
+}
+@media only screen and (max-width:1080px){
+    #dash>div{
+        height: auto;
+    }
+.app-child-div{
+    display: block;
+}
+.app-child-details{
+    width: 100%;
+}
+.app-child-button{
+    width: 100%;
+}
+.app-child-button{
+    display: flex;
+}
+.app-child-button>button{
+        
+    width: 50%;
+}
+}
+@media only screen and (max-width:650px){
+    #dash{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #appointments-div{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+@media only screen and (max-width:400px){
+    #dash{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

@@ -13,8 +13,14 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
+    position: sticky;
+    top:0;
+    right:0;
+    left:0;
+    z-index: 1;
     
 }
+  
 nav{
     position: relative; /* set position to relative */
     z-index: 9999;
@@ -38,7 +44,7 @@ nav{
     display: block;
     font-size: 21px;
     font-weight: 500;
-
+    text-decoration: none;
     padding: 10px 25px;
     border-radius:  50px;
     transition: 0.2s;

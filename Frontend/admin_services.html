@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/admin_nav.css">
+    <link rel="stylesheet" href="./Css/admin_services.css">
+        <!-- Fontawesome CDN Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/f90c67bbfa.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="./admin_dashboard.html">Dashboard</a></li>
+                <li><a href="./admin_styler.html">Stylers</a></li>
+                <li><a href="./admin_appointments.html">Appointments</a></li>
+                <li><a href="./admin_services.html">Services</a></li>
+                <li><a href="./admin_users.html">Users</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="add-details-div">
+            <h1>Add New Service</h1>
+            <form action="">
+                <input type="text" name="" id="service-name" placeholder="Service Name" required>
+                <input type="text" name="" id="service-name" placeholder="Service Image" required>
+                <input type="text" name="" id="styler-name" placeholder="Styler Name" required>
+                <input type="number" name="" id="price" placeholder="Price" required>
+                <input type="submit"  value="Add">
+            </form>
+        </div>
+        <div id="service-div">
+        <h1>Current Available Services</h1>
+        <!-- <div class="service-child-div">
+            <div class="service-img-div">
+                <img src="./Image/bears-shave.jpg" alt="">
+            </div>
+            <div class="service-details-div">
+                <div class="service-details-child-div" >
+
+                    <h1 class="edit-heading"  contenteditable="false">Beard Shaving</h1>
+                    <h2><span class="box">Price</span><span class="semi-colon">:</span>&#8377;<span class="edit-price" contenteditable="false"> 140</span></h2>
+                    <h2><span class="box">Styler</span> <span class="semi-colon">:</span> <span class="edit-name"  contenteditable="false">Jawed Habib</span> </h2>
+                    <h2><span class="box">Currently</span> <span class="semi-colon">:</span> <span class="box"><i class="fa-solid fa-circle"></i>Available</span> </h2>
+                </div>
+                <div class="service-button-child-div">
+                    <button id="edit-button" onclick="enableEdit()">Edit</button>
+                    <button onclick="removeFun()">Remove</button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    </main>
+    <!-- <div>
+        <p contenteditable="false" id="editable-text">This text is editable</p>
+        <button id="edit-button" onclick="enableEdit()">Edit</button>
+      </div> -->
+      
+
+</body>
+<script src="./JavaScript/admin_nav.js"></script>
+<script src="./JavaScript/admin_services.js"></script>
+<!-- <script>
+function enableEdit() {
+  var editableHeading  = document.querySelector(".edit-heading");
+  var editablePrice  = document.querySelector(".edit-price");
+  var editableName  = document.querySelector(".edit-name");
+  var  editButton= document.getElementById("edit-button");
+
+  if (editButton.innerText === "Edit") {
+    // Enable editing
+    editableHeading.contentEditable = true;
+    editablePrice.contentEditable = true;
+    editableName.contentEditable = true;
+    editableHeading.focus();
+    editablePrice.focus();
+    editableName.focus();
+    editButton.innerText = "Save";
+} else {
+    // Save changes and disable editing
+    editableHeading.contentEditable = false;
+    editablePrice.contentEditable = false;
+    editableName.contentEditable = false;
+    console.log(editableHeading.innerText,editableName.innerText,editablePrice.innerText)
+
+    editButton.innerText = "Edit";
+  }
+}
+
+
+</script> -->
+</html>

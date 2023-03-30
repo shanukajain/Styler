@@ -1,21 +1,55 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#add-details-div{
+    margin: auto;
+    margin-top: 20px;
+    width: 90%;
+    display: block;
+    border: 1px solid gray;
+    /* padding-left: 20px; */
+    padding: 30px;
+    border-radius: 20px;
+}
+#add-details-div form input{
+    margin-top: 10px;
+    padding: 8px 4rem;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    font-size: 20px;
+}
+#add-details-div form input[type="submit"]{
+    /* background-color: rgb(0,115,195); */
+    background-color: #a03141;
+    color: whitesmoke;
+}
+#add-details-div form input[type="submit"]:hover{
+    /* background-color: rgb(0, 149, 255); */
+    background-color: #c12c43;
 
 }
-main{
+/* .styler-cild-div{
+    background-color: #a5caca;
+}
+.styler-cild-div img{
+    width: 100px;
+    height: 100px;
+} */
+#styler{
     margin: auto;
     margin-top: 30px;
     width: 90%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 10px 20px;
+    margin-bottom: 100px;
 }
 .user-div{
     padding: 20px;
-    background: rgb(182,21,117,0.7);
-    height: 200px;
+    /* background: rgb(182,21,117,0.7); */
+    background: #a5caca;
+    height: 250px;
     display: flex;
     justify-content: space-between;
     border-radius: 25px;
@@ -29,6 +63,7 @@ main{
 .user-div div:nth-child(2){
     margin-left: 20px ;
     width: 70%;
+
 }
 .user-div div:nth-child(1) img{
     width: 100%;
@@ -36,9 +71,17 @@ main{
     border-radius: 50%;
 }
 .point{
-    color: #FFCDD2;
+    color: #1d1b26;
 }
-
+.edit-btn{
+    margin-top: 1rem;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 10px 60px;
+    background: #00a298;
+    font-weight: 500;
+}
 .clock-btn{
     /* position: relative;
     right: 0; */
@@ -60,8 +103,8 @@ main{
         width: 80%;
     }
 }
-@media only screen and (max-width:985px){
-    main{
+@media only screen and (max-width:1035px){
+    #styler{
         margin: auto;
         width: 90%;
         display: grid;
@@ -70,7 +113,7 @@ main{
     }
 
 }
-@media only screen and (max-width:985px){
+@media only screen and (max-width:600px){
 .user-div{
     height: auto;
     display: block;

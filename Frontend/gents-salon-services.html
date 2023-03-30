@@ -1,61 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gents Salon Service</title>
-    <link rel="stylesheet" href="./Css/gents-dalon-services.css">
-    <link rel="stylesheet" href="./Css/Navbar.css">
+    <link rel="stylesheet" href="./Css/gents-salon-services.css">
+    <link rel="stylesheet" href="./Css/admin_nav.css">
     <link rel="icon" href="https://www.linkpicture.com/q/WhatsApp-Image-2023-03-28-at-21.21.29.jpeg">
-    <script src="https://kit.fontawesome.com/3f69d0abd1.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/3f69d0abd1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="nav-bar">
+    <!-- <------- Navbar Section -------->
+    <header>
+        <div class="logo">
+            <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="./admin_dashboard.html">Dashboard</a></li>
+                <li><a href="./admin_users.html">Users</a></li>
+                <li><a href="">Appointments</a></li>
+                <li><a href="">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <------ Choose Section ------>
+    <div class="section">
+        <span style="color: #c68200">MEN HAIRCUT / </span>
+        <span>MEN BEARD / </span>
+        <span>CHOOSE </span>
+    </div>
+
+    <!-- <------ Video Section ------->
+    <div class="video-play">
+        <video src="./Image//Salon Video.mp4" autoplay muted loop></video>
+    </div>
+
+    <!-- <------- Hair Cut Style Section ---->
+
+    <div class="hair-styles">
         <div>
-            <img src="./Image/stylerLogo.png" alt="logo_styler" width="100px">
+            <h2>Hair Cut & Finish</h2>
+            <ul>
+                <li><i class="fa fa-circle-dot"></i> Cut and Hair Care</li>
+                <li><i class="fa fa-circle-dot"></i> Shampoo Conditioning</li>
+                <li><i class="fa fa-circle-dot"></i> Head Massage</li>
+                <li><i class="fa fa-circle-dot"></i> Beard Styling</li>
+                <li><i class="fa fa-circle-dot"></i> Hair / Beard Colouring</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Hair Colour</h2>
+            <ul>
+                <li><i class="fa fa-circle-dot"></i> Hair Color ( Ammonia & Ammonia Free)</li>
+                <li><i class="fa fa-circle-dot"></i> Hi-Lites</li>
+                <li><i class="fa fa-circle-dot"></i> Beard Colour</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Hair Texture</h2>
+            <ul>
+                <li><i class="fa fa-circle-dot"></i> Straightening</li>
+                <li><i class="fa fa-circle-dot"></i> Smoothening</li>
+                <li><i class="fa fa-circle-dot"></i> Rebonding</li>
+                <li><i class="fa fa-circle-dot"></i> Perming</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Hair Treatments</h2>
+            <ul>
+                <li><i class="fa fa-circle-dot"></i> Hair Spa</li>
+                <li><i class="fa fa-circle-dot"></i> Advance Moisturising</li>
+                <li><i class="fa fa-circle-dot"></i> Scalp Treatment</li>
+                <li><i class="fa fa-circle-dot"></i> Colour Treatment</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="beard-section">
+        <div>
+            <img src="https://www.lookssalon.in/public/images/innerBanner/serviceGents.jpg" alt="beards_men_img">
         </div>
         <div>
             <div>
-                <button>Book Appointment</button>
-                <button>Salon Finder</button>
-                <a style="text-decoration: none;" href="">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>
-                <a style="text-decoration: none;" href="">
-                    <i class="fa-brands fa-twitter"></i>
-                </a>
-                <a style="text-decoration: none;" href="">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
+                <h2>Skin Care</h2>
+                <ul>
+                    <li><i class="fa fa-circle-dot"></i> Clean Ups</li>
+                    <li><i class="fa fa-circle-dot"></i> Facials</li>
+                    <li><i class="fa fa-circle-dot"></i> Organic Treatments</li>
+                    <li><i class="fa fa-circle-dot"></i> Manicure</li>
+                    <li><i class="fa fa-circle-dot"></i> Pedicure</li>
+                </ul>
             </div>
             <div>
+                <h2>Beard Grooming</h2>
                 <ul>
-                    <li>HOME</li>
-                    <li>ABOUT US</li>
-                    <li>SERVICES</li>
-                    <li>E-SHOP</li>
-                    <li>FRANCHISE</li>
-                    <li>ACADEMY</li>
-                    <li>CONTACT</li>
-                    <li>OFFERS</li>
+                    <li><i class="fa fa-circle-dot"></i> Beard Trim</li>
+                    <li><i class="fa fa-circle-dot"></i> Beard Colour</li>
+                    <li><i class="fa fa-circle-dot"></i> Beard Styling</li>
+                    <li><i class="fa fa-circle-dot"></i> Shave</li>
+                    <li><i class="fa fa-circle-dot"></i> Luxury Shave & Beard Spa</li>
                 </ul>
             </div>
         </div>
+            <!-- <button class="ladies-service-button">Ladies Services</button> -->
     </div>
 
-    <!-- <------ Choose Section ------>  
-
-    <div class="choose-section">
+    <div class="book-appointment">
         <div>
-            <span>LADIES /</span>
-            <span>GENTS /</span>
-            <span>LOYALTY CARD</span>
+            <h1>Let's not wait for the "Perfect Look"</h1>
+            <span>Book An Appointment Now!</span>
+        </div>
+        <div>
+            <form action="">
+                <input type="text" id="name" placeholder="Name*">
+                <select name="Gender*" id="">
+                    <option value="">Gender*</option>
+                    <option value="Ladies">Ladies</option>
+                    <option value="Gents">Gents</option>
+                </select>
+                <br><br>
+                <input type="number" placeholder="Contact*">
+                <input type="text" placeholder="Service Type">
+                <br><br>
+                <input type="email" placeholder="Email Id*">
+                <input type="date" placeholder="Preffered Date*">
+                <br><br>
+                <select name="city" id="">
+                    <option value="">City*</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kota">Kota</option>
+                </select>
+                <select name="time" id="">
+                    <option value="">Preferred Time*</option>
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+                <input type="submit" value="Book Appointment">
+            </form>
         </div>
     </div>
 
-    <div>
+    <div class="gents-about">
+        <h1>Gents Salon Services</h1>
+        <p>Styling has never been limited to women. The art of looking handsome and getting makeovers has its own story for men and one cannot imagine the number of styles and treatments that can be done on these hunks. Moreover, the desire to have a unique identity is everyone's' want and Looks Salon makes that possible. From grooming to beauty sessions, we offer a wide range of services and treatments that every man wishes to get. Our professionally trained stylists and experts leave no stone unturned to give you the best look that would do all the talking and make your style better than the best!</p><br>
 
+        <p>Not only that, our experts would happily give you tips and tricks to sustain that long desired style to make you feel confident and rule the world. Look Salon is a proud and award winning salon chain that has over 95 branches nationally and internationally to help people give them the 'Perfect Look' and flaunt it in style. Our experts are constantly updated with latest trends in the fashion world and even help you suggest the best look according to your personality and while we're giving you your desired look, we also ensure that you have a very fruitful visit to the salon. Bring all your beauty and hair questions to us and get them answered at Looks Salon. We make sure that we are using the right product and technology for your services and thus you can be sure that you are availing a world-class service.</p><br>
+
+        <p>So wait no more, book your appointment today through our website or contact the nearest Looks Salon and experience the magnificent way of transforming yourself.
+        </p>
     </div>
 </body>
+<script src="./JavaScript/admin_nav.js"></script>
+
 </html>

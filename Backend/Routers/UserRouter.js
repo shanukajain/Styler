@@ -2,11 +2,9 @@ const express = require("express");
 require("dotenv").config();
 const { UserModel } = require("../Model/UserModel");
 const client=require("../config/redis");
-
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const UserRouter = express.Router();
-const fs=require("fs");
 const { authenticate } = require("../Middleware/Authentication");
 const { StylerModel } = require("../Model/StylerModel");
 const { AppointmentModel } = require("../Model/AppointmentModel");
@@ -94,9 +92,8 @@ UserRouter.get("/Check",async(req,res)=>{
 //********Book appointment**********/
 UserRouter.get("/book",async(req,res)=>{
     let payload=req.body;
-    console.log(typeof(payload.userID))
     payload.status="Pendding";
-    console.log(payload)
+    payload.slot.toLocaleLowerCase();
     let data=new AppointmentModel(payload);
     await data.save();
     res.send({message:"Appointment booked"});

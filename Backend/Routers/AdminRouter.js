@@ -5,6 +5,7 @@ const { StylerModel } = require("../Model/StylerModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { AppointmentModel } = require("../Model/AppointmentModel");
+const { BlockUserModel } = require("../Model/BlockUserModel");
 const AdminRouter = express.Router();
 const app = express()
 app.use(express.json())
@@ -18,7 +19,12 @@ AdminRouter.get("/allusers", async (req, res) => {
     res.send(data);
 });
 //******Block user*********/
-
+AdminRouter.get("/Block/",async(req,res)=>{
+let data=req.body;
+let Blockuser=new BlockUserModel(data);
+await Blockuser.save();
+res.status(200).send({msg:"user has been blocked"});
+})
 // ************REGISTER ADMIN***************
 
 AdminRouter.post("/register", async (req, res) => {

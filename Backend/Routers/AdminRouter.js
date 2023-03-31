@@ -1,10 +1,10 @@
 const express = require("express");
 require("dotenv").config();
-const { AdminModel } = require("../Model/AdminModel");
 const { UserModel } = require("../Model/UserModel");
 const { StylerModel } = require("../Model/StylerModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const { AppointmentModel } = require("../Model/AppointmentModel");
 const AdminRouter = express.Router();
 const app = express()
 app.use(express.json())
@@ -13,15 +13,17 @@ app.use(express.json())
 // ************ALL REGISTER USER***************
 
 AdminRouter.get("/allusers", async (req, res) => {
-    let data = await UserModel.find()
+    let search=req.query
+    let data = await UserModel.find(search)
     res.send(data);
 });
+//******Block user*********/
 
 // ************REGISTER ADMIN***************
 
 AdminRouter.post("/register", async (req, res) => {
     let payload = req.body;
-    let check = await AdminModel.find({ email: payload.email });
+    let check = await UserModel.find({ email: payload.email });
     if (check.length !== 0) {
         res.send({ "msg": "Email already registered" })
     } else {
@@ -32,7 +34,7 @@ AdminRouter.post("/register", async (req, res) => {
                 } else {
                     payload.password = hash;
                     payload.role = `admin`
-                    const User = new AdminModel(payload);
+                    const User = new UserModel(payload);
                     await User.save();
                     res.send({ "message": `Admin Register Sucessfull` });
                 }
@@ -50,7 +52,7 @@ AdminRouter.post("/register", async (req, res) => {
 AdminRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
-        let User = await AdminModel.findOne({ email: email });
+        let User = await UserModel.findOne({ email: email });
         if (User) {
             bcrypt.compare(password, User.password, async (err, result) => {
                 if (result) {
@@ -73,9 +75,9 @@ AdminRouter.post("/login", async (req, res) => {
 // ****************ALL STYLER ******************
 
 
-AdminRouter.get("/All/Stylers", async (req, res) => {
-
-    let data = await  StylerModel.find()
+AdminRouter.get("/All_Stylers", async (req, res) => {
+    let search=req.query
+    let data = await  StylerModel.find(search);
     res.send(data);
 });
 
@@ -107,6 +109,24 @@ AdminRouter.delete("/delete/styler/:id", async (req, res) => {
      await  StylerModel.deleteOne({"_id":ID})
     res.send({"msg": "Style Deleted"});
 });
+
+
+
+//**************All Appointments*************/
+AdminRouter.get("/All_appoints",async(req,res)=>{
+    let search=req.query
+let data=await AppointmentModel.find(search);
+res.send(data);
+})
+
+//*************Update Appointmentr **********/
+AdminRouter.patch("/update/appointment/:id",async(req,res)=>{
+    let status=req.body;
+    let id=req.params.id;
+    await AppointmentModel.updateOne({"_id":id},status);
+    res.send({msg:"done"});
+})
+//****** **********/
 
 module.exports = { AdminRouter };
 

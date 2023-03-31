@@ -1,10 +1,5 @@
 const jwt=require("jsonwebtoken")
-const redis=require("redis");
-// const client=redis.createClient();
-// client.on("error",(err)=>{
-//     console.log("error",err);
-// })
-// client.connect();
+const client=require("../config/redis");
 
 const authenticate=async(req,res,next)=>{
 const token=req.headers.authorization;
@@ -14,6 +9,7 @@ console.log(token);
 if(token){
    const decoded=jwt.verify(token,"9168");
    if(decoded){
+    console.log(decoded);
    let t= await client.GET(`${token}`);
     if(t){
         res.status(404).send({"msg":"login again"})
@@ -34,21 +30,3 @@ if(token){
 module.exports={
     authenticate
 }
-
-    if (token) {
-        var decoded = jwt.verify(token, "9168");
-        if (decoded) {
-
-            // req.body.userID = decoded.userID;
-            next();
-        }
-        else {
-            res.send("Token Failed")
-        }
-    } else {
-        res.send("Please Login First")
-    }
-};
-
-module.exports={authentication}
-

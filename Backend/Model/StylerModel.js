@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const StylerSchema = mongoose.Schema(
   {
-    email: String,
     Styler_name: String,
     mob_no: Number,
     city:String,
-    shift:String
+    salary:Number,
+    shift:Array
   }
 );
 

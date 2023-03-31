@@ -1,13 +1,15 @@
 const express = require("express");
 require("dotenv").config();
 const { UserModel } = require("../Model/UserModel");
-const {authentication}=require("../Middleware/Authentication")
 const client=require("../config/redis");
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const UserRouter = express.Router();
-const fs=require("fs")
+const fs=require("fs");
+const { authenticate } = require("../Middleware/Authentication");
+const { StylerModel } = require("../Model/StylerModel");
+const { AppointmentModel } = require("../Model/AppointmentModel");
 const app = express()
 app.use(express.json())
 
@@ -67,7 +69,38 @@ UserRouter.post("/login", async (req, res) => {
 
 });
 
-
+UserRouter.use(authenticate)
+//*******Check avalibility ***********/
+UserRouter.get("/Check",async(req,res)=>{
+    let {city,date,slot}=req.body;
+    let data =await StylerModel.find({"city":city});
+    let data1=await AppointmentModel.find({date,slot});
+    console.log(data1);
+   for(i=0;i<data1.length;i++){
+    data=data.filter((el)=>{
+        let id=String(el._id);
+        console.log(id,data1[i].StylistID)
+        if(id!==data1[i].StylistID){
+            return el;
+        }
+    })
+   }
+    if(data.length==0){
+        res.send({msg:"no slot avalibale"})
+    }else {
+    res.send(data);
+    }
+})
+//********Book appointment**********/
+UserRouter.get("/book",async(req,res)=>{
+    let payload=req.body;
+    console.log(typeof(payload.userID))
+    payload.status="Pendding";
+    console.log(payload)
+    let data=new AppointmentModel(payload);
+    await data.save();
+    res.send({message:"Appointment booked"});
+})
 // **************LOGOUT*****************
 
 UserRouter.get("/logout",async(req,res)=>{
@@ -78,10 +111,8 @@ UserRouter.get("/logout",async(req,res)=>{
 
 
 //**************AUTHENTICATE DEMO******************
-UserRouter.use(authentication);
-UserRouter.get("/check",(req,res)=>{
-   res.send("PASSED")
-})
+UserRouter.use(authenticate)
+
 module.exports = { UserRouter };
 
 

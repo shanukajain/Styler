@@ -34,17 +34,19 @@
                 <form action="">
                 <!-- <input type="date" name="" id=""> -->
                 <!-- <input type="datetime-local" name="" id=""> -->
-                <label for="datetime">Date and Time:</label>
-                <input type="datetime-local" id="datetime" class="datetime-input">
+                <label for="datetime">Date :</label>
+                <input type="date" id="datetime" class="datetime-input">
                     <input type="submit" value="Search">
                 </form>
             </div>
             <div id="select-status-div">
-                <select name="" id="select-status">
+                <select  name="" id="select-status">
+                    <option value="null">Choose Status</option>
                     <option value="completed">Completed</option>
                     <option value="cancled">Cancled</option>
                     <option value="pending">Pending</option>
                 </select>
+                <button class="choose" onclick="statusFun()">Choose</button>
             </div>
 
         </div>
@@ -95,4 +97,6 @@
         </div>
     </main>
 </body>
+<script src="./JavaScript/admin_nav.js"></script>
+<script src="./JavaScript/admin_appoinments.js"></script>
 </html>

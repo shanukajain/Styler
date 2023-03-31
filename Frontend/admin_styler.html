@@ -36,19 +36,41 @@
             <h1>Add New Styler</h1>
             <form action="">
                 <input type="text" name="" id="name" placeholder=" Name" required>
-                <input type="text" name="" id="work" placeholder="Work" required>
+                <!-- <input type="text" name="" id="work" placeholder="Work" required> -->
+                <!-- <input type="text" name="" id="shift_1" placeholder="First Shift" required> -->
+                <select name="" id="shift_1">
+                    <option value="Morning">Morning</option>
+                    <!-- <option value="Evening">Evening</option>
+                    <option value="Night">Night</option> -->
+                    <option value="not">Not Avaliable</option>
+                </select>
+                <select name="" id="shift_2">
+                    <!-- <option value="Morning">Morning</option> -->
+                    <option value="Evening">Evening</option>
+                    <!-- <option value="Night">Night</option> -->
+                    <option value="not">Not Avaliable</option>
+                </select>
+                <select name="" id="shift_3">
+                    <!-- <option value="Morning">Morning</option>
+                    <option value="Evening">Evening</option> -->
+                    <option value="Night">Night</option>
+                    <option value="not">Not Avaliable</option>
+                </select>
+                <!-- <input type="text" name="" id="shift_2" placeholder="Second Shift" required> -->
+                <input type="text" name="" id="city" placeholder="City" required>
                 <input type="email" name="" id="email" placeholder="Email" required>
-                <input type="number" name="" id="mobile_no" placeholder="Mobile Number" required>
+                <input type="number" name="" id="mobile_no" placeholder="Mobile Number" required maxlength="10">
                 <input type="number" name="" id="salary" placeholder="Salary" required>
                 <input type="submit"  value="Add">
             </form>
         </div>
-
         <div id="sreach-div">
-        <div id="sreach-child-div">
-            <input type="text" id="search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
+            <h1 style="text-align: center;">Sreach Styler</h1>
+            <div id="search_bar">
+                
+                <i class="fa fa-search"></i>
+                <input id="input" type="text" placeholder="Search for Users ">
+            </div>
         </div>
 
         <div id="styler">
@@ -66,55 +88,27 @@
                     <button>Remove</button>
                 </div>
             </div> -->
-            <div class="user-div">
+            <!-- <div class="user-div">
                 <div>
                     <img src="./Image/male-avatar-icon-flat.jpg" alt="user-avtar">
                 </div>
                 <div>
                     <h1>Soumya Adhya</h1>
                     <h2><span class="point">Work :</span> <span class="work">Hair Stylist</span></h2>
-                        <h3><span class="point">Mobile Number :</span> <span class="mobile">+91 9007060666</span></h3>
+                        <h3><span class="point">Mobile No :</span> <span class="mobile">+91 9007060666</span></h3>
                         <h3><span class="point">Email : </span> <span class="email">s@gmail.com</span></h3>
                         <h3><span class="point">Salary :</span> <span class="salary">&#8377;22,000</span></h3>
                         <button class="edit-btn">Edit</button>
                         <button class="clock-btn">Remove</button>
                         <br>
                     </div>
-            </div>
-            <div class="user-div">
-                <div>
-                    <img src="./Image/male-avatar-icon-flat.jpg" alt="user-avtar">
-                </div>
-                <div>
-                    <h1>Soumya Adhya</h1>
-                    <h2><span class="point">Work :</span> <span class="work">Hair Stylist</span></h2>
-                        <h3><span class="point">Mobile Number :</span> <span class="mobile">+91 9007060666</span></h3>
-                        <h3><span class="point">Email : </span> <span class="email">s@gmail.com</span></h3>
-                        <h3><span class="point">Salary :</span> <span class="salary">&#8377;22,000</span></h3>
-                        <button class="edit-btn">Edit</button>
-                        <button class="clock-btn">Remove</button>
-                        <br>
-                    </div>
-            </div>
-            <div class="user-div">
-                <div>
-                    <img src="./Image/male-avatar-icon-flat.jpg" alt="user-avtar">
-                </div>
-                <div>
-                    <h1>Soumya Adhya</h1>
-                    <h2><span class="point">Work :</span> <span class="work">Hair Stylist</span></h2>
-                        <h3><span class="point">Mobile Number :</span> <span class="mobile">+91 9007060666</span></h3>
-                        <h3><span class="point">Email : </span> <span class="email">s@gmail.com</span></h3>
-                        <h3><span class="point">Salary :</span> <span class="salary">&#8377;22,000</span></h3>
-                        <button class="edit-btn">Edit</button>
-                        <button class="clock-btn">Remove</button>
-                        <br>
-                    </div>
-            </div>
+            </div> -->
+        
        
             </div>
         </div>
     </main>
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
+<script src="./JavaScript/admin_styler.js"></script>
 </html>

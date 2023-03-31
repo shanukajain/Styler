@@ -41,7 +41,31 @@
 #dash>div:nth-child(5){
     background:#0353f9 ;
 }
-
+.app-child-details{
+    width: 60%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  td {
+    /* width: 100%; */
+    padding: 6px 0px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  th {
+    /* background-color: #f2f2f2; */
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+    /* width: 100%; */
+  }
+  
 #appointments-div{
     margin: auto;
     width: 90%;
@@ -64,11 +88,15 @@
 .point{
     /* padding: 3px; */
     /* background: white; */
+    font-size: 23px;
+    font-weight: 700;
     color: #252230;
     border-radius: 5px;
+    padding-left: 10px;
 }
 .text{
-
+    font-size: 22px;
+    font-weight: 700;
     color:#fff ;
 }
 .app-child-button>button{

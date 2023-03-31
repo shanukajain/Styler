@@ -10,7 +10,7 @@ if(token){
    const decoded=jwt.verify(token,"9168");
    if(decoded){
     console.log(decoded);
-   let t= await client.GET(`${token}`);
+   let t= await client.get(`${token}`);
     if(t){
         res.status(404).send({"msg":"login again"})
     }else {

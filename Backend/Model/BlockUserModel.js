@@ -5,6 +5,6 @@ const BlockUserSchema = mongoose.Schema(
   }
 );
 
-const BlockUserModel = new mongoose.model("Appointment_Details", BlockUserSchema);
+const BlockUserModel = new mongoose.model("Blocked_Users", BlockUserSchema);
 
 module.exports = { BlockUserModel };

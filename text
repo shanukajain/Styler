@@ -6,4 +6,13 @@
 
 //40-issues *2 80-task
 
-// .env file --> 
+
+// {
+//     "email":"ankit@gmail.com",
+//     "name":"ankit singh",
+//     "mob_no":454344,
+//     "gender":"male",
+//     "city":"ballia",
+//     "password":"ankit123",
+//     "role":"admin"
+//   }

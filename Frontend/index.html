@@ -9,10 +9,10 @@
     <link rel="icon" href="./Image/stylerLogo.png">
                     <!--welcomePage link-->
     <link rel="stylesheet" href="./Css/index.css">
-    <link rel="stylesheet" href="./JavaScript/index.js">     
+    <script src="./JavaScript/index.js"></script>
                    <!--..navigation bar link --->
     <link rel="stylesheet" href="./Css/admin_nav.css">
-    <script src="./JavaScript/admin_nav.js"></script>
+    <!-- <script src="./JavaScript/admin_nav.js"></script> -->
              <!-- font-link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,20 +34,20 @@
                       <!----Navbar section------->
     <header>
        <div class="logo">
-        <a href="./index.html"><img src="./Image/stylerLogo.png" alt=""></a>
+        <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
        </div>
-       <div class="hamburger">
+       <div class="hamburger" onClick="hamFun()">
           <div class="line"></div>
           <div class="line"></div>
           <div class="line"></div>
        </div>
        <nav class="nav-bar">
           <ul>
-            <li><a href="./admin_dashboard.html">Dashboard</a></li>
-            <li><a href="./admin_users.html">Users</a></li>
-            <li><a href="">Appointments</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="">Signup/Login</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="./gents-salon-services.html">Services</a></li>
+            <li><a href="./admin_dashboard.html">Admin</a></li>
+            <li><a href="./login_signup.html">Signup/Login</a></li>
           </ul>
        </nav>
     </header>                  
@@ -122,8 +122,8 @@
         <div class="about">
             <div class="about-header"><h1>Explore the Realm of Beauty with styler Salon</h1></div>
             <div class="about-para">
-                <p>With over 162 branches nationally and internationally, Looks salon is a premium beauty salon for men and women who desire to look the best every day. Getting a 
-                makeover not only changes the appearance of a person but also brings back the lost confidence and Looks Salon would take pride in being a part of it. From
+                <p>With over 162 branches nationally and internationally, styler salon is a premium beauty salon for men and women who desire to look the best every day. Getting a 
+                makeover not only changes the appearance of a person but also brings back the lost confidence and styler Salon would take pride in being a part of it. From
                  beauty to grooming services, we provide a tremendous range of facilities that touches every dimension of beauty and hair treatments. Our repertoire of 
                  professional experts makes sure that all your beauty and hair questions are answered, and you leave the salon with a big smile on your face.</p>
                 </div>
@@ -189,19 +189,20 @@
                 <h1>SALON</h1> -->
                 <p>The Exclusive Unisex Salon in your town acquainted with world-class tools and professionals for stunning looks and absolute luxury.</p>
                 <div class="footer-contact">
-                    <span><i class="fa-brands fa-facebook"></i></span>
-                    <span><i class="fa-brands fa-twitter"></i></span>
-                    <span><i class="fa-brands fa-instagram"></i></span>
+                    <span class="facebook"><i class="fa-brands fa-facebook"></i></span>
+                    <span  class="twitter"><i class="fa-brands fa-twitter"></i></span>
+                    <span class="instagram"><i class="fa-brands fa-instagram"></i></span>
                 </div>
                
         </div>
     </section>
     <p class="last-para">© 2023, Styler Salon. All rights reserved.</p>
 </body>
-</html>
+</html> 
 <script>
     // Hide the preloader when the page is loaded
 window.addEventListener("load", () => {
     document.querySelector("body").classList.add("loaded");
   });
+  
 </script>

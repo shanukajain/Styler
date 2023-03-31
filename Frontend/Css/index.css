@@ -111,6 +111,15 @@ body{
     justify-content: center;
     margin: auto;
 }
+.facebook:hover{
+    color:blue
+}
+.twitter:hover{
+   color:blueviolet
+}
+.instagram:hover{
+    color:red
+}
 .last-para{
     text-align: center;
     margin-top: 10px;
@@ -129,6 +138,7 @@ body{
         grid-template-columns:repeat(2,1fr)!important;
     }
     }
+                                   /* -----------<-->---------- */
 
 /* Center the preloader */
 #preloader {

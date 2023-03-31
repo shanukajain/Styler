@@ -78,8 +78,8 @@ UserRouter.get("/logout",async(req,res)=>{
 
 
 //**************AUTHENTICATE DEMO******************
-
-UserRouter.get("/check",authentication,(req,res)=>{
+UserRouter.use(authentication);
+UserRouter.get("/check",(req,res)=>{
    res.send("PASSED")
 })
 module.exports = { UserRouter };

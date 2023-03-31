@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/admin_appoinments.css">
+    <link rel="stylesheet" href="./Css/admin_nav.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="./admin_dashboard.html">Dashboard</a></li>
+                <li><a href="./admin_styler.html">Stylers</a></li>
+                <li><a href="./admin_appointments.html">Appointments</a></li>
+                <li><a href="./admin_services.html">Services</a></li>
+                <li><a href="./admin_users.html">Users</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="sreach-div">
+            <div id="form-div">
+                <form action="">
+                <!-- <input type="date" name="" id=""> -->
+                <!-- <input type="datetime-local" name="" id=""> -->
+                <label for="datetime">Date and Time:</label>
+                <input type="datetime-local" id="datetime" class="datetime-input">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <div id="select-status-div">
+                <select name="" id="select-status">
+                    <option value="completed">Completed</option>
+                    <option value="cancled">Cancled</option>
+                    <option value="pending">Pending</option>
+                </select>
+            </div>
+
+        </div>
+        <h1 style="text-align: center; margin-bottom: 20px;">Appointments</h1>
+        <div id="appointments-div">
+            <div class="app-child-div">
+                <div class="app-child-details">
+                    <h2><span class="point">Client Name</span> : <span class="text">Soumya Adhya</span></h2>
+                    <h2><span class="point">Time Slot</span> : <span class="text">8:30AM </span></h2>
+                    <h2><span class="point">Date</span> : <span class="text">30/03/2023</span></h2>
+                    <h2><span class="point">Styler Name</span> : <span class="text">Harish</span></h2>
+                </div>
+                <div class="app-child-button">
+                    <button class="complete-tbn">Complete</button>
+                    <button class="cancle-btn">Cancel</button>
+                    <button class="show-status">Completed</button>
+                </div>
+
+            </div>
+            <div class="app-child-div">
+                <div class="app-child-details">
+                    <h2><span class="point">Client Name</span> : <span class="text">Soumya Adhya</span></h2>
+                    <h2><span class="point">Time Slot</span> : <span class="text">8:30AM </span></h2>
+                    <h2><span class="point">Date</span> : <span class="text">30/03/2023</span></h2>
+                    <h2><span class="point">Styler Name</span> : <span class="text">Harish</span></h2>
+                </div>
+                <div class="app-child-button">
+                    <button class="complete-tbn">Complete</button>
+                    <button class="cancle-btn">Cancel</button>
+                    <button class="show-status"></button>
+                </div>
+
+            </div>
+            <div class="app-child-div">
+                <div class="app-child-details">
+                    <h2><span class="point">Client Name</span> : <span class="text">Soumya Adhya</span></h2>
+                    <h2><span class="point">Time Slot</span> : <span class="text">8:30AM </span></h2>
+                    <h2><span class="point">Date</span> : <span class="text">30/03/2023</span></h2>
+                    <h2><span class="point">Styler Name</span> : <span class="text">Harish</span></h2>
+                </div>
+                <div class="app-child-button">
+                    <button class="complete-tbn">Complete</button>
+                    <button class="cancle-btn">Cancel</button>
+                    <button class="show-status">Completed</button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

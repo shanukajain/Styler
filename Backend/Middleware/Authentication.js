@@ -34,3 +34,21 @@ if(token){
 module.exports={
     authenticate
 }
+
+    if (token) {
+        var decoded = jwt.verify(token, "9168");
+        if (decoded) {
+
+            // req.body.userID = decoded.userID;
+            next();
+        }
+        else {
+            res.send("Token Failed")
+        }
+    } else {
+        res.send("Please Login First")
+    }
+};
+
+module.exports={authentication}
+

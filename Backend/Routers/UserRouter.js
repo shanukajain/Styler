@@ -72,7 +72,7 @@ UserRouter.post("/login", async (req, res) => {
 
 UserRouter.get("/logout",async(req,res)=>{
     let token=req.headers.authorization;
-   await client.SETEX(`${token}`,60*60,"true")
+    await client.SETEX(`${token}`,60*60,"true");
    res.status(200).send({"msg":"logout successfull"});
 })
 

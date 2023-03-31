@@ -4,9 +4,204 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>styler - hair salon</title>
+                      <!-- icon-link -->
+    <link rel="icon" href="./Image/stylerLogo.png">
+                    <!--welcomePage link-->
+    <link rel="stylesheet" href="./Css/index.css">
+    <link rel="stylesheet" href="./JavaScript/index.js">     
+                   <!--..navigation bar link --->
+    <link rel="stylesheet" href="./Css/admin_nav.css">
+    <script src="./JavaScript/admin_nav.js"></script>
+             <!-- font-link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+                <!-- -font-awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                            <!----Carousel bootstrap link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">                        
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </head>
-<body>
-    
+
+<body> 
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <!-- <i class="preloader-icon fa fa-spinner"></i> -->
+        <i class="fa-solid fa-scissors"></i>
+      </div>
+                      <!----Navbar section------->
+    <header>
+       <div class="logo">
+        <a href="./index.html"><img src="./Image/stylerLogo.png" alt=""></a>
+       </div>
+       <div class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+       </div>
+       <nav class="nav-bar">
+          <ul>
+            <li><a href="./admin_dashboard.html">Dashboard</a></li>
+            <li><a href="./admin_users.html">Users</a></li>
+            <li><a href="">Appointments</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Signup/Login</a></li>
+          </ul>
+       </nav>
+    </header>                  
+
+                          <!-- hero section -->                      
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="https://www.lookssalon.in/public/images/innerBanner/service-men-1.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+        <img src="https://www.lookssalon.in/public/images/innerBanner/serviceGents.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.lookssalon.in/public/images/innerBanner/ladies-1.png" class="d-block w-100">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>                      
+      
+                              <!-- trend section -->
+    <section id="trend">
+        <div class="trend">
+            <div class="trend-card">
+                <img  src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/1.jpg" alt="#">
+            </div>
+            <div class="trend-card">
+                <a href="#">
+                <img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/2.jpg" alt="#">
+                </a>
+            </div>
+            <div class="trend-card">
+                <img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/6.jpg" alt="#">
+            </div>
+            <div class="trend-card">
+                <img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/4.jpg" alt="#">
+            </div>
+            <div class="trend-card">
+                <img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/3.jpg" alt="#">
+            </div>
+            <div class="trend-card">
+                <img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/5.jpg" alt="#">
+            </div>
+        </div>
+    </section> 
+                     
+                       <!-- category section -->
+    <section id="category">
+        <h1>Our Services</h1>
+        <div class="category">
+            <div class="category-card">
+                <h1>GENTS</h1>
+                <img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/services/gents.jpg" alt="#">
+            </div>
+            <div class="category-card">
+                <h1>LADIES</h1>
+                <img src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/services/ladies.jpg" alt="#">
+            </div>
+           
+        </div>
+    </section>
+  
+                         <!-- about section -->                  
+    <section id="about">
+        <div class="about">
+            <div class="about-header"><h1>Explore the Realm of Beauty with styler Salon</h1></div>
+            <div class="about-para">
+                <p>With over 162 branches nationally and internationally, Looks salon is a premium beauty salon for men and women who desire to look the best every day. Getting a 
+                makeover not only changes the appearance of a person but also brings back the lost confidence and Looks Salon would take pride in being a part of it. From
+                 beauty to grooming services, we provide a tremendous range of facilities that touches every dimension of beauty and hair treatments. Our repertoire of 
+                 professional experts makes sure that all your beauty and hair questions are answered, and you leave the salon with a big smile on your face.</p>
+                </div>
+            <div class="about-para">
+                <p>With over 6000 employees engaged in transforming your look, we make sure that all the services provided at our salons meet the international standards. Through
+                 our advice and solutions from the expertise in this array, we aim at giving the best services through our state-of-art facilities. Our professional stylists and 
+                 beauty experts are constantly updated with the latest trends and fashion advices that help them to work efficiently and deliver outstanding results!</p>
+                </div>
+            <div class="about-para">
+                <p>Give us an opportunity to serve you once, we are sure you'll love to come back to us again and be our esteemed customer forever. Fill the form or call us to book
+                 an appointment now!</p>
+                </div>
+        </div>
+    </section>
+ 
+                      <!-- partner section -->
+    <section id="partner">
+        <h1>Our Partner Brands</h1>
+        <div class="partner">
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/Loreal_edited.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/Kerastase-Logo.webp" alt="#"> 
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/olaplex-vector-logo_edited.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/Moroccanoil-Logo.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/main-brasil-cacau-order-form_edited.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/png-clipart-balmain-paris-logo-balmain-logo-icons-logos-emojis-iconic-brands_edited_edited.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/biotop.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/wahl-logo.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/dyson.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/wet_brush.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/american-crew.webp" alt="#">
+            </div>
+        </div>
+    </section>
+ 
+                    <!-- footer section -->
+    <section id="footer">
+        <div class="footer">
+            <div class="logo2">
+                <img src="../logo.png" alt="#">
+            </div>
+                <!-- <h1>STYLER</h1>
+                <h1>SALON</h1> -->
+                <p>The Exclusive Unisex Salon in your town acquainted with world-class tools and professionals for stunning looks and absolute luxury.</p>
+                <div class="footer-contact">
+                    <span><i class="fa-brands fa-facebook"></i></span>
+                    <span><i class="fa-brands fa-twitter"></i></span>
+                    <span><i class="fa-brands fa-instagram"></i></span>
+                </div>
+               
+        </div>
+    </section>
+    <p class="last-para">© 2023, Styler Salon. All rights reserved.</p>
 </body>
 </html>
+<script>
+    // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+    document.querySelector("body").classList.add("loaded");
+  });
+</script>

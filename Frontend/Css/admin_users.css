@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+main{
+    margin: auto;
+    margin-top: 30px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px 20px;
+}
+.user-div{
+    padding: 20px;
+    background: rgb(182,21,117,0.7);
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 25px;
+    color: whitesmoke;
+}
+.user-div div:nth-child(1){
+    width: 20%;
+    /* background: url("../Image/male-avatar-icon-flat.jpg"); */
+    height: 100%;
+}
+.user-div div:nth-child(2){
+    margin-left: 20px ;
+    width: 70%;
+}
+.user-div div:nth-child(1) img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.point{
+    color: #FFCDD2;
+}
+
+.clock-btn{
+    /* position: relative;
+    right: 0; */
+    margin-top: 1rem;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 10px 60px;
+    background: #B33A3A;
+    font-weight: 500;
+}
+.clock-btn:hover{
+    background: #B71C1C;
+}
+@media only screen and (max-width:1459px){
+    .user-div div:nth-child(2){
+    margin-left: 20px ;
+
+        width: 80%;
+    }
+}
+@media only screen and (max-width:985px){
+    main{
+        margin: auto;
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px 20px;
+    }
+
+}
+@media only screen and (max-width:985px){
+.user-div{
+    height: auto;
+    display: block;
+
+}
+.user-div div:nth-child(1){
+    margin: auto;
+    width: 40%;
+    height: 200px;
+}
+.user-div div:nth-child(2){
+    margin: auto;
+    text-align: center;
+}
+}

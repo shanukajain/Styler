@@ -1,0 +1,114 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.section 
+{
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.video-play 
+{
+    width: 100%;
+}
+
+.video-play>video{
+    width: 100%;
+}
+
+.hair-styles 
+{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #fff;
+    padding: 25px;
+}
+
+.hair-styles i 
+{
+    color: #c68200;
+    font-size: 12px;
+}
+
+.beard-section 
+{
+    width: 100%;
+}
+
+.beard-section>div:nth-child(2)
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.beard-section i {
+    color: #c68200;
+    font-size: 12px;
+}
+
+
+.ladies-service-button{ 
+    border: none;
+    padding: 15x 20px;
+    font-size: 17px;
+    background-color: #c68200;
+    color: white;
+}
+
+.book-appointment 
+{
+    width: 100%;
+    padding: 20px;
+    background-color: #eee;
+}
+
+.book-appointment>div:nth-child(1){
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.book-appointment>div:nth-child(2)
+{
+    width: 70%;
+    margin: auto;
+}
+
+.book-appointment>div:nth-child(2) input, select {
+    width: 45%;
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.book-appointment>div:nth-child(2) input::placeholder{
+    color: black;
+}
+
+.book-appointment>div:nth-child(2) input[type="submit"]
+{
+    background-color: #c68200;
+    color: white;
+    border: none;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+
+.gents-about{
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}

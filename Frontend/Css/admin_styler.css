@@ -36,6 +36,17 @@
     width: 100px;
     height: 100px;
 } */
+#sreach-child-div{
+    width: 50%;
+    margin: auto;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    border:  1px solid black;
+}
+#search{
+    padding: 5px 38%;
+}
 #styler{
     margin: auto;
     margin-top: 30px;

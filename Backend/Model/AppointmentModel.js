@@ -6,7 +6,7 @@ const AppointmentSchema = mongoose.Schema(
     Stylistname:String,
     date:String,
     slot:String,
-    status:{type:String, enum:["Pendding","complete","Apporved","cancel"],default:"Pendding"},
+    status:{type:String, enum:["Pendding","Complete","Apporved","Cancel"],default:"Pendding"},
   }
 );
 

@@ -9,9 +9,6 @@ const { BlockUserModel } = require("../Model/BlockUserModel");
 const {StylesModel}=require("../Model/Styles")
 const statusemail = require("../config/statusemail");
 const AdminRouter = express.Router();
-const app = express()
-app.use(express.json())
-
 
 // ************ALL REGISTER USER***************
 

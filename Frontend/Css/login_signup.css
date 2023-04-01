@@ -247,7 +247,7 @@ main{
 }
 
 /* Rotate the loading icon */
-.fa-solid {
+#spinner{
   animation: spin 2s infinite linear;
   font-size: 8rem;
   color:black;

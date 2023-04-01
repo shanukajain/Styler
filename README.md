@@ -1,5 +1,5 @@
 
-<h1 align="center"> Styler </h1>
+<h1 align="center"> Styler ✂️</h1>
 <h2 align="center">It's Hair Salon website having good User Interface & major functionalities. </h2>
 <br>
 <p>Styler is the Hair Salon website specifically for booking the appointment online.The site is being developed on the basis on Low Level Design and system Design (Architecture). In the styler the costomer can see the available time slot and book the slot with slot with the different stylers.In this web site the costomer or user can see the availble stylers, time slot and charges for the cuts over site.

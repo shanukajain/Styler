@@ -14,10 +14,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
-
+  <div id="preloader">
+    <!-- this is the preloader -->
+    <!-- <i class="preloader-icon fa fa-spinner"></i> -->
+    <i class="fa-solid fa-scissors"></i>
+  </div>
     <header>
         <div class="logo">
-            <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
+            <a href="./login_signup.html"><img src="./Image/stylerLogo.png" alt=""></a>
         </div>
         <div class="hamburger">
             <div class="line"></div>
@@ -27,9 +31,9 @@
         <nav class="nav-bar">
             <ul>
                 <li><a href="./index.html">Home</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">ABOUT US</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="./gents-salon-services.html">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -119,3 +123,10 @@
 
 <script src="./JavaScript/login_signup.js"></script>
 </html>
+<script>
+  // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+  document.querySelector("body").classList.add("loaded");
+});
+
+</script>

@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gents Salon Service</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="./Css/gents-salon-services.css">
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <link rel="icon" href="https://www.linkpicture.com/q/WhatsApp-Image-2023-03-28-at-21.21.29.jpeg">
@@ -70,12 +72,12 @@
     </div>
 
     <!-- <------ Video Section  and Book Appointment Section ------->
-    <div class="video-play">
+    <div class="video-play" data-aos="fade-right">
         <div>
             <video src="./Image/clideo_editor_6cd33746bad44c348a7d58a560c82021.mp4" autoplay muted loop></video>
         </div>
-        <div>
-            <div class="book-appointment">
+        <div >
+            <div class="book-appointment" data-aos="fade-left">
                 <div>
                     <h1>Let's not wait for the "Perfect Look"</h1>
                     <span>Book An Appointment Now!</span>
@@ -130,7 +132,7 @@
 
     <!-- <------- Hair Cut Style Section ---->
 
-    <div class="hair-styles">
+    <div class="hair-styles" data-aos="fade-up">
         <div>
             <h2>Hair Cut & Finish</h2>
             <ul>
@@ -169,7 +171,7 @@
         </div>
     </div>
 
-    <div class="beard-section">
+    <div class="beard-section" data-aos="fade-up">
         <div>
             <img src="https://www.lookssalon.in/public/images/innerBanner/serviceGents.jpg" alt="beards_men_img">
         </div>
@@ -199,7 +201,7 @@
     </div>
 
 
-    <div class="gents-about">
+    <div class="gents-about" data-aos="fade-up">
         <h1>Gents Salon Services</h1>
         <p>Styling has never been limited to women. The art of looking handsome and getting makeovers has its own story
             for men and one cannot imagine the number of styles and treatments that can be done on these hunks.
@@ -222,7 +224,7 @@
         </p>
     </div>
 
-    <section id="partner">
+    <section id="partner" data-aos="fade-up">
         <h1>Our Partner Brands</h1>
         <div class="partner">
             <div class="partner-card">
@@ -264,7 +266,7 @@
     </section>
 
     <!-- footer section -->
-    <section id="footer">
+    <section id="footer" data-aos="fade-up">
         <div class="footer">
             <div class="logo2">
                 <img src="../logo.png" alt="#">
@@ -285,7 +287,11 @@
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
 <script src="./JavaScript/gents-salon-services.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 <script>
+    AOS.init();
+
     window.addEventListener("load", () => {
         document.querySelector("body").classList.add("loaded");
     });

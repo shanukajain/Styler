@@ -9,12 +9,8 @@ function dateFun(event){
 
     if (status !== "null") {
         // Parse the date input value and format it as "01-01-2023"
-        const parts = dateVal.split('-');
-        const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
         
-        console.log(status);
-        console.log(formattedDate);
-        fetchApps(status,formattedDate)
+        fetchApps(status,dateVal)
       }
 }
 

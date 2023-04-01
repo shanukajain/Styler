@@ -22,6 +22,10 @@
 
    </head>
 <body>
+  <div id="preloader">
+    <!-- this is the preloader -->
+    <i class="fa-solid fa-scissors" id="spinner"></i>
+  </div>
   <header>
     <div class="logo">
      <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
@@ -36,12 +40,10 @@
          <li><a href="index.html">Home</a></li>
          <li><a href="#about">About Us</a></li>
          <li><a href="./gents-salon-services.html">Services</a></li>
-         <li><a href="./admin_dashboard.html">Admin</a></li>
          <li><a href="./login_signup.html">Signup/Login</a></li>
        </ul>
     </nav>
- </header> 
-
+ </header>    
 
 
  <h1 style="text-align: center;">For Admin Only</h1>
@@ -123,11 +125,6 @@
 </main>
 
 </body>
-<script>
-  // Hide the preloader when the page is loaded
-window.addEventListener("load", () => {
-  document.querySelector("body").classList.add("loaded");
-});
 
 </script>
 <script src="./JavaScript/admin_nav.js"></script>
@@ -135,3 +132,10 @@ window.addEventListener("load", () => {
 <script src="./JavaScript/admin_login.js"></script>
 
 </html>
+<script>
+  // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+  document.querySelector("body").classList.add("loaded");
+});
+
+</script>

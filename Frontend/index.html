@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>styler - hair salon</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
                       <!-- icon-link -->
     <link rel="icon" href="./Image/stylerLogo.png">
                     <!--welcomePage link-->
@@ -75,7 +77,7 @@
     </div>                      
       
                               <!-- trend section -->
-    <section id="trend">
+    <section id="trend" data-aos="fade-up" data-aos-duration="1000">
         <div class="trend">
             <div class="trend-card">
                 <img  src="https://d3r0z4awu7ba6n.cloudfront.net/images/looks/homeBanner/1.jpg" alt="#">
@@ -101,7 +103,7 @@
     </section> 
                      
                        <!-- category section -->
-    <section id="category">
+    <section id="category" data-aos="fade-up" data-aos-duration="1000">
         <h1>Our Services</h1>
         <div class="category">
             <div class="category-card">
@@ -117,7 +119,7 @@
     </section>
   
                          <!-- about section -->                  
-    <section id="about">
+    <section id="about" data-aos="fade-up" data-aos-duration="1000">
         <div class="about">
             <div class="about-header"><h1>Explore the Realm of Beauty with styler Salon</h1></div>
             <div class="about-para">
@@ -139,7 +141,7 @@
     </section>
  
                       <!-- partner section -->
-    <section id="partner">
+    <section id="partner" data-aos="fade-up" data-aos-duration="1000">
         <h1>Our Partner Brands</h1>
         <div class="partner">
             <div class="partner-card">
@@ -179,7 +181,7 @@
     </section>
  
                     <!-- footer section -->
-    <section id="footer">
+    <section id="footer" data-aos="fade-up" data-aos-duration="1000">
         <div class="footer">
             <div class="logo2">
                 <img src="../logo.png" alt="#">
@@ -199,8 +201,12 @@
     
    
 </body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 </html> 
 <script>
+    AOS.init();
+
     // Hide the preloader when the page is loaded
 window.addEventListener("load", () => {
     document.querySelector("body").classList.add("loaded");

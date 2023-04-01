@@ -10,19 +10,23 @@
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <link rel="icon" href="https://www.linkpicture.com/q/WhatsApp-Image-2023-03-28-at-21.21.29.jpeg">
     <script src="https://kit.fontawesome.com/3f69d0abd1.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Css/index.css">
 </head>
 
 <body>
+
+    <!-- <---- Loading Section ------>
+
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <!-- <i class="preloader-icon fa fa-spinner"></i> -->
+        <i class="fa-solid fa-scissors"></i>
+    </div>
+
     <!-- <------- Navbar Section -------->
     <header>
         <div class="logo">
-            <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
+            <a href="./index.html"><img src="./Image/stylerLogo.png" alt=""></a>
         </div>
         <div class="hamburger">
             <div class="line"></div>
@@ -31,24 +35,25 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li><a href="./admin_dashboard.html">Dashboard</a></li>
-                <li><a href="./admin_users.html">Users</a></li>
-                <li><a href="">Appointments</a></li>
-                <li><a href="">Services</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="#">About US</a></li>
+                <li><a href="./gents-salon-services.html">Services</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="#">Offers</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- <------ Choose Section ------>
     <div class="section">
-        <span style="color: #c68200">MEN HAIRCUT / </span>
-        <span>MEN BEARD / </span>
+        <span style="color: #c68200">MEN / </span>
+        <span>WOMEN / </span>
         <span>CHOOSE </span>
     </div>
 
     <!-- <------ Video Section ------->
     <div class="video-play">
-        <video src="./Image//Salon Video.mp4" autoplay muted loop></video>
+        <video src="./Image/clideo_editor_6cd33746bad44c348a7d58a560c82021.mp4" autoplay muted loop></video>
     </div>
 
     <!-- <------- Hair Cut Style Section ---->
@@ -118,7 +123,7 @@
                 </ul>
             </div>
         </div>
-            <!-- <button class="ladies-service-button">Ladies Services</button> -->
+        <!-- <button class="ladies-service-button">Ladies Services</button> -->
     </div>
 
     <div class="book-appointment">
@@ -128,20 +133,10 @@
         </div>
         <div>
             <form action="">
-                <input type="text" id="name" placeholder="Name*">
-                <select name="Gender*" id="">
-                    <option value="">Gender*</option>
-                    <option value="Ladies">Ladies</option>
-                    <option value="Gents">Gents</option>
-                </select>
+                <input type="text" placeholder="Service Type" id="service-type" required>
+                <input type="date" placeholder="Preffered Date*" id="book-date" required>
                 <br><br>
-                <input type="number" placeholder="Contact*">
-                <input type="text" placeholder="Service Type">
-                <br><br>
-                <input type="email" placeholder="Email Id*">
-                <input type="date" placeholder="Preffered Date*">
-                <br><br>
-                <select name="city" id="">
+                <select name="city" id="city" required>
                     <option value="">City*</option>
                     <option value="Delhi">Delhi</option>
                     <option value="Mumbai">Mumbai</option>
@@ -150,26 +145,107 @@
                     <option value="Chennai">Chennai</option>
                     <option value="Kota">Kota</option>
                 </select>
-                <select name="time" id="">
+                <select name="time" id="slots" required>
                     <option value="">Preferred Time*</option>
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Morning">Afternoon</option>
+                    <option value="Morning">Evening</option>
                 </select>
-                <input type="submit" value="Book Appointment">
+                <input type="submit" value="Book Appointment" id="book-button">
             </form>
         </div>
     </div>
 
     <div class="gents-about">
         <h1>Gents Salon Services</h1>
-        <p>Styling has never been limited to women. The art of looking handsome and getting makeovers has its own story for men and one cannot imagine the number of styles and treatments that can be done on these hunks. Moreover, the desire to have a unique identity is everyone's' want and Looks Salon makes that possible. From grooming to beauty sessions, we offer a wide range of services and treatments that every man wishes to get. Our professionally trained stylists and experts leave no stone unturned to give you the best look that would do all the talking and make your style better than the best!</p><br>
+        <p>Styling has never been limited to women. The art of looking handsome and getting makeovers has its own story
+            for men and one cannot imagine the number of styles and treatments that can be done on these hunks.
+            Moreover, the desire to have a unique identity is everyone's' want and Looks Salon makes that possible. From
+            grooming to beauty sessions, we offer a wide range of services and treatments that every man wishes to get.
+            Our professionally trained stylists and experts leave no stone unturned to give you the best look that would
+            do all the talking and make your style better than the best!</p><br>
 
-        <p>Not only that, our experts would happily give you tips and tricks to sustain that long desired style to make you feel confident and rule the world. Look Salon is a proud and award winning salon chain that has over 95 branches nationally and internationally to help people give them the 'Perfect Look' and flaunt it in style. Our experts are constantly updated with latest trends in the fashion world and even help you suggest the best look according to your personality and while we're giving you your desired look, we also ensure that you have a very fruitful visit to the salon. Bring all your beauty and hair questions to us and get them answered at Looks Salon. We make sure that we are using the right product and technology for your services and thus you can be sure that you are availing a world-class service.</p><br>
+        <p>Not only that, our experts would happily give you tips and tricks to sustain that long desired style to make
+            you feel confident and rule the world. Look Salon is a proud and award winning salon chain that has over 95
+            branches nationally and internationally to help people give them the 'Perfect Look' and flaunt it in style.
+            Our experts are constantly updated with latest trends in the fashion world and even help you suggest the
+            best look according to your personality and while we're giving you your desired look, we also ensure that
+            you have a very fruitful visit to the salon. Bring all your beauty and hair questions to us and get them
+            answered at Looks Salon. We make sure that we are using the right product and technology for your services
+            and thus you can be sure that you are availing a world-class service.</p><br>
 
-        <p>So wait no more, book your appointment today through our website or contact the nearest Looks Salon and experience the magnificent way of transforming yourself.
+        <p>So wait no more, book your appointment today through our website or contact the nearest Looks Salon and
+            experience the magnificent way of transforming yourself.
         </p>
     </div>
+
+    <section id="partner">
+        <h1>Our Partner Brands</h1>
+        <div class="partner">
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/Loreal_edited.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/Kerastase-Logo.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/olaplex-vector-logo_edited.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/Moroccanoil-Logo.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/main-brasil-cacau-order-form_edited.webp"
+                    alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/png-clipart-balmain-paris-logo-balmain-logo-icons-logos-emojis-iconic-brands_edited_edited.webp"
+                    alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/biotop.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/wahl-logo.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/dyson.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/wet_brush.webp" alt="#">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.lookssalon.in/public/images//brands/american-crew.webp" alt="#">
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <section id="footer">
+        <div class="footer">
+            <div class="logo2">
+                <img src="../logo.png" alt="#">
+            </div>
+            <!-- <h1>STYLER</h1>
+                <h1>SALON</h1> -->
+            <p>The Exclusive Unisex Salon in your town acquainted with world-class tools and professionals for stunning
+                looks and absolute luxury.</p>
+            <div class="footer-contact">
+                <span><i class="fa-brands fa-facebook"></i></span>
+                <span><i class="fa-brands fa-twitter"></i></span>
+                <span><i class="fa-brands fa-instagram"></i></span>
+            </div>
+
+        </div>
+    </section>
+    <p class="last-para">© 2023 Styler Salon. All rights reserved.</p>
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
+<script src="./JavaScript/gents-salon-services.js"></script>
+<script>
+    window.addEventListener("load", () => {
+        document.querySelector("body").classList.add("loaded");
+    });
+</script>
 
 </html>

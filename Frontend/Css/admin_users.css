@@ -4,6 +4,39 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 }
+#sreach-div{
+    width: 50%;
+    margin: auto;
+}
+#search_bar{
+    height: 40px;
+    width: 100%;
+    margin-top: 15px;
+    padding-left: 12px;
+    /* margin-left: -170px; */
+    border-radius: 5px;
+    background-color: #F8F8F8;
+
+    box-shadow: rgba(24, 24, 24, 0.02) 0px 1px 3px 0px, rgba(29, 33, 37, 0.15) 0px 0px 0px 1px;
+}
+.DF{
+    position: absolute;
+    margin-left: -360px;
+    margin-top: 430px;
+    
+}
+#input{
+    width: 80%;
+    height: 30px;
+    margin-left: 06px;
+    text-decoration: none;
+    margin-top: 2px;
+    /* border-radius: 0px solid white; */
+    border: 0;
+    outline: none;
+    background-color: #F8F8F8;
+    color: #8b7d77;
+}
 main{
     margin: auto;
     margin-top: 30px;
@@ -15,14 +48,14 @@ main{
 .user-div{
     padding: 20px;
     background: rgb(182,21,117,0.7);
-    height: 200px;
+    height: 230px;
     display: flex;
     justify-content: space-between;
     border-radius: 25px;
     color: whitesmoke;
 }
 .user-div div:nth-child(1){
-    width: 20%;
+    width: 25%;
     /* background: url("../Image/male-avatar-icon-flat.jpg"); */
     height: 100%;
 }
@@ -86,3 +119,50 @@ main{
     text-align: center;
 }
 }
+@media only screen and (max-width:680px){
+#sreach-div{
+    width: 90%;
+}
+}
+
+
+/* Center the preloader */
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    scrollbar-width: none;
+  }
+  
+  /* Rotate the loading icon */
+  .fa-solid {
+    animation: spin 2s infinite linear;
+    font-size: 8rem;
+    color:black;
+  }
+  
+  /* Rotate the preloader */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Hide the preloader when the page is loaded */
+  .loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  }
+  

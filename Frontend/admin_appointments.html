@@ -9,6 +9,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <i class="fa-solid fa-scissors"></i>
+      </div>
     <header>
         <div class="logo">
             <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
@@ -34,23 +38,25 @@
                 <form action="">
                 <!-- <input type="date" name="" id=""> -->
                 <!-- <input type="datetime-local" name="" id=""> -->
-                <label for="datetime">Date and Time:</label>
-                <input type="datetime-local" id="datetime" class="datetime-input">
+                <label for="datetime">Date :</label>
+                <input type="date" id="datetime" class="datetime-input">
                     <input type="submit" value="Search">
                 </form>
             </div>
             <div id="select-status-div">
-                <select name="" id="select-status">
+                <select  name="" id="select-status">
+                    <option value="null">Choose Status</option>
                     <option value="completed">Completed</option>
                     <option value="cancled">Cancled</option>
                     <option value="pending">Pending</option>
                 </select>
+                <button class="choose" onclick="statusFun()">Choose</button>
             </div>
 
         </div>
         <h1 style="text-align: center; margin-bottom: 20px;">Appointments</h1>
         <div id="appointments-div">
-            <div class="app-child-div">
+            <!-- <div class="app-child-div">
                 <div class="app-child-details">
                     <h2><span class="point">Client Name</span> : <span class="text">Soumya Adhya</span></h2>
                     <h2><span class="point">Time Slot</span> : <span class="text">8:30AM </span></h2>
@@ -63,8 +69,8 @@
                     <button class="show-status">Completed</button>
                 </div>
 
-            </div>
-            <div class="app-child-div">
+            </div> -->
+            <!-- <div class="app-child-div">
                 <div class="app-child-details">
                     <h2><span class="point">Client Name</span> : <span class="text">Soumya Adhya</span></h2>
                     <h2><span class="point">Time Slot</span> : <span class="text">8:30AM </span></h2>
@@ -91,8 +97,17 @@
                     <button class="show-status">Completed</button>
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </main>
 </body>
+<script src="./JavaScript/admin_nav.js"></script>
+<script src="./JavaScript/admin_appoinments.js"></script>
 </html>
+<script>
+    // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+    document.querySelector("body").classList.add("loaded");
+  });
+  
+</script>

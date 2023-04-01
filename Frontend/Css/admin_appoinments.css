@@ -21,7 +21,7 @@
     /* width: 40%; */
 }
 #form-div form>label{
-    width: 13rem;
+    width: 5rem;
     margin-top: 10px;
     font-size: 20px;
     font-weight: 500;
@@ -45,7 +45,7 @@
     width: 500px;
     border-bottom-color: #0066cc;
   }
-  input[type="submit"]{
+  input[type="submit"],.choose{
     width: 10rem;
     background-color: #009abc;
     color: whitesmoke;
@@ -55,17 +55,19 @@
   }
 
   #select-status-div{
-    width: 20%;
+    width: 40%;
+    display: flex;
   }
   #select-status{
-    width: 100%;
+    width: 70%;
     padding: 10px 10%;
     border-radius: 5px;
     border:  none;
-    background: #009abc;
+    /* background: #009abc; */
+    background: #a4ffff;
     font-size: 20px;
     font-weight: 500;
-    color:whitesmoke;
+    /* color:whitesmoke; */
   }
   /* #select-status>option{
     width: 100%;
@@ -134,20 +136,36 @@
 
 }
 
-.show-status{
+/* .show-status{
     display: none;
     margin: auto;
     width: 100%;
     padding: 10px;
-    /* background-color:black ; */
-    /* color: ; */
-}
+   
+} */
+.btn-container {
+    display: none;
+  }
+  
+  .pendding .complete-btn,
+  .pendding .cancle-btn {
+    display: block;
+  }
+  
+  .completed .status-complete {
+    display: block;
+  }
+  
+  .cancled .status-cancled {
+    display: block;
+  }
+  
 @media only screen and (max-width:1351px){
     #form-div{
-        width:65%;
+        width:55%;
     }
     #select-status-div{
-        width: 20%;
+        width: 40%;
     }
     .app-child-details{
         width: 80%;
@@ -225,3 +243,45 @@
         grid-template-columns: repeat(1,1fr);
     }
 }
+
+
+/* Center the preloader */
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    scrollbar-width: none;
+  }
+  
+  /* Rotate the loading icon */
+  .fa-solid {
+    animation: spin 2s infinite linear;
+    font-size: 8rem;
+    color:black;
+  }
+  
+  /* Rotate the preloader */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Hide the preloader when the page is loaded */
+  .loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  }
+  

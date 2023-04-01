@@ -9,10 +9,16 @@
 header{
     width: 100%;
     background-color: rgb(230,222,227,0.9);
+    /* opacity:2.0; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 50px;
+    position: sticky;
+    top:0;
+    right:0;
+    left:0;
+    z-index: 1;
 }
   
 nav{
@@ -24,7 +30,7 @@ nav{
     margin-left: 50px;
 }
 .logo img{
-    width: 80px;
+    width: 100px;
     height: 80px;
     border-radius: 50%;
 }

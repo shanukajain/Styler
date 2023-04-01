@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 const StylesSchema = mongoose.Schema({
    name:String,
    image:String,
-   price:Number
+   category:String,
+   price:Number,
+   ForGender:String
   }
 );
 

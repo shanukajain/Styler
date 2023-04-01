@@ -1,4 +1,4 @@
-const express = require("express");
+ const express = require("express");
 require("dotenv").config();
 const { UserModel } = require("../Model/UserModel");
 const client=require("../config/redis");
@@ -8,14 +8,17 @@ const UserRouter = express.Router();
 const { authenticate } = require("../Middleware/Authentication");
 const { StylerModel } = require("../Model/StylerModel");
 const { AppointmentModel } = require("../Model/AppointmentModel");
+const {BlockUserModel}=require("../Model/BlockUserModel")
 const otpvalidator = require("../config/OTP");
+
+
 const app = express()
 app.use(express.json())
 
 // **************REGISTER*****************
 //******OPT */
 UserRouter.get("/OTP",async(req,res)=>{
-    let payload = req.body;
+    let payload = req.query;
     let check = await UserModel.find({ email: payload.email });
     if (check.length !== 0) {
         res.send({ "msg": "Email already registered" })
@@ -50,32 +53,45 @@ UserRouter.post("/register", async (req, res) => {
 
 UserRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
-    try {
-        let User = await UserModel.findOne({ email: email });
-        if (User) {
-            bcrypt.compare(password, User.password, async (err, result) => {
-                if (result) {
-                    const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
-                    //Store In Cookies
-
-                    console.log("Login Sucessfull");
-                    res.send({ message: "Login Sucessfull", token: token });
-                } else {
-                    res.send({ message: "Wrong Password" });
-                }
-            });
-        } else {
-            res.send({ message: "Sign Up First" });
+    let blockmails=await BlockUserModel.find();
+    // console.log(blockmails);
+    let flag=true;
+    for( let k=0;k<blockmails.length;k++){
+        if(email==blockmails[k].Email){
+           flag=false;
         }
-    } catch (error) {
-        res.send({ message: error.message });
+    };
+    if(flag==true){
+        try {
+            let User = await UserModel.findOne({ email: email });
+            if (User) {
+                bcrypt.compare(password, User.password, async (err, result) => {
+                    if (result) {
+                        const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
+                        //Store In Cookies
+                        // client.set("token", token);
+                        console.log("Login Sucessfull");
+                        res.send({ message: "Login Sucessfull", token: token });
+                    } else {
+                        res.send({ message: "Wrong Password" });
+                    }
+                });
+            } else {
+                res.send({ message: "Sign Up First" });
+            }
+        } catch (error) {
+            res.send({ message: error.message });
+        }
+    }else{
+        res.send({message:"Email is Blocked"})
     }
+    
 
 });
 
 UserRouter.use(authenticate)
 //*******Check avalibility ***********/
-UserRouter.get("/Check",async(req,res)=>{
+UserRouter.post("/Check",async(req,res)=>{
     let {city,date,slot}=req.body;
     let data =await StylerModel.find({"city":city});
     let data1=await AppointmentModel.find({date,slot});
@@ -96,7 +112,7 @@ UserRouter.get("/Check",async(req,res)=>{
     }
 })
 //********Book appointment**********/
-UserRouter.get("/book",async(req,res)=>{
+UserRouter.post("/book",async(req,res)=>{
     let payload=req.body;
     payload.status="Pendding";
     payload.slot.toLocaleLowerCase();

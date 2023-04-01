@@ -8,9 +8,6 @@ const { AppointmentModel } = require("../Model/AppointmentModel");
 const { BlockUserModel } = require("../Model/BlockUserModel");
 const statusemail = require("../config/statusemail");
 const AdminRouter = express.Router();
-const app = express()
-app.use(express.json())
-
 
 // ************ALL REGISTER USER***************
 

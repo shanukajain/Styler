@@ -18,7 +18,7 @@ app.use(express.json())
 // **************REGISTER*****************
 //******OPT */
 UserRouter.get("/OTP",async(req,res)=>{
-    let payload = req.body;
+    let payload = req.query;
     let check = await UserModel.find({ email: payload.email });
     if (check.length !== 0) {
         res.send({ "msg": "Email already registered" })
@@ -91,7 +91,7 @@ UserRouter.post("/login", async (req, res) => {
 
 UserRouter.use(authenticate)
 //*******Check avalibility ***********/
-UserRouter.get("/Check",async(req,res)=>{
+UserRouter.post("/Check",async(req,res)=>{
     let {city,date,slot}=req.body;
     let data =await StylerModel.find({"city":city});
     let data1=await AppointmentModel.find({date,slot});
@@ -112,7 +112,7 @@ UserRouter.get("/Check",async(req,res)=>{
     }
 })
 //********Book appointment**********/
-UserRouter.get("/book",async(req,res)=>{
+UserRouter.post("/book",async(req,res)=>{
     let payload=req.body;
     payload.status="Pendding";
     payload.slot.toLocaleLowerCase();

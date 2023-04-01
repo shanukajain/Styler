@@ -46,8 +46,8 @@
 
     <!-- <------ Choose Section ------>
     <div class="section">
-        <span style="color: #c68200">MEN HAIRCUT / </span>
-        <span>MEN BEARD / </span>
+        <span style="color: #c68200">MEN / </span>
+        <span>WOMEN / </span>
         <span>CHOOSE </span>
     </div>
 
@@ -133,10 +133,10 @@
         </div>
         <div>
             <form action="">
-                <input type="text" placeholder="Service Type">
-                <input type="date" placeholder="Preffered Date*">
+                <input type="text" placeholder="Service Type" id="service-type" required>
+                <input type="date" placeholder="Preffered Date*" id="book-date" required>
                 <br><br>
-                <select name="city" id="">
+                <select name="city" id="city" required>
                     <option value="">City*</option>
                     <option value="Delhi">Delhi</option>
                     <option value="Mumbai">Mumbai</option>
@@ -145,12 +145,13 @@
                     <option value="Chennai">Chennai</option>
                     <option value="Kota">Kota</option>
                 </select>
-                <select name="time" id="">
+                <select name="time" id="slots" required>
                     <option value="">Preferred Time*</option>
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Morning">Afternoon</option>
+                    <option value="Morning">Evening</option>
                 </select>
-                <input type="submit" value="Book Appointment">
+                <input type="submit" value="Book Appointment" id="book-button">
             </form>
         </div>
     </div>
@@ -240,6 +241,7 @@
     <p class="last-para">© 2023 Styler Salon. All rights reserved.</p>
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
+<script src="./JavaScript/gents-salon-services.js"></script>
 <script>
     window.addEventListener("load", () => {
         document.querySelector("body").classList.add("loaded");

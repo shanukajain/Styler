@@ -3,70 +3,47 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-                       <!-- icon-link -->
-                       <link rel="icon" href="./Image/stylerLogo.png">
     <link rel="stylesheet" href="style.css">
+                       <!-- icon-link -->
+    <link rel="icon" href="./Image/stylerLogo.png">
     <!-- ==================================bootstrap===================================================== -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://kit.fontawesome.com/f90c67bbfa.js" crossorigin="anonymous"></script>
+
     <!-- ========================================navbar css========================================================= -->
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <!-- ========================================login-signup css========================================================= -->
     <link rel="stylesheet" href="./Css/login_signup.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>styler - Login/Signup</title>
-
    </head>
 <body>
-  <div id="preloader">
-    <!-- this is the preloader -->
-    <!-- <i class="preloader-icon fa fa-spinner"></i> -->
-    <i class="fa-solid fa-scissors"></i>
-  </div>
-    <header>
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <!-- <i class="preloader-icon fa fa-spinner"></i> -->
+        <i class="fa-solid fa-scissors"></i>
+      </div>
+      <header>
         <div class="logo">
-            <a href="./login_signup.html"><img src="./Image/stylerLogo.png" alt=""></a>
+         <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
         </div>
-        <div class="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
+        <div class="hamburger" onClick="hamFun()">
+           <div class="line"></div>
+           <div class="line"></div>
+           <div class="line"></div>
         </div>
         <nav class="nav-bar">
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./gents-salon-services.html">Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+           <ul>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="#about">About Us</a></li>
+             <li><a href="./gents-salon-services.html">Services</a></li>
+             <li><a href="./admin_dashboard.html">Admin</a></li>
+             <li><a href="./login_signup.html">Signup/Login</a></li>
+           </ul>
         </nav>
-    </header>
+     </header>  
+
+
+
 <main>
-  <div class="modal fade" id="otpModal" tabindex="-1" role="dialog" aria-labelledby="otpModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="otpModalLabel">Enter OTP</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <input type="text" class="form-control" id="otpInput" placeholder="Enter OTP">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="otpSubmit">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
@@ -105,12 +82,12 @@
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
               </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
-            </div>
+              <!-- <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+            </div> -->
         </form>
       </div>
     <!-- ======================================signup========================================================  -->
-
+<!-- 
         <div class="signup-form">
           <div class="title">Signup</div>
         <form >
@@ -137,23 +114,41 @@
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
             </div>
       </form>
-    </div>
+    </div> -->
     </div>
     </div>
   </div>
 </main>
 
 </body>
-
+<script>
+    // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+    document.querySelector("body").classList.add("loaded");
+  });
+  
 </script>
 <script src="./JavaScript/admin_nav.js"></script>
 
-<script src="./JavaScript/login_signup.js"></script>
-</html>
-<script>
-  // Hide the preloader when the page is loaded
-window.addEventListener("load", () => {
-  document.querySelector("body").classList.add("loaded");
-});
+<!-- <script src="./JavaScript/login_signup.js"></script> -->
 
+<script>
+    // Hide the preloader when the page is loaded
+
+  
+    let adminLogin=document.querySelector(".login-form form");
+    adminLogin.addEventListener("submit",adminFun)
+    function adminFun(){
+        let email=document.querySelector(".login-email").value;
+        let password=document.querySelector(".login-password").value
+        if(email=="admin@gmail.com"&&password==="admin"){
+            alert("Welcome Admin")
+            window.location.href="admin_dashboard.html";
+         return;
+        }else{
+            return alert("Wrong Credentials")
+
+        }
+    }
 </script>
+</html>

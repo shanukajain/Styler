@@ -12,6 +12,11 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <!-- <i class="preloader-icon fa fa-spinner"></i> -->
+        <i class="fa-solid fa-scissors"></i>
+      </div>
     <header>
         <div class="logo">
             <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
@@ -59,3 +64,10 @@
     <script src="./JavaScript/admin_users.js"></script>
 </body>
 </html>
+<script>
+    // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+    document.querySelector("body").classList.add("loaded");
+  });
+  
+</script>

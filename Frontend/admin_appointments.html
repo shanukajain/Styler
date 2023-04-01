@@ -9,6 +9,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <i class="fa-solid fa-scissors"></i>
+      </div>
     <header>
         <div class="logo">
             <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
@@ -52,7 +56,7 @@
         </div>
         <h1 style="text-align: center; margin-bottom: 20px;">Appointments</h1>
         <div id="appointments-div">
-            <div class="app-child-div">
+            <!-- <div class="app-child-div">
                 <div class="app-child-details">
                     <h2><span class="point">Client Name</span> : <span class="text">Soumya Adhya</span></h2>
                     <h2><span class="point">Time Slot</span> : <span class="text">8:30AM </span></h2>
@@ -65,8 +69,8 @@
                     <button class="show-status">Completed</button>
                 </div>
 
-            </div>
-            <div class="app-child-div">
+            </div> -->
+            <!-- <div class="app-child-div">
                 <div class="app-child-details">
                     <h2><span class="point">Client Name</span> : <span class="text">Soumya Adhya</span></h2>
                     <h2><span class="point">Time Slot</span> : <span class="text">8:30AM </span></h2>
@@ -93,10 +97,17 @@
                     <button class="show-status">Completed</button>
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </main>
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
 <script src="./JavaScript/admin_appoinments.js"></script>
 </html>
+<script>
+    // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+    document.querySelector("body").classList.add("loaded");
+  });
+  
+</script>

@@ -21,7 +21,7 @@
 <br>
 <p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
 <br>
-<img align="center" width="900" heigth:"500"  alt="project3" src="https://user-images.githubusercontent.com/113410376/229286014-6da59134-d9f6-47ba-9fde-1932547bd1ba.png">
+<img align="center" width="1000" heigth:"500"  alt="project3" src="https://user-images.githubusercontent.com/113410376/229286014-6da59134-d9f6-47ba-9fde-1932547bd1ba.png">
 
 <br>
 <h3>✨Content & Features: </h3>

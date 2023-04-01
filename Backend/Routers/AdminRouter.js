@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { AppointmentModel } = require("../Model/AppointmentModel");
 const { BlockUserModel } = require("../Model/BlockUserModel");
+const statusemail = require("../config/statusemail");
 const AdminRouter = express.Router();
 const app = express()
 app.use(express.json())
@@ -102,8 +103,9 @@ AdminRouter.post("/create/styler", async (req, res) => {
 AdminRouter.patch("/update/styler/:id", async (req, res) => {
     let ID=req.params.id;
     let payload=req.body
-    // console.log(ID);
+    let data=StylerModel.findOne({"_id":ID})
     await StylerModel.updateOne({"_id":ID},payload)
+    statusemail(data.UserEmail,payload.status);
     res.send({"msg": "Style Updated"});
 });
 
@@ -132,13 +134,8 @@ AdminRouter.patch("/update/appointment/:id",async(req,res)=>{
     await AppointmentModel.updateOne({"_id":id},status);
     res.send({msg:"done"});
 })
+
 //******* **********/
 
 module.exports = { AdminRouter };
-
-
-
-
-
-
 

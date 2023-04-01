@@ -4,7 +4,8 @@ const AppointmentSchema = mongoose.Schema(
     UserID:String,
     StylistID:String,
     Stylistname:String,
-    date:Date,
+    UserEmail:String,
+    date:String,
     slot:String,
     status:{type:String, enum:["Pendding","Complete","Apporved","Cancel"],default:"Pendding"},
   }

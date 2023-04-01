@@ -9,17 +9,26 @@ const { authenticate } = require("../Middleware/Authentication");
 const { StylerModel } = require("../Model/StylerModel");
 const { AppointmentModel } = require("../Model/AppointmentModel");
 const {BlockUserModel}=require("../Model/BlockUserModel")
+const otpvalidator = require("../config/OTP");
+
+
 const app = express()
 app.use(express.json())
 
 // **************REGISTER*****************
-
-UserRouter.post("/register", async (req, res) => {
+//******OPT */
+UserRouter.get("/OTP",async(req,res)=>{
     let payload = req.body;
     let check = await UserModel.find({ email: payload.email });
     if (check.length !== 0) {
         res.send({ "msg": "Email already registered" })
-    } else {
+    }else {
+      let OTP= otpvalidator(payload.email);
+      res.send({"OTP":OTP})
+    }
+})
+UserRouter.post("/register", async (req, res) => {
+    let payload = req.body;
         try {
             bcrypt.hash(payload.password, +2, async (err, hash) => {
                 if (err) {
@@ -36,7 +45,6 @@ UserRouter.post("/register", async (req, res) => {
             console.log({ message: error.message });
             res.send({ message: error.message });
         }
-    }
 
 });
 
@@ -113,16 +121,15 @@ UserRouter.get("/book",async(req,res)=>{
     res.send({message:"Appointment booked"});
 })
 // **************LOGOUT*****************
-
 UserRouter.get("/logout",async(req,res)=>{
     let token=req.headers.authorization;
     await client.SETEX(`${token}`,60*60,"true");
    res.status(200).send({"msg":"logout successfull"});
 })
+// ***********Appointments*************
 
 
-//**************AUTHENTICATE DEMO******************
-UserRouter.use(authenticate)
+
 
 module.exports = { UserRouter };
 

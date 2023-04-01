@@ -11,7 +11,7 @@
     margin-bottom: 20px;
 }
 #form-div{
-    width: 50%;
+    width: 100%;
 }
 #form-div form{
     width: 100%;
@@ -21,7 +21,7 @@
     /* width: 40%; */
 }
 #form-div form>label{
-    width: 5rem;
+    width: 7rem;
     margin-top: 10px;
     font-size: 20px;
     font-weight: 500;
@@ -83,6 +83,38 @@
     grid-template-columns: repeat(2,1fr);
     gap: 20px 30px;
 }
+.app-child-details{
+    width: 60%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  td {
+    /* width: 100%; */
+    padding: 6px 0px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  th {
+    /* background-color: #f2f2f2; */
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+    /* width: 100%; */
+  }
+  
+#appointments-div{
+    margin: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px 30px;
+}
 .app-child-div{
     background-color: #5a76c1;
     /* background-color: #bedae8; */
@@ -98,75 +130,64 @@
 .point{
     /* padding: 3px; */
     /* background: white; */
+    font-size: 23px;
+    font-weight: 700;
     color: #252230;
     border-radius: 5px;
+    padding-left: 10px;
 }
 .text{
-
+    font-size: 22px;
+    font-weight: 700;
     color:#fff ;
 }
-/* .app-child-button{
-    width: 40%;
-} */
+.app-child-button{
+    width: 33%;
+    display: flex;
+}
 .app-child-button>button{
+    margin-top: 10px;
+    height: 45px;
+    margin-left: 5px;
     padding: 10px 2rem;
     border-radius: 5px;
     border: none;
-    color: whitesmoke;
-
     font-weight: 500;
+    color: whitesmoke;
 }
-.app-child-button>button:nth-child(1){
+.complete-tbn,.approve-btn{
     background-color: #209f80;
 
-
 }
-.app-child-button>button:nth-child(1):hover{
+.complete-tbn:hover,.approve-btn:hover,.completed:hover{
     background-color: #135847;
 
-
 }
-.app-child-button>button:nth-child(2){
-
+.cancle-btn{
     background-color: #bf3c00;
 
 }
-.app-child-button>button:nth-child(2):hover{
+.cancle-btn:hover,.canceled:hover{
     background-color: #802f0a;
 
 }
-
-/* .show-status{
-    display: none;
-    margin: auto;
+.completed{
     width: 100%;
-    padding: 10px;
-   
-} */
-.btn-container {
-    display: none;
-  }
-  
-  .pendding .complete-btn,
-  .pendding .cancle-btn {
-    display: block;
-  }
-  
-  .completed .status-complete {
-    display: block;
-  }
-  
-  .cancled .status-cancled {
-    display: block;
-  }
-  
+    background-color: #209f80;
+
+}
+.canceled{
+    width: 100%;
+    background-color: #bf3c00;
+
+}
 @media only screen and (max-width:1351px){
     #form-div{
-        width:55%;
+        width:100%;
     }
-    #select-status-div{
+    /* #select-status-div{
         width: 40%;
-    }
+    } */
     .app-child-details{
         width: 80%;
     }

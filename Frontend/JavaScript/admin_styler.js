@@ -7,11 +7,7 @@ const addStyler=document.querySelector("#add-details-div form");
 addStyler.addEventListener("submit",addFun)
 async function addFun(event){
     event.preventDefault()
-    let arr=[]
     let name=document.getElementById("name").value;
-    let shift1=document.getElementById("shift_1").value;
-    let shift2=document.getElementById("shift_2").value;
-    let shift3=document.getElementById("shift_3").value;
     let city=document.getElementById("city").value;
     let email=document.getElementById("email").value;
     let mob_no=document.getElementById("mobile_no").value;
@@ -19,23 +15,15 @@ async function addFun(event){
     if(mob_no.length!==10){
         return alert("Mobile Number Should be 10 Digits")
     }
-    if(shift1!="not"){
-        arr.push(shift1)
-    }
-    if(shift2!="not"){
-        arr.push(shift2)
-    }
-    if(shift3!="not"){
-        arr.push(shift3)
-    }
+
 
     let obj={
         Styler_name: name,
         mob_no: mob_no,
         city:city,
-        email:email,
         salary:salary,
-        shift:[...arr]
+        email:email,
+        // shift:[...arr]
     }
     console.log(obj)
 
@@ -97,16 +85,15 @@ function stylerFun(res){
     stylerDiv.innerHTML="";
     let allStylers=res.map((item)=>{
         return `
-        <div class="user-div" data-id=${item._id}>
+        <div class="user-div" data-id=${item._id} data-aos="fade-up" data-aos-duration="1000">
                 <div>
                     <img src="./Image/male-avatar-icon-flat.jpg" alt="user-avtar">
                 </div>
                 <div>
                     <h1 class="heading">${item.Styler_name}</h1>
-                    <h3><span class="point">Shift 1:</span> <span class="shift_1">${item.shift[0]||"Not Avaliable"}</span></h3>
-                    <h3><span class="point">Shift 2:</span> <span class="shift_2">${item.shift[1]||"Not Avaliable"}</span></h3>
-                    <h3><span class="point">Shift 3:</span> <span class="shift_3">${item.shift[2]||"Not Avaliable"}</span></h3>
                         <h3><span class="point">Mobile No :</span> <span class="mobile">+91 ${item.mob_no}</span></h3>
+                        <h3><span class="point">Email :</span> <span class="mobile"> ${item.email}</span></h3>
+                        <h3><span class="point">City :</span> <span class="mobile"> ${item.city}</span></h3>
                         <h3><span class="point">Salary :</span> <span class="salary">&#8377;${item.salary}</span></h3>
                         <button data-id=${item._id} class="edit-btn">Edit</button>
                         <button data data-id=${item._id} class="clock-btn">Remove</button>

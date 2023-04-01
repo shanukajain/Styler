@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <link rel="stylesheet" href="./Css/admin_services.css">
         <!-- Fontawesome CDN Link -->
@@ -42,8 +44,8 @@
             <h1>Add New Service</h1>
             <form action="">
                 <input type="text" name="" id="service-name" placeholder="Service Name" required>
-                <input type="text" name="" id="service-name" placeholder="Service Image" required>
-                <input type="text" name="" id="styler-name" placeholder="Styler Name" required>
+                <input type="text" name="" id="service-img" placeholder="Service Image Link" required>
+                <input type="text" name="" id="service-category" placeholder="category" required>
                 <input type="number" name="" id="price" placeholder="Price" required>
                 <input type="submit"  value="Add">
             </form>
@@ -80,40 +82,9 @@
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
 <script src="./JavaScript/admin_services.js"></script>
-<!-- <script>
-function enableEdit() {
-  var editableHeading  = document.querySelector(".edit-heading");
-  var editablePrice  = document.querySelector(".edit-price");
-  var editableName  = document.querySelector(".edit-name");
-  var  editButton= document.getElementById("edit-button");
-
-  if (editButton.innerText === "Edit") {
-    // Enable editing
-    editableHeading.contentEditable = true;
-    editablePrice.contentEditable = true;
-    editableName.contentEditable = true;
-    editableHeading.focus();
-    editablePrice.focus();
-    editableName.focus();
-    editButton.innerText = "Save";
-} else {
-    // Save changes and disable editing
-    editableHeading.contentEditable = false;
-    editablePrice.contentEditable = false;
-    editableName.contentEditable = false;
-    console.log(editableHeading.innerText,editableName.innerText,editablePrice.innerText)
-
-    editButton.innerText = "Edit";
-  }
-}
-
-
-</script> -->
-</html>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    // Hide the preloader when the page is loaded
-window.addEventListener("load", () => {
-    document.querySelector("body").classList.add("loaded");
-  });
-  
+  AOS.init();
 </script>
+</html>
+

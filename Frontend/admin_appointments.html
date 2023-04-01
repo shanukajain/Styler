@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="./Css/admin_appoinments.css">
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <title>Document</title>
@@ -38,20 +40,21 @@
                 <form action="">
                 <!-- <input type="date" name="" id=""> -->
                 <!-- <input type="datetime-local" name="" id=""> -->
-                <label for="datetime">Date :</label>
+                <label for="datetime">Date:</label>
                 <input type="date" id="datetime" class="datetime-input">
+                <select  name="" id="select-status">
+                    <option value="null">Choose Status</option>
+                    <option value="Complete">Completed</option>
+                    <option value="Cancel">Cancled</option>
+                    <option value="Apporved">Apporved</option>
+                    <option value="Pendding">Pending</option>
+                </select>
                     <input type="submit" value="Search">
                 </form>
             </div>
-            <div id="select-status-div">
-                <select  name="" id="select-status">
-                    <option value="null">Choose Status</option>
-                    <option value="completed">Completed</option>
-                    <option value="cancled">Cancled</option>
-                    <option value="pending">Pending</option>
-                </select>
+            <!-- <div id="select-status-div">
                 <button class="choose" onclick="statusFun()">Choose</button>
-            </div>
+            </div> -->
 
         </div>
         <h1 style="text-align: center; margin-bottom: 20px;">Appointments</h1>
@@ -103,11 +106,8 @@
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
 <script src="./JavaScript/admin_appoinments.js"></script>
-</html>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-    // Hide the preloader when the page is loaded
-window.addEventListener("load", () => {
-    document.querySelector("body").classList.add("loaded");
-  });
-  
+  AOS.init();
 </script>
+</html>

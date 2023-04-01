@@ -1,4 +1,4 @@
-const express = require("express");
+ const express = require("express");
 require("dotenv").config();
 const { UserModel } = require("../Model/UserModel");
 const client=require("../config/redis");
@@ -57,7 +57,7 @@ UserRouter.post("/login", async (req, res) => {
                 if (result) {
                     const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
                     //Store In Cookies
-
+                    client.set("token", token);
                     console.log("Login Sucessfull");
                     res.send({ message: "Login Sucessfull", token: token });
                 } else {

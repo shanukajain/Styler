@@ -22,29 +22,28 @@
 
    </head>
 <body>
-
-  <header>
-    <div class="logo">
-     <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
-    </div>
-    <div class="hamburger" onClick="hamFun()">
-       <div class="line"></div>
-       <div class="line"></div>
-       <div class="line"></div>
-    </div>
-    <nav class="nav-bar">
-       <ul>
-         <li><a href="index.html">Home</a></li>
-         <li><a href="#about">About Us</a></li>
-         <li><a href="./gents-salon-services.html">Services</a></li>
-         <li><a href="./admin_dashboard.html">Admin</a></li>
-         <li><a href="./login_signup.html">Signup/Login</a></li>
-       </ul>
-    </nav>
- </header> 
-
-
-
+  <div id="preloader">
+    <!-- this is the preloader -->
+    <i class="fa-solid fa-scissors" id="spinner"></i>
+  </div>
+    <header>
+        <div class="logo">
+            <a href="./login_signup.html"><img src="./Image/stylerLogo.png" alt=""></a>
+        </div>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./gents-salon-services.html">Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 <main>
   <div class="modal fade" id="otpModal" tabindex="-1" role="dialog" aria-labelledby="otpModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -144,6 +143,12 @@
 </main>
 
 </body>
+
+</script>
+<script src="./JavaScript/admin_nav.js"></script>
+
+<script src="./JavaScript/login_signup.js"></script>
+</html>
 <script>
   // Hide the preloader when the page is loaded
 window.addEventListener("load", () => {
@@ -151,7 +156,3 @@ window.addEventListener("load", () => {
 });
 
 </script>
-<script src="./JavaScript/admin_nav.js"></script>
-
-<script src="./JavaScript/login_signup.js"></script>
-</html>

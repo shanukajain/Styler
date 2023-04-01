@@ -10,10 +10,14 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <i class="fa-solid fa-scissors"></i>
+      </div>
 
     <header>
         <div class="logo">
-            <a href="./admin_dashboard.html"><img src="./Image/stylerLogo.png" alt=""></a>
+            <a href="./index.html"><img src="./Image/stylerLogo.png" alt=""></a>
         </div>
         <div class="hamburger">
             <div class="line"></div>
@@ -113,3 +117,10 @@
     </script>
 </body>
 </html>
+<script>
+    // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+    document.querySelector("body").classList.add("loaded");
+  });
+  
+</script>

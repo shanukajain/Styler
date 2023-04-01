@@ -53,12 +53,31 @@ UserRouter.post("/register", async (req, res) => {
 
 UserRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
+<<<<<<< HEAD
+    try {
+        let User = await UserModel.findOne({ email: email });
+        if (User) {
+            bcrypt.compare(password, User.password, async (err, result) => {
+                if (result) {
+                    const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
+                    //Store In Cookies
+                    // client.set("token", token);
+                    console.log("Login Sucessfull");
+                    res.send({ message: "Login Sucessfull", token: token });
+                } else {
+                    res.send({ message: "Wrong Password" });
+                }
+            });
+        } else {
+            res.send({ message: "Sign Up First" });
+=======
     let blockmails=await BlockUserModel.find();
     // console.log(blockmails);
     let flag=true;
     for( let k=0;k<blockmails.length;k++){
         if(email==blockmails[k].Email){
            flag=false;
+>>>>>>> 4179a8b79b93f7b8e441602541417b9f217da922
         }
     };
     if(flag==true){
@@ -106,7 +125,7 @@ UserRouter.post("/Check",async(req,res)=>{
     })
    }
     if(data.length==0){
-        res.send({msg:"no slot avalibale"})
+        res.send({msg:"no slot avalibale"});
     }else {
     res.send(data);
     }
@@ -121,10 +140,12 @@ UserRouter.post("/book",async(req,res)=>{
     res.send({message:"Appointment booked"});
 })
 // **************LOGOUT*****************
-UserRouter.get("/logout",async(req,res)=>{
-    let token=req.headers.authorization;
-    await client.SETEX(`${token}`,60*60,"true");
-   res.status(200).send({"msg":"logout successfull"});
+UserRouter.get("/logout",(req,res)=>{
+    const token =req.headers.authorization
+    const blacklist=JSON.parse(fs.readFileSync("./blacklisted.json",{encoding:"utf-8"}));
+    blacklist.push(token);
+    fs.writeFileSync("./blacklist.json",JSON.stringify(blacklist));
+    res.send("you are logged out")
 })
 // ***********Appointments*************
 

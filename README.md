@@ -2,7 +2,7 @@
 <h1 align="center"> Styler </h1>
 <h2 align="center">It's Hair Salon website having good User Interface & major functionalities. </h2>
 <br>
-<p>Styler is the Hair Salon website specifically for booking the appointment online.The site is being developed on the basis on Low Level Design and system Design (Architecture). In the styler the costomer can see the available time slot and book the slot with slot with the different stylers.In this web site the costomer or user can see the availble stylers, time slot and charges for the cuts over site. The main agenda of makng this web-site is to avoid the physical customer waiting and porivde the smooth online service to customer.
+<p>Styler is the Hair Salon website specifically for booking the appointment online.The site is being developed on the basis on Low Level Design and system Design (Architecture). In the styler the costomer can see the available time slot and book the slot with slot with the different stylers.In this web site the costomer or user can see the availble stylers, time slot and charges for the cuts over site.
 </p>
 <h3 style="color: red">📍 Tech Stack</h3>
 <h4 align="center">Frontend</h4>
@@ -21,7 +21,7 @@
 <br>
 <p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
 <br>
-<img align="center" width="800" heigth:"500"  alt="project3" src="https://user-images.githubusercontent.com/113410376/229286014-6da59134-d9f6-47ba-9fde-1932547bd1ba.png">
+<img align="center" width="900" heigth:"500"  alt="project3" src="https://user-images.githubusercontent.com/113410376/229286014-6da59134-d9f6-47ba-9fde-1932547bd1ba.png">
 
 <br>
 <h3>✨Content & Features: </h3>

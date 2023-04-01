@@ -4,8 +4,7 @@ const StylerSchema = mongoose.Schema(
     Styler_name: String,
     mob_no: Number,
     city:String,
-    salary:Number,
-    shift:Array
+    salary:Number
   }
 );
 

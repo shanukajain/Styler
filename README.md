@@ -40,6 +40,8 @@
   <li>Book the Slot feature</li>
   <li> Responsiveness for different device</li>
 </ul> 
+<h3 align="center"> System Design </h3>
+<img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/229286983-c882202c-6a9b-4a9b-81e3-b7333d95763c.png">
 <h3 align="center"> Layout of the Website</h3>
 <img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/214280786-77c1bafb-5b53-4fe6-b403-421b29660cc1.png">
 

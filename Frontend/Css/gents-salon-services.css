@@ -12,16 +12,28 @@
     text-align: center;
     font-size: 25px;
     padding: 7px;
-    background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: 80px;
 }
 
 .video-play 
 {
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
-.video-play>video{
+.video-play>div{
+    width: 50%;
+    height: 100%;
+}
+
+.video-play>div:nth-child(2){
+    height: 100%;
+}
+
+.video-play video{
     width: 100%;
 }
 
@@ -71,7 +83,7 @@
 {
     width: 100%;
     padding: 20px;
-    background-color: #eee;
+    /* background-color: #eee; */
 }
 
 .book-appointment>div:nth-child(1){
@@ -104,7 +116,7 @@
     color: white;
     border: none;
     margin-top: 20px;
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 .gents-about{
@@ -130,5 +142,14 @@
 
     #book-button{
         margin-left: 100px;
+    }
+
+    .video-play{
+        display: grid;
+        grid-template-columns: repeat(1, fr);
+    }
+
+    .video-play>div{
+        width: 100%;
     }
 }

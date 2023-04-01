@@ -13,9 +13,15 @@ if(blacklist.includes(token)){
    if(decoded){
     console.log(decoded);
 //    let t= await client.get(`${token}`);
+<<<<<<< HEAD
+    // if(t){
+        // res.status(404).send({"msg":"login again"})
+    // }else {
+=======
 //     if(t){
 //         res.status(404).send({"msg":"login again"})
 //     }else {
+>>>>>>> 4179a8b79b93f7b8e441602541417b9f217da922
         const userID=decoded.userID;
         req.body.userID=userID;
         req.body.role=decoded.role

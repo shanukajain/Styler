@@ -20,9 +20,9 @@ AdminRouter.get("/allusers", async (req, res) => {
     res.send(data);
 });
 //******Block user*********/
-AdminRouter.get("/Block/",async(req,res)=>{
+AdminRouter.post("/Block/",async(req,res)=>{
 let data=req.body;
-let Blockuser=new BlockUserModel(data);
+let Blockuser=await new BlockUserModel(data);
 await Blockuser.save();
 res.status(200).send({msg:"user has been blocked"});
 })
@@ -134,5 +134,8 @@ AdminRouter.patch("/update/appointment/:id",async(req,res)=>{
     await AppointmentModel.updateOne({"_id":id},status);
     res.send({msg:"done"});
 })
-//****** **********/
+
+//******* **********/
+
 module.exports = { AdminRouter };
+

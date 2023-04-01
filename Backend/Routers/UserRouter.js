@@ -8,7 +8,10 @@ const UserRouter = express.Router();
 const { authenticate } = require("../Middleware/Authentication");
 const { StylerModel } = require("../Model/StylerModel");
 const { AppointmentModel } = require("../Model/AppointmentModel");
+const {BlockUserModel}=require("../Model/BlockUserModel")
 const otpvalidator = require("../config/OTP");
+
+
 const app = express()
 app.use(express.json())
 
@@ -50,26 +53,39 @@ UserRouter.post("/register", async (req, res) => {
 
 UserRouter.post("/login", async (req, res) => {
     const { email, password } = req.body;
-    try {
-        let User = await UserModel.findOne({ email: email });
-        if (User) {
-            bcrypt.compare(password, User.password, async (err, result) => {
-                if (result) {
-                    const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
-                    //Store In Cookies
-                    client.set("token", token);
-                    console.log("Login Sucessfull");
-                    res.send({ message: "Login Sucessfull", token: token });
-                } else {
-                    res.send({ message: "Wrong Password" });
-                }
-            });
-        } else {
-            res.send({ message: "Sign Up First" });
+    let blockmails=await BlockUserModel.find();
+    // console.log(blockmails);
+    let flag=true;
+    for( let k=0;k<blockmails.length;k++){
+        if(email==blockmails[k].Email){
+           flag=false;
         }
-    } catch (error) {
-        res.send({ message: error.message });
+    };
+    if(flag==true){
+        try {
+            let User = await UserModel.findOne({ email: email });
+            if (User) {
+                bcrypt.compare(password, User.password, async (err, result) => {
+                    if (result) {
+                        const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
+                        //Store In Cookies
+                        // client.set("token", token);
+                        console.log("Login Sucessfull");
+                        res.send({ message: "Login Sucessfull", token: token });
+                    } else {
+                        res.send({ message: "Wrong Password" });
+                    }
+                });
+            } else {
+                res.send({ message: "Sign Up First" });
+            }
+        } catch (error) {
+            res.send({ message: error.message });
+        }
+    }else{
+        res.send({message:"Email is Blocked"})
     }
+    
 
 });
 

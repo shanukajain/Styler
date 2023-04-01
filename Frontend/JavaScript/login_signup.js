@@ -77,7 +77,7 @@ async function loginFun(event){
     let datares=await res.json()
     if(datares.message==="Login Sucessfull"){
         console.log(datares.token)
-        localStorage.setItem("login-token",datares.token)
+        localStorage.setItem("token",datares.token)
         alert(`Welcome Back`);
         window.location.href="index.html"
         return;

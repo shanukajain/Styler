@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="./Image/stylerLogo.png">
 
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <link rel="stylesheet" href="./Css/admin_styler.css">
         <!-- Fontawesome CDN Link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <script src="https://kit.fontawesome.com/f90c67bbfa.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Styler - Admin Stylers</title>
 </head>
 <body>
     <div id="preloader">
@@ -98,9 +99,16 @@
 <script src="./JavaScript/admin_nav.js"></script>
 <script src="./JavaScript/admin_styler.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+
 </html>
 
 
+<script>
+    AOS.init();
+
+  // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+  document.querySelector("body").classList.add("loaded");
+});
+
+</script>

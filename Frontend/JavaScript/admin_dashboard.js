@@ -1,30 +1,21 @@
 const baseURL = "http://localhost:9168";
 
-// async function fetchFun(){
-//     let res= await fetch(`${baseURL}/`)
-// }
-let today = new Date();
-let day = String(today.getDate()).padStart(2, '0');
-let month = String(today.getMonth() + 1).padStart(2, '0');
-let year = today.getFullYear();
-
-let formattedDate = `${day}-${month}-${year}`;
-
-console.log(formattedDate);
-// let options = { timeZone: 'Asia/Kolkata' }; // set the time zone to India (GMT+5:30)
-// let todayFormatted = today.toLocaleString('en-IN', options); // format the date and time in Indian time
-console.log(today); // logs today's date and time in the console
-// let search=document.getElementById("input");
-// search.addEventListener("keypress",(e)=>{
-//     if(e.key=="Enter"){
-//         let value=document.getElementById("input").value;
-//         let key="description"
-//         fetchProducts(key,value)
-//      console.log(value)   
-//     }
-// })
 fetchApps()
 async function fetchApps(){
+  let today = new Date();
+let year = today.getFullYear();
+let month = today.getMonth() + 1;
+let day = today.getDate();
+
+if (month < 10) {
+  month = "0" + month;
+}
+
+if (day < 10) {
+  day = "0" + day;
+}
+
+let formattedDate = year + "-" + month + "-" + day;
     let apps=await fetch(`${baseURL}/admin/All_appoints?status=Pendding&status=Apporved&date=${formattedDate}`);
     let data= await apps.json();
 

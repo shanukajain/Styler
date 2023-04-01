@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Image/stylerLogo.png">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <link rel="stylesheet" href="./Css/admin_dashboard.css">
-    <title>Document</title>
+    <title>Styler - Admin Dashboard</title>
+
 </head>
 <body>
     <div id="preloader">
         <!-- this is the preloader -->
-        <i class="fa-solid fa-scissors"></i>
+        <i class="fa-solid fa-scissors" id="spinner"></i>
       </div>
-
     <header>
         <div class="logo">
             <a href="./index.html"><img src="./Image/stylerLogo.png" alt=""></a>
@@ -71,53 +73,19 @@
 
 
         <div id="appointments-div">
-            <!-- <div class="app-child-div" style="background: #159b37;">
-                <div class="app-child-details">
-                    <table>
-                        <tr>
-                          <th class="point">Client Name:</th>
-                          <td class="text">Soumya Adhya</td>
-                        </tr>
-                        <tr>
-                          <th class="point">Time Slot:</th>
-                          <td class="text">8:30AM</td>
-                        </tr>
-                        <tr>
-                          <th class="point">Date:</th>
-                          <td class="text">30/03/2023</td>
-                        </tr>
-                        <tr>
-                          <th class="point">Styler Name:</th>
-                          <td class="text">Harish</td>
-                        </tr>
-                        <tr>
-                          <th class="point">City :</th>
-                          <td class="text">Kolkata</td>
-                        </tr>
-                      </table>
-                      
-                </div>
-                <div class="app-child-button">
-                    <button class="approve" style="display: none;">Approved</button>
-                    <button class="complete-tbn" style="display: block;">Complete</button>
-                    <button class="cancle-btn">Cancel</button>
-                    <button class="completed">Completed</button>
-                    <button class="canceled">Canceled</button>
-                </div>
-
-            </div> -->
-           
         </div>
     </main>
     <script src="./JavaScript/admin_nav.js"></script>
     <script src="./JavaScript/admin_dashboard.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
+    <!-- <script>
       AOS.init();
-    </script>
+    </script> -->
 </body>
 </html>
 <script>
+      AOS.init();
+
     // Hide the preloader when the page is loaded
 window.addEventListener("load", () => {
     document.querySelector("body").classList.add("loaded");

@@ -51,7 +51,7 @@ UserRouter.post("/login", async (req, res) => {
                 if (result) {
                     const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
                     //Store In Cookies
-                    client.set("token", token);
+                    // client.set("token", token);
                     console.log("Login Sucessfull");
                     res.send({ message: "Login Sucessfull", token: token });
                 } else {
@@ -84,7 +84,7 @@ UserRouter.get("/Check",async(req,res)=>{
     })
    }
     if(data.length==0){
-        res.send({msg:"no slot avalibale"})
+        res.send({msg:"no slot avalibale"});
     }else {
     res.send(data);
     }

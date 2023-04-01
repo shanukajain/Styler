@@ -24,7 +24,7 @@
     </div>
 
     <!-- <------- Navbar Section -------->
-    <header>
+    <!-- <header>
         <div class="logo">
             <a href="./index.html"><img src="./Image/stylerLogo.png" alt=""></a>
         </div>
@@ -42,7 +42,26 @@
                 <li><a href="#">Offers</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
+    <header style="position:fixed; z-index: 99;">
+        <div class="logo">
+         <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
+        </div>
+        <div class="hamburger" onClick="hamFun()">
+           <div class="line"></div>
+           <div class="line"></div>
+           <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+           <ul>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="#about">About Us</a></li>
+             <li><a href="./gents-salon-services.html">Services</a></li>
+             <li><a href="./admin_dashboard.html">Admin</a></li>
+             <li><a href="./login_signup.html">Signup/Login</a></li>
+           </ul>
+        </nav>
+     </header> 
 
     <!-- <------ Choose Section ------>
     <div class="section">
@@ -51,9 +70,63 @@
         <span>CHOOSE </span>
     </div>
 
-    <!-- <------ Video Section ------->
+    <!-- <------ Video Section  and Book Appointment Section ------->
     <div class="video-play">
-        <video src="./Image/clideo_editor_6cd33746bad44c348a7d58a560c82021.mp4" autoplay muted loop></video>
+        <div>
+            <video src="./Image/clideo_editor_6cd33746bad44c348a7d58a560c82021.mp4" autoplay muted loop></video>
+        </div>
+        <div>
+            <div class="book-appointment">
+                <div>
+                    <h1>Let's not wait for the "Perfect Look"</h1>
+                    <span>Book An Appointment Now!</span>
+                </div>
+                <div>
+                    <form action="">
+                        <input type="text" placeholder="Service Type" id="service-type" required>
+                        <input type="date" placeholder="Preffered Date*" id="book-date" required>
+                        <br><br>
+                        <select name="city" id="city" required>
+                            <option value="">City*</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Kota">Kota</option>
+                        </select>
+                        <select name="time" id="slots" required>
+                            <option value="">Preferred Time*</option>
+                            <option value="12AM">12AM</option>
+                            <option value="1AM">1AM</option>
+                            <option value="2AM">2AM</option>
+                            <option value="3AM">3AM</option>
+                            <option value="4AM">4AM</option>
+                            <option value="5AM">5AM</option>
+                            <option value="6AM">6AM</option>
+                            <option value="7AM">7AM</option>
+                            <option value="8AM">8AM</option>
+                            <option value="9AM">9AM</option>
+                            <option value="10AM">10AM</option>
+                            <option value="11AM">11AM</option>
+                            <option value="12PM">12PM</option>
+                            <option value="1PM">1PM</option>
+                            <option value="2PM">2PM</option>
+                            <option value="3PM">3PM</option>
+                            <option value="4PM">4PM</option>
+                            <option value="5PM">5PM</option>
+                            <option value="6PM">6PM</option>
+                            <option value="7PM">7PM</option>
+                            <option value="8PM">8PM</option>
+                            <option value="9PM">9PM</option>
+                            <option value="10PM"></option>
+                            <option value="11PM"></option>
+                        </select>
+                        <input type="submit" value="Book Appointment" id="book-button">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- <------- Hair Cut Style Section ---->
@@ -126,35 +199,6 @@
         <!-- <button class="ladies-service-button">Ladies Services</button> -->
     </div>
 
-    <div class="book-appointment">
-        <div>
-            <h1>Let's not wait for the "Perfect Look"</h1>
-            <span>Book An Appointment Now!</span>
-        </div>
-        <div>
-            <form action="">
-                <input type="text" placeholder="Service Type" id="service-type" required>
-                <input type="date" placeholder="Preffered Date*" id="book-date" required>
-                <br><br>
-                <select name="city" id="city" required>
-                    <option value="">City*</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Bangalore">Bangalore</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Kota">Kota</option>
-                </select>
-                <select name="time" id="slots" required>
-                    <option value="">Preferred Time*</option>
-                    <option value="Morning">Morning</option>
-                    <option value="Morning">Afternoon</option>
-                    <option value="Morning">Evening</option>
-                </select>
-                <input type="submit" value="Book Appointment" id="book-button">
-            </form>
-        </div>
-    </div>
 
     <div class="gents-about">
         <h1>Gents Salon Services</h1>

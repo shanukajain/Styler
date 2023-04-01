@@ -19,6 +19,7 @@
     "mongoose": "^7.0.3",
     "nodemon": "^2.0.22",
     "redis": "^4.6.5",
+    "redis-cli": "^2.1.2",
     "redis-server": "^1.2.2"
   }
 }

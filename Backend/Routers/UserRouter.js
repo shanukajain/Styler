@@ -105,10 +105,12 @@ UserRouter.get("/book",async(req,res)=>{
     res.send({message:"Appointment booked"});
 })
 // **************LOGOUT*****************
-UserRouter.get("/logout",async(req,res)=>{
-    let token=req.headers.authorization;
-    await client.SETEX(`${token}`,60*60,"true");
-   res.status(200).send({"msg":"logout successfull"});
+UserRouter.get("/logout",(req,res)=>{
+    const token =req.headers.authorization
+    const blacklist=JSON.parse(fs.readFileSync("./blacklisted.json",{encoding:"utf-8"}));
+    blacklist.push(token);
+    fs.writeFileSync("./blacklist.json",JSON.stringify(blacklist));
+    res.send("you are logged out")
 })
 // ***********Appointments*************
 

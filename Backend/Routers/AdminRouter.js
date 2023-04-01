@@ -4,6 +4,7 @@ const { UserModel } = require("../Model/UserModel");
 const { StylerModel } = require("../Model/StylerModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const fs=require("fs");
 const { AppointmentModel } = require("../Model/AppointmentModel");
 const { BlockUserModel } = require("../Model/BlockUserModel");
 const statusemail = require("../config/statusemail");
@@ -134,5 +135,23 @@ AdminRouter.patch("/update/appointment/:id",async(req,res)=>{
     await AppointmentModel.updateOne({"_id":id},status);
     res.send({msg:"done"});
 })
+
+
+/*******Logout *******/
+AdminRouter.get("/logout",(req,res)=>{
+    const token =req.headers.authorization
+    const blacklist=JSON.parse(fs.readFileSync("./blacklisted.json",{encoding:"utf-8"}));
+    blacklist.push(token);
+    fs.writeFileSync("./blacklist.json",JSON.stringify(blacklist));
+    res.send("you are logged out")
+})
+
+
+
+
+
+
+
+
 //****** **********/
 module.exports = { AdminRouter };

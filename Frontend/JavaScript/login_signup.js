@@ -19,9 +19,14 @@ signupForm.addEventListener("submit", async (event) => {
 
     let otpRes= await otp.json();
     console.log(otpRes)
+
+
     if(otpRes.msg==="Email already registered") {
         return alert("You Are Already Registered")
-    }else{
+    }
+     if (otpRes.msg !== "Email already registered"){
+
+        $("#otpModal").modal("show");
         document.getElementById("otpSubmit").addEventListener("click",async ()=>{
             let otpValue=document.getElementById("otpInput").value;
             if(otpValue==otpRes.OTP){
@@ -34,13 +39,17 @@ signupForm.addEventListener("submit", async (event) => {
                     });
                     let data = await res.json();
                     if (data.message === "User Register Sucessfull") {
-                        return alert("Register Successfully");
+                         alert("Register Successfully");
+                        window.location.href="login_signup.html"
+                        return;
                     }else{
                         return alert("Try Again Later");
                     }
             }
             else{
-              return  alert("Worng OTP")
+                alert("Worng OTP")
+                window.location.href="login_signup.html"
+                return;
             }
         })
         

@@ -9,22 +9,10 @@ const { AppointmentModel } = require("../Model/AppointmentModel");
 const { BlockUserModel } = require("../Model/BlockUserModel");
 const {StylesModel}=require("../Model/Styles")
 const statusemail = require("../config/statusemail");
+const { authorization } = require("../Middleware/Authorization");
+const { authenticate } = require("../Middleware/Authentication");
 const AdminRouter = express.Router();
 
-// ************ALL REGISTER USER***************
-
-AdminRouter.get("/allusers", async (req, res) => {
-    let search = req.query
-    let data = await UserModel.find(search)
-    res.send(data);
-});
-//******Block user*********/
-AdminRouter.post("/Block/", async (req, res) => {
-    let data = req.body;
-    let Blockuser = await new BlockUserModel(data);
-    await Blockuser.save();
-    res.status(200).send({ msg: "user has been blocked" });
-})
 // ************REGISTER ADMIN***************
 
 AdminRouter.post("/register", async (req, res) => {
@@ -71,7 +59,7 @@ AdminRouter.post("/login", async (req, res) => {
             if (User) {
                 bcrypt.compare(password, User.password, async (err, result) => {
                     if (result) {
-                        const token = jwt.sign({ userID: User._id, role: User.role }, "9168");
+                        const token = jwt.sign({ userID: User._id, role:User.role }, "9168");
                         console.log("Login Sucessfull");
                         res.send({ message: "Login Sucessfull", token: token });
                     } else {
@@ -88,8 +76,23 @@ AdminRouter.post("/login", async (req, res) => {
         res.send({ message: "Email is Blocked" })
     }
 });
+AdminRouter.use(authenticate);
+AdminRouter.use(authorization("admin"))
 
+// ************ALL REGISTER USER***************
 
+AdminRouter.get("/allusers", async (req, res) => {
+    let search = req.query
+    let data = await UserModel.find(search)
+    res.send(data);
+});
+//******Block user*********/
+AdminRouter.post("/Block/", async (req, res) => {
+    let data = req.body;
+    let Blockuser = await new BlockUserModel(data);
+    await Blockuser.save();
+    res.status(200).send({ msg: "user has been blocked" });
+})
 // ****************ALL STYLER ******************
 
 

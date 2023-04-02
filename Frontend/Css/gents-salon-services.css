@@ -153,3 +153,45 @@
         width: 100%;
     }
 }
+
+.slot-card{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* padding: 10px; */
+    background-color: #e6dee3e6;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.slot-card>div:nth-child(1){
+    width: 85%;
+    float: left;
+    padding: 10px;
+}
+
+.slot-card>div:nth-child(2){
+    width: 10%;
+    background-color: red;
+}
+
+.slot-card button{
+    border: none;
+    background: none;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.slot-card>div:nth-child(2):hover{
+    opacity: 0.7;
+    cursor: pointer;
+    background-color: black;
+}
+
+
+.slot-card span{
+    font-size: 14px;
+    color: red;
+}

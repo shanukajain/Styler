@@ -73,17 +73,17 @@ async function fetchStylers(key,value){
          res= await fetch(`${baseURL}/admin/All_Stylers`);
 
     }
-    res=await res.json();
-console.log(res)
-    stylerFun(res)
+    let data=await res.json();
+console.log(data)
+    stylerFun(data)
 }
 let stylerDiv=document.getElementById("styler");
 
 // =============================map styler==========================================================  
 
-function stylerFun(res){
+function stylerFun(data){
     stylerDiv.innerHTML="";
-    let allStylers=res.map((item)=>{
+    let allStylers=data.map((item)=>{
         return `
         <div class="user-div" data-id=${item._id} data-aos="fade-up" data-aos-duration="1000">
                 <div>

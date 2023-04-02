@@ -71,7 +71,7 @@ UserRouter.post("/login", async (req, res) => {
                         //Store In Cookies
                         // client.set("token", token);
                         console.log("Login Sucessfull");
-                        res.send({ message: "Login Sucessfull", token: token });
+                        res.send({ message: "Login Sucessfull", token: token ,username:User.name});
                     } else {
                         res.send({ message: "Wrong Password" });
                     }
@@ -87,6 +87,11 @@ UserRouter.post("/login", async (req, res) => {
     }
     
 
+});
+UserRouter.get("/userInfo", async (req, res) => {
+    let search = req.query
+    let data = await UserModel.find(search)
+    res.send(data);
 });
 UserRouter.use(authenticate)
 //*******Check avalibility ***********/

@@ -135,6 +135,101 @@
     display: none;
 }
 
+/* ==================================*******soumya css*****============================================================= */
+.app-child-details{
+    width: 60%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  td {
+    /* width: 100%; */
+    padding: 6px 0px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+  }
+  
+  th {
+    /* background-color: #f2f2f2; */
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+    /* width: 100%; */
+  }
+  
+#appointments-div{
+    margin: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px 30px;
+}
+.app-child-div{
+    background-color: #5a76c1;
+    /* background-color: #bedae8; */
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    /* color: aliceblue; */
+}
+.app-child-div>h2{
+    margin-top: 5px;
+}
+.point{
+    /* padding: 3px; */
+    /* background: white; */
+    font-size: 23px;
+    font-weight: 700;
+    color: #252230;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+.text{
+    font-size: 22px;
+    font-weight: 700;
+    color:#fff ;
+}
+.app-child-button{
+    width: 33%;
+    display: flex;
+}
+.app-child-button>button{
+    margin-top: 10px;
+    height: 45px;
+    margin-left: 5px;
+    padding: 10px 2rem;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    color: whitesmoke;
+}
+.complete-tbn,.approve-btn{
+    background-color: #209f80;
+
+}
+.complete-tbn:hover,.approve-btn:hover{
+    background-color: #135847;
+
+}
+.cancle-btn{
+    background-color: #bf3c00;
+
+}
+.cancle-btn:hover{
+    background-color: #802f0a;
+
+}
+
+/* ==================================*******soumya css*****============================================================= */
+
+
+
+
 @media screen and (max-width:770px) {
     .hair-styles {
         grid-template-columns: repeat(2, 1fr);

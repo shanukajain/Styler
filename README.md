@@ -45,7 +45,7 @@
 <img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/214280786-77c1bafb-5b53-4fe6-b403-421b29660cc1.png">
 
 <br>
-<p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
+<p >Visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
 
  <h3> Show your support 🙌</h3>
  <p> Give ⭐ , If you 🫶 like the project</P>

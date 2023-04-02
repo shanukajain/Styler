@@ -1,19 +1,17 @@
 const jwt=require("jsonwebtoken")
 const client=require("../config/redis");
-
+const fs=require("fs");
 const authenticate=async(req,res,next)=>{
 const token=req.headers.authorization;
 
-console.log(token);
-
-if(token){
+console.log(token,"1234");
+const blacklist=fs.readFileSync("./blacklist.json",{encoding:"utf-8"});
+if(blacklist.includes(token)){
+    res.send("login again")}
+    else if(token){
    const decoded=jwt.verify(token,"9168");
    if(decoded){
     console.log(decoded);
-//    let t= await client.get(`${token}`);
-//     if(t){
-//         res.status(404).send({"msg":"login again"})
-//     }else {
         const userID=decoded.userID;
         req.body.userID=userID;
         req.body.role=decoded.role

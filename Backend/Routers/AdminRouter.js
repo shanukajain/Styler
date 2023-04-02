@@ -4,6 +4,7 @@ const { UserModel } = require("../Model/UserModel");
 const { StylerModel } = require("../Model/StylerModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const fs=require("fs");
 const { AppointmentModel } = require("../Model/AppointmentModel");
 const { BlockUserModel } = require("../Model/BlockUserModel");
 const {StylesModel}=require("../Model/Styles")
@@ -172,13 +173,22 @@ AdminRouter.patch("/styles/update/:id",async (req,res)=>{
     await StylesModel.updateOne({"_id":id},payload)
     res.status(200).send({"msg":"New Style Updated"})
 })
-
-// ************DELETE STYLES*****************
-
 AdminRouter.delete("/styles/delete/:id",async (req,res)=>{
     let id=req.params.id;
     await StylesModel.deleteOne({"_id":id})
     res.status(200).send({"msg":"New Style Delete"})
 })
+
+/*******Logout *******/
+AdminRouter.get("/logout",(req,res)=>{
+    const token =req.headers.authorization
+    const blacklist=JSON.parse(fs.readFileSync("./blacklisted.json",{encoding:"utf-8"}));
+    blacklist.push(token);
+    fs.writeFileSync("./blacklist.json",JSON.stringify(blacklist));
+    res.send("you are logged out")
+})
+
+
+
 module.exports = { AdminRouter };
 

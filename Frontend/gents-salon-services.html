@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gents Salon Service</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="./Css/gents-salon-services.css">
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <link rel="icon" href="https://www.linkpicture.com/q/WhatsApp-Image-2023-03-28-at-21.21.29.jpeg">
@@ -24,7 +26,7 @@
     </div>
 
     <!-- <------- Navbar Section -------->
-    <header>
+    <!-- <header>
         <div class="logo">
             <a href="./index.html"><img src="./Image/stylerLogo.png" alt=""></a>
         </div>
@@ -42,7 +44,25 @@
                 <li><a href="#">Offers</a></li>
             </ul>
         </nav>
-    </header>
+    </header> -->
+    <header style="position:fixed; z-index: 99;">
+        <div class="logo">
+         <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
+        </div>
+        <div class="hamburger" onClick="hamFun()">
+           <div class="line"></div>
+           <div class="line"></div>
+           <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+           <ul>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="#about">About Us</a></li>
+             <li><a href="./gents-salon-services.html">Services</a></li>
+             <li><a href="./login_signup.html">Signup/Login</a></li>
+           </ul>
+        </nav>
+     </header> 
 
     <!-- <------ Choose Section ------>
     <div class="section">
@@ -51,14 +71,68 @@
         <span>CHOOSE </span>
     </div>
 
-    <!-- <------ Video Section ------->
-    <div class="video-play">
-        <video src="./Image/clideo_editor_6cd33746bad44c348a7d58a560c82021.mp4" autoplay muted loop></video>
+    <!-- <------ Video Section  and Book Appointment Section ------->
+    <div class="video-play" data-aos="fade-right">
+        <div>
+            <video src="./Image/clideo_editor_6cd33746bad44c348a7d58a560c82021.mp4" autoplay muted loop></video>
+        </div>
+        <div >
+            <div class="book-appointment" data-aos="fade-left">
+                <div>
+                    <h1>Let's not wait for the "Perfect Look"</h1>
+                    <span>Book An Appointment Now!</span>
+                </div>
+                <div>
+                    <form action="">
+                        <input type="text" placeholder="Service Type" id="service-type" required>
+                        <input type="date" placeholder="Preffered Date*" id="book-date" required>
+                        <br><br>
+                        <select name="city" id="city" required>
+                            <option value="">City*</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Kota">Kota</option>
+                        </select>
+                        <select name="time" id="slots" required>
+                            <option value="">Preferred Time*</option>
+                            <option value="12AM">12AM</option>
+                            <option value="1AM">1AM</option>
+                            <option value="2AM">2AM</option>
+                            <option value="3AM">3AM</option>
+                            <option value="4AM">4AM</option>
+                            <option value="5AM">5AM</option>
+                            <option value="6AM">6AM</option>
+                            <option value="7AM">7AM</option>
+                            <option value="8AM">8AM</option>
+                            <option value="9AM">9AM</option>
+                            <option value="10AM">10AM</option>
+                            <option value="11AM">11AM</option>
+                            <option value="12PM">12PM</option>
+                            <option value="1PM">1PM</option>
+                            <option value="2PM">2PM</option>
+                            <option value="3PM">3PM</option>
+                            <option value="4PM">4PM</option>
+                            <option value="5PM">5PM</option>
+                            <option value="6PM">6PM</option>
+                            <option value="7PM">7PM</option>
+                            <option value="8PM">8PM</option>
+                            <option value="9PM">9PM</option>
+                            <option value="10PM"></option>
+                            <option value="11PM"></option>
+                        </select>
+                        <input type="submit" value="Book Appointment" id="book-button">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- <------- Hair Cut Style Section ---->
 
-    <div class="hair-styles">
+    <div class="hair-styles" data-aos="fade-up">
         <div>
             <h2>Hair Cut & Finish</h2>
             <ul>
@@ -97,7 +171,7 @@
         </div>
     </div>
 
-    <div class="beard-section">
+    <div class="beard-section" data-aos="fade-up">
         <div>
             <img src="https://www.lookssalon.in/public/images/innerBanner/serviceGents.jpg" alt="beards_men_img">
         </div>
@@ -126,37 +200,8 @@
         <!-- <button class="ladies-service-button">Ladies Services</button> -->
     </div>
 
-    <div class="book-appointment">
-        <div>
-            <h1>Let's not wait for the "Perfect Look"</h1>
-            <span>Book An Appointment Now!</span>
-        </div>
-        <div>
-            <form action="">
-                <input type="text" placeholder="Service Type" id="service-type" required>
-                <input type="date" placeholder="Preffered Date*" id="book-date" required>
-                <br><br>
-                <select name="city" id="city" required>
-                    <option value="">City*</option>
-                    <option value="Delhi">Delhi</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Kolkata">Kolkata</option>
-                    <option value="Bangalore">Bangalore</option>
-                    <option value="Chennai">Chennai</option>
-                    <option value="Kota">Kota</option>
-                </select>
-                <select name="time" id="slots" required>
-                    <option value="">Preferred Time*</option>
-                    <option value="Morning">Morning</option>
-                    <option value="Morning">Afternoon</option>
-                    <option value="Morning">Evening</option>
-                </select>
-                <input type="submit" value="Book Appointment" id="book-button">
-            </form>
-        </div>
-    </div>
 
-    <div class="gents-about">
+    <div class="gents-about" data-aos="fade-up">
         <h1>Gents Salon Services</h1>
         <p>Styling has never been limited to women. The art of looking handsome and getting makeovers has its own story
             for men and one cannot imagine the number of styles and treatments that can be done on these hunks.
@@ -179,7 +224,7 @@
         </p>
     </div>
 
-    <section id="partner">
+    <section id="partner" data-aos="fade-up">
         <h1>Our Partner Brands</h1>
         <div class="partner">
             <div class="partner-card">
@@ -221,7 +266,7 @@
     </section>
 
     <!-- footer section -->
-    <section id="footer">
+    <section id="footer" data-aos="fade-up">
         <div class="footer">
             <div class="logo2">
                 <img src="../logo.png" alt="#">
@@ -242,7 +287,11 @@
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
 <script src="./JavaScript/gents-salon-services.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 <script>
+    AOS.init();
+
     window.addEventListener("load", () => {
         document.querySelector("body").classList.add("loaded");
     });

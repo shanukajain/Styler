@@ -41,7 +41,7 @@
   <li> Responsiveness for different device</li>
 </ul> 
 <h3> Pages of Website: </h3>
-<div display:"flex"  style="border: 2px solid black" >
+<div display:"flex" style="border: 2px solid black" >
 <kbd><img width="380" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </kbd> <kbd><img width="380" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336567-c1c3f631-1cf1-439a-b83f-447a6f9f7a8d.png"></kbd>
 </kbd> </div>
 <br>

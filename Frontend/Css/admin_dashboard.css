@@ -103,6 +103,7 @@ table {
 }
 .app-child-button{
     width: 33%;
+    
     display: flex;
 }
 .app-child-button>button{
@@ -133,7 +134,7 @@ table {
 }
 
 
-@media only screen and (max-width:1351px){
+@media only screen and (max-width:1565px){
     .app-child-details{
         width: 80%;
     }

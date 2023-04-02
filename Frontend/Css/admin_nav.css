@@ -12,6 +12,7 @@ header{
     /* opacity:2.0; */
     display: flex;
     align-items: center;
+    align-content: center;
     justify-content: space-between;
     padding: 0 50px;
     position: sticky;
@@ -30,8 +31,8 @@ nav{
     margin-left: 50px;
 }
 .logo img{
-    width: 100px;
-    height: 80px;
+    width: 175px;
+    height: 85px;
     border-radius: 50%;
 }
 .hamburger{

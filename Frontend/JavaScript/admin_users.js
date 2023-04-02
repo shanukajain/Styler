@@ -34,7 +34,7 @@ function userFun(res){
 
     let allusers= res.map((item)=>{
         // console.log(item)
-       return `<div class="user-div">
+       return `<div class="user-div" data-aos="fade-up" data-aos-duration="1000">
         <div>
             <img src="./Image/male-avatar-icon-flat.jpg" alt="user-avtar">
         </div>

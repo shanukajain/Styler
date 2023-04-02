@@ -12,7 +12,7 @@
     margin: auto;
     width: 90%;
     display: grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(5,1fr);
 }
 #dash>div{
     /* width: 18%; */
@@ -30,16 +30,18 @@
     background:#0353f9 ;
 }
 #dash>div:nth-child(2){
-    background:#0aa745 ;
+    background:#ff9913 ;
 }
 #dash>div:nth-child(3){
-    background:#ea4858 ;
+    /* background:#ea4858 ; */
+    background:#ea7345 ;
 }
 #dash>div:nth-child(4){
-    background:#3f697c ;
+    background:#0aa745 ;
+
 }
 #dash>div:nth-child(5){
-    background:#0353f9 ;
+    background:#fc4828 ;
 }
 .app-child-details{
     width: 60%;
@@ -99,26 +101,33 @@ table {
     font-weight: 700;
     color:#fff ;
 }
+.app-child-button{
+    width: 33%;
+    display: flex;
+}
 .app-child-button>button{
+    margin-top: 10px;
+    height: 45px;
+    margin-left: 5px;
     padding: 10px 2rem;
     border-radius: 5px;
     border: none;
     font-weight: 500;
     color: whitesmoke;
 }
-.app-child-button>button:nth-child(1),.approve-btn{
+.complete-tbn,.approve-btn{
     background-color: #209f80;
 
 }
-.app-child-button>button:nth-child(1):hover{
+.complete-tbn:hover,.approve-btn:hover{
     background-color: #135847;
 
 }
-.app-child-button>button:nth-child(2){
+.cancle-btn{
     background-color: #bf3c00;
 
 }
-.app-child-button>button:nth-child(2):hover{
+.cancle-btn:hover{
     background-color: #802f0a;
 
 }
@@ -130,6 +139,7 @@ table {
     }
     .app-child-button{
         width: 20%;
+        display: block;
     }
     .app-child-button>button{
         

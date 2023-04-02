@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" href="./Image/stylerLogo.png">
+
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <link rel="stylesheet" href="./Css/admin_styler.css">
         <!-- Fontawesome CDN Link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <script src="https://kit.fontawesome.com/f90c67bbfa.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Styler - Admin Stylers</title>
 </head>
 <body>
     <div id="preloader">
@@ -41,30 +44,9 @@
             <h1>Add New Styler</h1>
             <form action="">
                 <input type="text" name="" id="name" placeholder=" Name" required>
-                <!-- <input type="text" name="" id="work" placeholder="Work" required> -->
-                <!-- <input type="text" name="" id="shift_1" placeholder="First Shift" required> -->
-                <select name="" id="shift_1">
-                    <option value="Morning">Morning</option>
-                    <!-- <option value="Evening">Evening</option>
-                    <option value="Night">Night</option> -->
-                    <option value="not">Not Avaliable</option>
-                </select>
-                <select name="" id="shift_2">
-                    <!-- <option value="Morning">Morning</option> -->
-                    <option value="Evening">Evening</option>
-                    <!-- <option value="Night">Night</option> -->
-                    <option value="not">Not Avaliable</option>
-                </select>
-                <select name="" id="shift_3">
-                    <!-- <option value="Morning">Morning</option>
-                    <option value="Evening">Evening</option> -->
-                    <option value="Night">Night</option>
-                    <option value="not">Not Avaliable</option>
-                </select>
-                <!-- <input type="text" name="" id="shift_2" placeholder="Second Shift" required> -->
-                <input type="text" name="" id="city" placeholder="City" required>
-                <input type="email" name="" id="email" placeholder="Email" required>
                 <input type="number" name="" id="mobile_no" placeholder="Mobile Number" required maxlength="10">
+                <input type="email" name="" id="email" placeholder="Email" required>
+                <input type="text" name="" id="city" placeholder="City" required>
                 <input type="number" name="" id="salary" placeholder="Salary" required>
                 <input type="submit"  value="Add">
             </form>
@@ -116,11 +98,17 @@
 </body>
 <script src="./JavaScript/admin_nav.js"></script>
 <script src="./JavaScript/admin_styler.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 </html>
+
+
 <script>
-    // Hide the preloader when the page is loaded
+    AOS.init();
+
+  // Hide the preloader when the page is loaded
 window.addEventListener("load", () => {
-    document.querySelector("body").classList.add("loaded");
-  });
-  
+  document.querySelector("body").classList.add("loaded");
+});
+
 </script>

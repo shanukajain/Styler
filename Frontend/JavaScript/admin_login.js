@@ -15,37 +15,22 @@ signupForm.addEventListener("submit", async (event) => {
   };
   try {
 
-    let otp=await fetch(`${baseURL}/user/OTP?email=${email}`)
-
-    let otpRes= await otp.json();
-    console.log(otpRes)
-    if(otpRes.msg==="Email already registered") {
-        return alert("You Are Already Registered")
-    }else{
-        document.getElementById("otpSubmit").addEventListener("click",async ()=>{
-            let otpValue=document.getElementById("otpInput").value;
-            if(otpValue==otpRes.OTP){
-                let res = await fetch(`${baseURL}/user/register`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(obj),
-                    });
-                    let data = await res.json();
-                    if (data.message === "User Register Sucessfull") {
-                        return alert("Register Successfully");
-                    }else{
-                        return alert("Try Again Later");
-                    }
-            }
-            else{
-              return  alert("Worng OTP")
-            }
-        })
-        
-        
-    }
+        let res = await fetch(`${baseURL}/admin/register`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(obj),
+                });
+                let data = await res.json();
+                if(data.msg==="Email already registered"){
+                    return alert("Email already registered")
+                }
+                if (data.message === "Admin Register Sucessfull") {
+                    return alert("Register Successfully");
+                }else{
+                    return alert("Try Again Later");
+                }
 
   } catch (error) {
     console.log(error);
@@ -67,7 +52,7 @@ async function loginFun(event){
         email:name,
         password
     }
-    let res= await fetch(`${baseURL}/user/login`,{
+    let res= await fetch(`${baseURL}/admin/login`,{
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -77,9 +62,9 @@ async function loginFun(event){
     let datares=await res.json()
     if(datares.message==="Login Sucessfull"){
         console.log(datares.token)
-        localStorage.setItem("token",datares.token)
+        localStorage.setItem("admin-login-token",datares.token)
         alert(`Welcome Back`);
-        window.location.href="index.html"
+        window.location.href="admin_dashboard.html"
         return;
     }
     if(datares.message==="Wrong Password"){

@@ -3,46 +3,51 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
                        <!-- icon-link -->
-    <link rel="icon" href="./Image/stylerLogo.png">
+                       <link rel="icon" href="./Image/stylerLogo.png">
+    <link rel="stylesheet" href="style.css">
     <!-- ==================================bootstrap===================================================== -->
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/f90c67bbfa.js" crossorigin="anonymous"></script>
     <!-- ========================================navbar css========================================================= -->
     <link rel="stylesheet" href="./Css/admin_nav.css">
     <!-- ========================================login-signup css========================================================= -->
     <link rel="stylesheet" href="./Css/login_signup.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>styler - Login/Signup</title>
+
    </head>
 <body>
-    <div id="preloader">
-        <!-- this is the preloader -->
-        <i class="fa-solid fa-scissors" id="spinner"></i>
-      </div>
-      <header>
-        <div class="logo">
-         <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
-        </div>
-        <div class="hamburger" onClick="hamFun()">
-           <div class="line"></div>
-           <div class="line"></div>
-           <div class="line"></div>
-        </div>
-        <nav class="nav-bar">
-           <ul>
-             <li><a href="index.html">Home</a></li>
-             <li><a href="#about">About Us</a></li>
-             <li><a href="./gents-salon-services.html">Services</a></li>
-             <li><a href="./admin_dashboard.html">Admin</a></li>
-             <li><a href="./login_signup.html">Signup/Login</a></li>
-           </ul>
-        </nav>
-     </header>  
+  <div id="preloader">
+    <!-- this is the preloader -->
+    <i class="fa-solid fa-scissors" id="spinner"></i>
+  </div>
+  <header>
+    <div class="logo">
+     <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
+    </div>
+    <div class="hamburger" onClick="hamFun()">
+       <div class="line"></div>
+       <div class="line"></div>
+       <div class="line"></div>
+    </div>
+    <nav class="nav-bar">
+       <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="#about">About Us</a></li>
+         <li><a href="./gents-salon-services.html">Services</a></li>
+         <li><a href="./login_signup.html">Signup/Login</a></li>
+       </ul>
+    </nav>
+ </header>    
 
 
-
+ <h1 style="text-align: center;">For Admin Only</h1>
 <main>
-
   <div class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
@@ -81,12 +86,12 @@
               <div class="button input-box">
                 <input type="submit" value="Sumbit">
               </div>
-              <!-- <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
-            </div> -->
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
+            </div>
         </form>
       </div>
     <!-- ======================================signup========================================================  -->
-<!-- 
+
         <div class="signup-form">
           <div class="title">Signup</div>
         <form >
@@ -108,44 +113,29 @@
                 <input class="signup-password" type="password" placeholder="Enter your password" required>
               </div>
               <div class="button input-box">
-                <input type="submit"  class="btn btn-primary" data-toggle="modal" data-target="#otpModal" value="Sumbit">
+                <input type="submit"  value="Sumbit">
               </div>
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
             </div>
       </form>
-    </div> -->
+    </div>
     </div>
     </div>
   </div>
 </main>
 
 </body>
-<script>
-    // Hide the preloader when the page is loaded
-window.addEventListener("load", () => {
-    document.querySelector("body").classList.add("loaded");
-  });
-  
+
 </script>
 <script src="./JavaScript/admin_nav.js"></script>
 
-<!-- <script src="./JavaScript/login_signup.js"></script> -->
+<script src="./JavaScript/admin_login.js"></script>
 
-<script>
-  
-    let adminLogin=document.querySelector(".login-form form");
-    adminLogin.addEventListener("submit",adminFun)
-    function adminFun(){
-        let email=document.querySelector(".login-email").value;
-        let password=document.querySelector(".login-password").value
-        if(email=="admin@gmail.com"&&password==="admin"){
-            alert("Welcome Admin")
-            window.location.href="admin_dashboard.html";
-         return;
-        }else{
-            return alert("Wrong Credentials")
-
-        }
-    }
-</script>
 </html>
+<script>
+  // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+  document.querySelector("body").classList.add("loaded");
+});
+
+</script>

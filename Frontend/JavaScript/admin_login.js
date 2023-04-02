@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:9168";
+const baseURL = "https://long-blue-pronghorn-hat.cyclic.app";
 let signupForm = document.querySelector(".signup-form form");
 signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -63,17 +63,22 @@ async function loginFun(event){
     if(datares.message==="Login Sucessfull"){
         console.log(datares.token)
         localStorage.setItem("admin-login-token",datares.token)
+        await  swal(
+            "Login Sucessfull",
+            "success"
+          );
         alert(`Welcome Back`);
         window.location.href="admin_dashboard.html"
         return;
     }
     if(datares.message==="Wrong Password"){
-        return alert("Wrong Credentials")
+        return await swal("Wrong Credentials", "", "error");
     }
     if(datares.message==="Sign Up First"){
-       return alert("Create Your Account First")
+        return await swal("Create Your Account First");
     }
     if(datares.message!=="Login Sucessfull"||datares.message!=="Sign Up First"||datares.message!=="Wrong Password"){
-        return alert("Try Again Later")
+        return await swal("Something Went Wrong.", "", "error");
+
     }
 }

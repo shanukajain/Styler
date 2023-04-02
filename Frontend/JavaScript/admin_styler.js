@@ -1,5 +1,5 @@
 
-const baseURL="http://localhost:9168"
+const baseURL="https://long-blue-pronghorn-hat.cyclic.app"
 fetchStylers()
 
 const addStyler=document.querySelector("#add-details-div form");
@@ -31,7 +31,7 @@ async function addFun(event){
         method: "POST",
             headers: {
                   "Content-Type": "application/json",
-                //   Authorization: localStorage.getItem("token")
+                  Authorization: localStorage.getItem("admin-login-token")
                 },
                 body: JSON.stringify(obj)
 
@@ -67,10 +67,22 @@ search.addEventListener("keypress",(e)=>{
 async function fetchStylers(key,value){
     let res;
     if(key&&value){
-    res= await fetch(`${baseURL}/admin/All_Stylers?${key}=${value}`);
+    res= await fetch(`${baseURL}/admin/All_Stylers?${key}=${value}`,{
+        method: "GET",
+        headers: {
+              "Content-Type": "application/json",
+              Authorization: localStorage.getItem("admin-login-token")
+            },
+    });
 
     }else{
-         res= await fetch(`${baseURL}/admin/All_Stylers`);
+         res= await fetch(`${baseURL}/admin/All_Stylers`,{
+            method: "GET",
+        headers: {
+              "Content-Type": "application/json",
+              Authorization: localStorage.getItem("admin-login-token")
+            },
+         });
 
     }
     let data=await res.json();
@@ -185,7 +197,7 @@ async function blockFun(data_id){
         method: "DELETE",
             headers: {
                   "Content-Type": "application/json",
-                //   Authorization: localStorage.getItem("token")
+                  Authorization: localStorage.getItem("admin-login-token")
                 },
             },
     )

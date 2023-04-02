@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:9168";
+const baseURL = "https://long-blue-pronghorn-hat.cyclic.app";
 logincheck()
 function logincheck(){
   let adminLoginToken=localStorage.getItem("admin-login-token")
@@ -31,10 +31,22 @@ if (day < 10) {
 
 let formattedDate = year + "-" + month + "-" + day;
 console.log(formattedDate)
-    let apps=await fetch(`${baseURL}/admin/All_appoints?status=Pendding&status=Apporved&date=${formattedDate}`);
+    let apps=await fetch(`${baseURL}/admin/All_appoints?status=Pendding&status=Apporved&date=${formattedDate}`,{
+      method: "GET",
+      headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("admin-login-token")
+          },
+    });
     let data= await apps.json();
 
-    let dashRes=await  fetch(`${baseURL}/admin/All_appoints?date=${formattedDate}`);
+    let dashRes=await  fetch(`${baseURL}/admin/All_appoints?date=${formattedDate}`,{
+      method: "GET",
+      headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("admin-login-token")
+          },
+    });
     let dashData= await dashRes.json()
     let penddingData=dashData.filter((item)=>item.status==="Pendding")
     let completedData=dashData.filter((item)=>item.status==="Complete")
@@ -169,6 +181,7 @@ async function statusFun(data_id,status){
     method: "PATCH",
     headers: {
         "Content-Type": "application/json",
+        Authorization: localStorage.getItem("admin-login-token")
     },
     body: JSON.stringify({status:status}),
   })

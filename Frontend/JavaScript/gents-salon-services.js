@@ -20,6 +20,7 @@ console.log(LoginToken)
 
 
 
+// const appointmentForm = document.querySelector(".book-appointment form");
 const appointmentForm = document.querySelector(".book-appointment form");
 
 const baseURL="https://long-blue-pronghorn-hat.cyclic.app"

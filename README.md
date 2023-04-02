@@ -42,11 +42,11 @@
 </ul> 
 <h3> Pages of Website: </h3>
 <div display:"flex"  style="border: 2px solid black" >
-<kbd><a href="https://green-basketapp.netlify.app/"><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </a></kbd> <kbd><a href="https://chetan-potfolio.netlify.app/"><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336567-c1c3f631-1cf1-439a-b83f-447a6f9f7a8d.png"></a></kbd>
+<kbd><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </kbd> <kbd><img width="400" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336567-c1c3f631-1cf1-439a-b83f-447a6f9f7a8d.png"></kbd>
 </kbd> </div>
 <br>
 <div display:"flex"  style="border: 2px solid black" >
-<kbd><a href="https://green-basketapp.netlify.app/"><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </a></kbd> <kbd><a href="https://chetan-potfolio.netlify.app/"><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336567-c1c3f631-1cf1-439a-b83f-447a6f9f7a8d.png"></a></kbd>
+<kbd><img width="400" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </kbd> <kbd><img width="400" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229354165-6136b7aa-0e4c-4dec-a633-9409d0c26598.png"></kbd>
 </kbd> </div>
 <h3 align="center"> System Design </h3>
 <img width="898" alt="layout" src="./Frontend/Image/High Level Design.png">

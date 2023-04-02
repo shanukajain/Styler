@@ -1,4 +1,18 @@
-const baseURL = "http://localhost:9168";
+const baseURL = "https://long-blue-pronghorn-hat.cyclic.app";
+async function logincheck(){
+  let adminLoginToken=localStorage.getItem("admin-login-token")
+
+  if(adminLoginToken===null){
+    await swal("Your log-in session has expired. Login Again.", "", "error");
+    window.location.href="admin_login.html";
+    return;
+  }
+}
+
+logincheck()
+
+
+
 
 fetchApps()
 async function fetchApps(){
@@ -16,10 +30,23 @@ if (day < 10) {
 }
 
 let formattedDate = year + "-" + month + "-" + day;
-    let apps=await fetch(`${baseURL}/admin/All_appoints?status=Pendding&status=Apporved&date=${formattedDate}`);
+console.log(formattedDate)
+    let apps=await fetch(`${baseURL}/admin/All_appoints?status=Pendding&status=Apporved&date=${formattedDate}`,{
+      method: "GET",
+      headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("admin-login-token")
+          },
+    });
     let data= await apps.json();
 
-    let dashRes=await  fetch(`${baseURL}/admin/All_appoints?date=${formattedDate}`);
+    let dashRes=await  fetch(`${baseURL}/admin/All_appoints?date=${formattedDate}`,{
+      method: "GET",
+      headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("admin-login-token")
+          },
+    });
     let dashData= await dashRes.json()
     let penddingData=dashData.filter((item)=>item.status==="Pendding")
     let completedData=dashData.filter((item)=>item.status==="Complete")
@@ -54,10 +81,6 @@ function appsFun(data){
                 <div class="app-child-details">
                     <table>
                         <tr>
-                          <th class="point">Client Email:</th>
-                          <td class="text">${item.UserEmail}</td>
-                        </tr>
-                        <tr>
                           <th class="point">Time Slot:</th>
                           <td class="text">${item.slot}</td>
                         </tr>
@@ -87,10 +110,6 @@ function appsFun(data){
             <div class="app-child-div" style="background: #ea7345;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
                 <div class="app-child-details">
                     <table>
-                        <tr>
-                          <th class="point">Client Email:</th>
-                          <td class="text">${item.UserEmail}</td>
-                        </tr>
                         <tr>
                           <th class="point">Time Slot:</th>
                           <td class="text">${item.slot}</td>
@@ -154,6 +173,7 @@ async function statusFun(data_id,status){
     method: "PATCH",
     headers: {
         "Content-Type": "application/json",
+        Authorization: localStorage.getItem("admin-login-token")
     },
     body: JSON.stringify({status:status}),
   })

@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:9168";
+const baseURL = "https://long-blue-pronghorn-hat.cyclic.app";
 
 
 // const data=[
@@ -40,7 +40,7 @@ async function addFun(event){
         method: "POST",
             headers: {
                   "Content-Type": "application/json",
-                //   Authorization: localStorage.getItem("token")
+                  Authorization: localStorage.getItem("admin-login-token")
                 },
                 body: JSON.stringify(obj)
 
@@ -54,7 +54,13 @@ async function addFun(event){
 }
 
 async function fetchServices(){
-    let res= await fetch(`${baseURL}/admin/styles`);
+    let res= await fetch(`${baseURL}/admin/styles`,{
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("admin-login-token")
+        }
+    });
 
     let data=await res.json();
     console.log(data)
@@ -136,7 +142,7 @@ async function removeFun(data_id){
             method: "DELETE",
             headers: {
                   "Content-Type": "application/json",
-                //   Authorization: localStorage.getItem("token")
+                  Authorization: localStorage.getItem("admin-login-token")
                 },
                 // body: JSON.stringify(obj)
         });

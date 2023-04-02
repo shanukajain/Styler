@@ -1,4 +1,9 @@
-const baseURL = "http://localhost:9168";
+const baseURL = "https://long-blue-pronghorn-hat.cyclic.app";
+
+
+
+
+
 
 let date=document.querySelector("#form-div form");
 date.addEventListener("submit", dateFun);
@@ -20,10 +25,22 @@ async function fetchApps(status,formattedDate){
 try {
     let res;
     if(status && formattedDate){
-        res= await fetch(`${baseURL}/admin/All_appoints?date=${formattedDate}&status=${status}`);
+        res= await fetch(`${baseURL}/admin/All_appoints?date=${formattedDate}&status=${status}`,{
+          method: "GET",
+          headers: {
+                "Content-Type": "application/json",
+                Authorization: localStorage.getItem("admin-login-token")
+              },
+        });
 
     }else{
-        res= await fetch(`${baseURL}/admin/All_appoints`);
+        res= await fetch(`${baseURL}/admin/All_appoints`,{
+          method: "GET",
+          headers: {
+                "Content-Type": "application/json",
+                Authorization: localStorage.getItem("admin-login-token")
+              },
+        });
 
     }
     let data=await res.json();
@@ -33,6 +50,10 @@ try {
     console.log(error)
 }
 }
+{/* <tr>
+<th class="point">Client Email:</th>
+<td class="text">${item.UserEmail}</td>
+</tr> */}
 let appsDiv=document.getElementById("appointments-div");
 function appsFun(data){
     appsDiv.innerHTML=""
@@ -42,10 +63,7 @@ function appsFun(data){
             <div class="app-child-div" style="background: #ff9913;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
                 <div class="app-child-details">
                     <table>
-                        <tr>
-                          <th class="point">Client Email:</th>
-                          <td class="text">${item.UserEmail}</td>
-                        </tr>
+   
                         <tr>
                           <th class="point">Time Slot:</th>
                           <td class="text">${item.slot}</td>
@@ -77,10 +95,6 @@ function appsFun(data){
                 <div class="app-child-details">
                     <table>
                         <tr>
-                          <th class="point">Client Email:</th>
-                          <td class="text">${item.UserEmail}</td>
-                        </tr>
-                        <tr>
                           <th class="point">Time Slot:</th>
                           <td class="text">${item.slot}</td>
                         </tr>
@@ -111,10 +125,6 @@ function appsFun(data){
                 <div class="app-child-details">
                     <table>
                         <tr>
-                          <th class="point">Client Email:</th>
-                          <td class="text">${item.UserEmail}</td>
-                        </tr>
-                        <tr>
                           <th class="point">Time Slot:</th>
                           <td class="text">${item.slot}</td>
                         </tr>
@@ -144,10 +154,6 @@ function appsFun(data){
             <div class="app-child-div" style="background: #ff0f11;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
                 <div class="app-child-details">
                     <table>
-                        <tr>
-                          <th class="point">Client Email:</th>
-                          <td class="text">${item.UserEmail}</td>
-                        </tr>
                         <tr>
                           <th class="point">Time Slot:</th>
                           <td class="text">${item.slot}</td>
@@ -211,6 +217,7 @@ async function statusFun(data_id,status){
       method: "PATCH",
       headers: {
           "Content-Type": "application/json",
+          Authorization: localStorage.getItem("admin-login-token")
       },
       body: JSON.stringify({status:status}),
     })

@@ -1,5 +1,5 @@
 
-const baseURL="http://localhost:9168"
+const baseURL="https://long-blue-pronghorn-hat.cyclic.app"
 fetchStylers()
 
 const addStyler=document.querySelector("#add-details-div form");
@@ -31,7 +31,7 @@ async function addFun(event){
         method: "POST",
             headers: {
                   "Content-Type": "application/json",
-                //   Authorization: localStorage.getItem("token")
+                  Authorization: localStorage.getItem("admin-login-token")
                 },
                 body: JSON.stringify(obj)
 
@@ -67,23 +67,35 @@ search.addEventListener("keypress",(e)=>{
 async function fetchStylers(key,value){
     let res;
     if(key&&value){
-    res= await fetch(`${baseURL}/admin/All_Stylers?${key}=${value}`);
+    res= await fetch(`${baseURL}/admin/All_Stylers?${key}=${value}`,{
+        method: "GET",
+        headers: {
+              "Content-Type": "application/json",
+              Authorization: localStorage.getItem("admin-login-token")
+            },
+    });
 
     }else{
-         res= await fetch(`${baseURL}/admin/All_Stylers`);
+         res= await fetch(`${baseURL}/admin/All_Stylers`,{
+            method: "GET",
+        headers: {
+              "Content-Type": "application/json",
+              Authorization: localStorage.getItem("admin-login-token")
+            },
+         });
 
     }
-    res=await res.json();
-console.log(res)
-    stylerFun(res)
+    let data=await res.json();
+console.log(data)
+    stylerFun(data)
 }
 let stylerDiv=document.getElementById("styler");
 
 // =============================map styler==========================================================  
 
-function stylerFun(res){
+function stylerFun(data){
     stylerDiv.innerHTML="";
-    let allStylers=res.map((item)=>{
+    let allStylers=data.map((item)=>{
         return `
         <div class="user-div" data-id=${item._id} data-aos="fade-up" data-aos-duration="1000">
                 <div>
@@ -185,7 +197,7 @@ async function blockFun(data_id){
         method: "DELETE",
             headers: {
                   "Content-Type": "application/json",
-                //   Authorization: localStorage.getItem("token")
+                  Authorization: localStorage.getItem("admin-login-token")
                 },
             },
     )

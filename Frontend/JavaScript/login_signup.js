@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:9168";
+const baseURL = "https://long-blue-pronghorn-hat.cyclic.app";
 let signupForm = document.querySelector(".signup-form form");
 signupForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -19,9 +19,16 @@ signupForm.addEventListener("submit", async (event) => {
 
     let otpRes= await otp.json();
     console.log(otpRes)
+
+
     if(otpRes.msg==="Email already registered") {
-        return alert("You Are Already Registered")
-    }else{
+        // return alert("You Are Already Registered")
+        return await swal("You Are Already Registered")
+        // return 
+    }
+     if (otpRes.msg !== "Email already registered"){
+
+        $("#otpModal").modal("show");
         document.getElementById("otpSubmit").addEventListener("click",async ()=>{
             let otpValue=document.getElementById("otpInput").value;
             if(otpValue==otpRes.OTP){
@@ -34,13 +41,18 @@ signupForm.addEventListener("submit", async (event) => {
                     });
                     let data = await res.json();
                     if (data.message === "User Register Sucessfull") {
-                        return alert("Register Successfully");
+                        //  alert("Register Successfully");
+                        await swal("Signup Successful!", "You are now Registered!", "success");
+                        window.location.href="login_signup.html"
+                        return;
                     }else{
-                        return alert("Try Again Later");
+                        return await swal("Something Went Wrong.", "", "error");
                     }
             }
             else{
-              return  alert("Worng OTP")
+                 await swal("Wrong OTP.", "", "error");
+                window.location.href="login_signup.html"
+                return;
             }
         })
         
@@ -49,7 +61,8 @@ signupForm.addEventListener("submit", async (event) => {
 
   } catch (error) {
     console.log(error);
-    alert("An error occurred. Please try again later.");
+    // alert("An error occurred. Please try again later.");
+    return await swal("An error occurred. Please try again later.", "", "error");
   }
 });
 
@@ -78,17 +91,25 @@ async function loginFun(event){
     if(datares.message==="Login Sucessfull"){
         console.log(datares.token)
         localStorage.setItem("token",datares.token)
-        alert(`Welcome Back`);
-        window.location.href="index.html"
+            await  swal(
+              "Welcome to Styler",
+              "Lets Explore, Redirecting to Home page....",
+              "success"
+            );
+
+            window.location.href = "index.html";
+
         return;
     }
     if(datares.message==="Wrong Password"){
-        return alert("Wrong Credentials")
+        // return alert("Wrong Credentials")
+        return await swal("Wrong Credentials", "", "error");
     }
     if(datares.message==="Sign Up First"){
-       return alert("Create Your Account First")
+    //    return alert("Create Your Account First")
+       return await swal("Create Your Account First");
     }
     if(datares.message!=="Login Sucessfull"||datares.message!=="Sign Up First"||datares.message!=="Wrong Password"){
-        return alert("Try Again Later")
+        return await swal("Something Went Wrong.", "", "error");
     }
 }

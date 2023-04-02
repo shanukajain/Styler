@@ -40,10 +40,14 @@
    <li>Block the user in admin</li>
   <li> Responsiveness for different device</li>
 </ul> 
+<h3> Pages of Website: </h3>
 <div display:"flex"  style="border: 2px solid black" >
-<kbd><a href="https://green-basketapp.netlify.app/"><img width="400" height="250" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </a></kbd> <kbd><a href="https://chetan-potfolio.netlify.app/"><img width="400" height="250" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336567-c1c3f631-1cf1-439a-b83f-447a6f9f7a8d.png"></a></kbd>
-</kbd> <kbd><a href="https://dreamy-starlight-fddfa8.netlify.app/"><img width="200" height="100" alt="pot" src="https://user-images.githubusercontent.com/113410376/215862462-357b647d-1702-4871-9500-23076fdf5740.jpeg"></a></kbd>
- <kbd><a href="https://kaleidoscopic-fairy-4468ea.netlify.app/"><img width="200" height="100" alt="icon" src="https://user-images.githubusercontent.com/113410376/225300006-83da5189-69ef-4c04-83c7-f4aad39bacc6.png"></a></kbd>
+<kbd><a href="https://green-basketapp.netlify.app/"><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </a></kbd> <kbd><a href="https://chetan-potfolio.netlify.app/"><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336567-c1c3f631-1cf1-439a-b83f-447a6f9f7a8d.png"></a></kbd>
+</kbd> </div>
+<br>
+<div display:"flex"  style="border: 2px solid black" >
+<kbd><a href="https://green-basketapp.netlify.app/"><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </a></kbd> <kbd><a href="https://chetan-potfolio.netlify.app/"><img width="450" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336567-c1c3f631-1cf1-439a-b83f-447a6f9f7a8d.png"></a></kbd>
+</kbd> </div>
 <h3 align="center"> System Design </h3>
 <img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/229286983-c882202c-6a9b-4a9b-81e3-b7333d95763c.png">
 <h3 align="center"> Layout of the Website</h3>

@@ -58,8 +58,8 @@ let checkAvailability = async (appointInfo) => {
                             <h3>Salary: <span>Rs.${elem.salary}</span></h3>
                             <h3>Email: <span>${elem.email}</span></h3>
                         </div>
-                        <div>
-                            <button onclick="bookStyler()">Book Now</button>
+                        <div class="button-div">
+                            <button onclick="bookStyler()" class="book-now-button">Book Now</button>
                         </div>
                     </div>`
         })
@@ -71,14 +71,21 @@ let checkAvailability = async (appointInfo) => {
 // <------- Booking Stylers For Hair Cut ---------> 
 
 async function bookStyler(styler){
-    let response = await fetch("http://localhost:9168/user/book", {
-        method: "POST",
-        headers: {
-            Authorization: localStorage.getItem("token"),
-            "Content-Type":"application/json"
-        },
-        body: JSON.stringify(styler)
-    });
-    let data = await response.json();
-    console.log(data);
+    console.log(styler)
+    // let response = await fetch("http://localhost:9168/user/book", {
+    //     method: "POST",
+    //     headers: {
+    //         Authorization: localStorage.getItem("token"),
+    //         "Content-Type":"application/json"
+    //     },
+    //     body: JSON.stringify(styler)
+    // });
+    // let data = await response.json();
+    // console.log(data);
+    alert("Styler Booked For Your Hair Cut");
+    let book_now_button = document.querySelector(".book-now-button");
+    book_now_button.innerText = "Booked";
+    book_now_button.setAttribute("disabled", true);
+    let buttonDiv = document.querySelector(".button-div");
+    buttonDiv.style.backgroundColor = "green";
 }

@@ -1,84 +1,126 @@
-const appointmentForm = document.querySelector("form");
-appointmentForm.addEventListener("submit", (e) => {
+logincheck()
+  async function logincheck(){
+  let LoginToken=localStorage.getItem("token")
+console.log(LoginToken)
+  if(LoginToken==null||undefined){
+    // alert("Your log-in session has expired. Login Again");
+
+    await swal("Your log-in session has expired. Login Again.", "", "error");
+    // setTimeout( () => {
+    //     window.location.href = "login_signup.html";
+    //     // spinner.style.display = "none"; //!Spinner
+    //   }, 12000);
+    return window.location.href="login_signup.html";
+    
+  }
+}
+
+
+
+
+
+
+// const appointmentForm = document.querySelector(".book-appointment form");
+const appointmentForm = document.querySelector(".book-appointment form");
+
+const baseURL="https://long-blue-pronghorn-hat.cyclic.app"
+
+let rightDiv=document.getElementById("right-div");
+
+appointmentForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const serviceType = document.querySelector("#service-type").value;
     const bookDate = document.querySelector("#book-date").value;
     const city = document.querySelector("#city").value;
     const slotsAvailable = document.querySelector("#slots").value;
-    bookAppointment(bookDate, city, slotsAvailable);
+    console.log(serviceType,bookDate,city,slotsAvailable)
+    // bookAppointment(bookDate, city, slotsAvailable);
+    let check=await  fetch(`${baseURL}/user/Check`,{
+        method: "POST",
+        headers: {
+              "Content-Type": "application/json",
+              Authorization: localStorage.getItem("token")
+            },
+            body: JSON.stringify({
+                city:city,
+                date:bookDate,
+                slot:slotsAvailable
+            })
+    })
+    let checkRes= await check.json();
+    console.log(checkRes)
+    if(checkRes.msg==="no slot avalibale"){
+        return await swal("No slot avalibale.", "", "error");
+    }else{
+        console.log(checkRes[0])
+        let bookDiv=document.querySelector(".book-appointment");
+        rightDiv.innerHTML=""
+        bookDiv.style.display="none"
+        let allData=checkRes.map((item)=>{
+            return `
+            <div class="app-child-div" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
+            <div class="app-child-details">
+                <table>
+                    <tr>
+                      <th class="point">Styler Name:</th>
+                      <td class="text">${item.Styler_name}</td>
+                    </tr>
+                    <tr>
+                      <th class="point">City:</th>
+                      <td class="text">${item.city}</td>
+                    </tr>
+                    <tr>
+                      <th class="point">Email:</th>
+                      <td class="text">${item.email}</td>
+                    </tr>
+                    <tr>
+                      <th class="point">Mobile No:</th>
+                      <td class="text">${item.mob_no}</td>
+                    </tr>
+                  </table>
+                  
+            </div>
+            <div class="app-child-button">
+                <button class="approve-btn" data-item=${JSON.stringify(item)} data-id=${item._id} style="display: block;" >Book</button>
+            </div>
+        </div>
+            `
+        })
+        rightDiv.innerHTML=allData.join(" ")
+        let booKbtn=document.querySelectorAll(".approve-btn");
+        for (let brn of booKbtn){
+            brn.addEventListener("click",async (event)=>{
+                let item = JSON.parse(event.target.dataset.item)
+
+                let obj={
+                    UserID:1,
+                    StylistID:1,
+                    Stylistname:item.Styler_name,
+                    date:bookDate,
+                    slot:slotsAvailable,
+                }
+                console.log(obj)
+                let book= await fetch(`${baseURL}/user/book`,{
+                    method: "POST",
+                    headers: {
+                          "Content-Type": "application/json",
+                          Authorization: localStorage.getItem("token")
+                        },
+                        body: JSON.stringify(obj)
+                })
+                let bookRes= await book.json()
+                console.log(bookRes)
+                if(bookRes.message==="Appointment booked"){
+                    event.target.innerHTML = "Booked"
+                     await swal("Appointment booked Successfully!", "You are now Registered!", "success");
+                     return;
+                    }
+
+            })
+        }
+
+     
+    }
 });
 
 
-// <------- Booking Appointment of Stylers --------> 
-
-let bookAppointment = (date, city, slot) => {
-    let token = localStorage.getItem("token");
-    if (token) {
-        let appointInfo = {
-            city,
-            date,
-            slot
-        }
-        // console.log(appointInfo)
-        checkAvailability(appointInfo);
-    } else {
-        let bookButton = document.querySelector("#book-button");
-        bookButton.value = "Login First To Book Appointment";
-        bookButton.style.backgroundColor = "red";
-    }
-}
-
-// <----- Checking Availabilty of Stylers ---------> 
-
-let checkAvailability = async (appointInfo) => {
-    let response = await fetch("http://localhost:9168/user/Check", {
-        method: "POST",
-        headers: {
-            Authorization: localStorage.getItem("token"),
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(appointInfo)
-    });
-    let responseData = await response.json();
-    // console.log((responseData));
-    let bookAppoinmentDiv = document.querySelector(".book-appointment");
-    if (responseData.msg == "no slot avalibale") {
-        bookAppoinmentDiv.innerHTML = `<div style={width:50%; margin: auto; align-items: centre}>
-            <h1>No Slots Available</h1>
-            <img src="https://thumbs.dreamstime.com/b/vector-illustration-sad-face-emoticon-emoji-icon-isolated-white-background-121697371.jpg" width="300px"/>
-        </div>`
-    } else {
-        let services = responseData.map((elem) => {
-            // console.log(elem);
-            return `<div class="slot-card" id=${elem._id}>
-                        <div>
-                            <h3>Styler Name: <span>${elem.Styler_name}</span></h3>
-                            <h3>Mobile Number: <span>${elem.mob_no}</span></h3>
-                            <h3>City: <span>${elem.city}</span></h3>
-                            <h3>Salary: <span>Rs.${elem.salary}</span></h3>
-                            <h3>Email: <span>${elem.email}</span></h3>
-                        </div>
-                        <div>
-                            <button onclick="bookStyler()">Book Now</button>
-                        </div>
-                    </div>`
-        })
-        bookAppoinmentDiv.innerHTML = services;
-    }
-}
-
-
-// <------- Booking Stylers For Hair Cut ---------> 
-
-async function bookStyler(styler){
-    let response = await fetch("http://localhost:9168/user/book", {
-        method: "POST",
-        headers: {
-            Authorization: localStorage.getItem("token"),
-            "Content-Type":"application/json"
-        },
-        body: JSON.stringify(styler)
-    });
-    let data = await response.json();
-    console.log(data);
-}

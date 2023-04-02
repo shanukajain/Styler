@@ -67,7 +67,6 @@ async function loginFun(event){
             "Login Sucessfull",
             "success"
           );
-        alert(`Welcome Back`);
         window.location.href="admin_dashboard.html"
         return;
     }

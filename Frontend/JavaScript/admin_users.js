@@ -24,7 +24,13 @@ async function fetchUsers(key,value){
     });
 
     }else{
-         res= await fetch(`${baseURL}/admin/allusers`);
+        res= await fetch(`${baseURL}/admin/allusers`,{
+            method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("admin-login-token")
+        }
+        });
 
     }
     res=await res.json();

@@ -1,15 +1,15 @@
 const baseURL = "https://long-blue-pronghorn-hat.cyclic.app";
-logincheck()
-function logincheck(){
+async function logincheck(){
   let adminLoginToken=localStorage.getItem("admin-login-token")
 
   if(adminLoginToken===null){
-    alert("Your log-in session has expired. Login Again");
+    await swal("Your log-in session has expired. Login Again.", "", "error");
     window.location.href="admin_login.html";
     return;
   }
 }
 
+logincheck()
 
 
 
@@ -81,10 +81,6 @@ function appsFun(data){
                 <div class="app-child-details">
                     <table>
                         <tr>
-                          <th class="point">Client Email:</th>
-                          <td class="text">${item.UserEmail}</td>
-                        </tr>
-                        <tr>
                           <th class="point">Time Slot:</th>
                           <td class="text">${item.slot}</td>
                         </tr>
@@ -114,10 +110,6 @@ function appsFun(data){
             <div class="app-child-div" style="background: #ea7345;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
                 <div class="app-child-details">
                     <table>
-                        <tr>
-                          <th class="point">Client Email:</th>
-                          <td class="text">${item.UserEmail}</td>
-                        </tr>
                         <tr>
                           <th class="point">Time Slot:</th>
                           <td class="text">${item.slot}</td>

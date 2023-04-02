@@ -46,7 +46,7 @@
 </kbd> </div>
 <br>
 <div display:"flex"  style="border: 2px solid black" >
-<kbd><img width="400" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229336540-955388a1-b497-4391-a1e1-c4cbd2f148f2.png"> </kbd> <kbd><img width="400" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229354165-6136b7aa-0e4c-4dec-a633-9409d0c26598.png"></kbd>
+<kbd><img width="400" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229354306-a00b2e6a-313a-4f0c-ac32-4aad48cc1c78.png"> </kbd> <kbd><img width="400" height="300" alt="Green Basket" src="https://user-images.githubusercontent.com/113410376/229354165-6136b7aa-0e4c-4dec-a633-9409d0c26598.png"></kbd>
 </kbd> </div>
 <h3 align="center"> System Design </h3>
 <img width="898" alt="layout" src="./Frontend/Image/High Level Design.png">

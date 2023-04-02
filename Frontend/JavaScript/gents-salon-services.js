@@ -1,10 +1,15 @@
 const appointmentForm = document.querySelector("form");
+let obj;
 appointmentForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const serviceType = document.querySelector("#service-type").value;
     const bookDate = document.querySelector("#book-date").value;
     const city = document.querySelector("#city").value;
     const slotsAvailable = document.querySelector("#slots").value;
+    obj = {
+        UserID:1,
+        date:bookDate,
+        slot:slotsAvailable,
+      }
     bookAppointment(bookDate, city, slotsAvailable);
 });
 
@@ -31,7 +36,7 @@ let bookAppointment = (date, city, slot) => {
 // <----- Checking Availabilty of Stylers ---------> 
 
 let checkAvailability = async (appointInfo) => {
-    let response = await fetch("http://localhost:9168/user/Check", {
+    let response = await fetch("https://long-blue-pronghorn-hat.cyclic.app/user/Check", {
         method: "POST",
         headers: {
             Authorization: localStorage.getItem("token"),
@@ -59,20 +64,27 @@ let checkAvailability = async (appointInfo) => {
                             <h3>Email: <span>${elem.email}</span></h3>
                         </div>
                         <div class="button-div">
-                            <button onclick="bookStyler()" class="book-now-button">Book Now</button>
+                            <button data-id=${elem._id} class="book-now-button">Book Now</button>
                         </div>
                     </div>`
         })
         bookAppoinmentDiv.innerHTML = services;
+        let buttonElem = document.querySelectorAll(".book-now-button");
+        for (let btn of buttonElem) {
+            btn.addEventListener("click", (e) => {
+                let dataId = e.target.dataset.id;
+                bookStyler(obj);
+            })
+        }
     }
 }
 
 
 // <------- Booking Stylers For Hair Cut ---------> 
 
-async function bookStyler(styler){
+async function bookStyler(styler) {
     console.log(styler)
-    // let response = await fetch("http://localhost:9168/user/book", {
+    // let response = await fetch("https://long-blue-pronghorn-hat.cyclic.app/user/book", {
     //     method: "POST",
     //     headers: {
     //         Authorization: localStorage.getItem("token"),

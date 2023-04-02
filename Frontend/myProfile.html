@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+
+<title>profile edit data and skills - Bootdey.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./Css/myProfile.css">
+<link rel="stylesheet" href="./Css/admin_nav.css">
+<body>
+    <div id="preloader">
+        <!-- this is the preloader -->
+        <!-- <i class="preloader-icon fa fa-spinner"></i> -->
+        <i class="fa-solid fa-scissors"></i>
+      </div>
+                      <!----Navbar section------->
+    <header>
+       <div class="logo">
+        <a href="./index.html"><img src="./Image/stylerLogo.png" alt="#"></a>
+       </div>
+       <div class="hamburger" onClick="hamFun()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+       </div>
+       <nav class="nav-bar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="./gents-salon-services.html">Services</a></li>
+            <li><a href="./login_signup.html">Signup/Login</a></li>
+          </ul>
+       </nav>
+    </header>  
+<div class="container">
+<div class="main-body">
+<div class="row">
+<div class="col-lg-4">
+<div class="card">
+<div class="card-body">
+<div class="d-flex flex-column align-items-center text-center">
+<img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
+<div class="mt-3">
+<h4>John Doe</h4>
+<!-- <p class="text-secondary mb-1">Full Stack Developer</p>
+<p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+<button class="btn btn-primary">Follow</button>
+<button class="btn btn-outline-primary">Message</button> -->
+</div>
+</div>
+<hr class="my-4">
+
+</div>
+</div>
+</div>
+<div class="col-lg-8">
+<div class="card">
+<div class="card-body">
+<div class="row mb-3">
+<div class="col-sm-3">
+<h6 class="mb-0">Full Name</h6>
+</div>
+<div class="col-sm-9 text-secondary">
+<input type="text" class="form-control" value="John Doe">
+</div>
+</div>
+<div class="row mb-3">
+<div class="col-sm-3">
+<h6 class="mb-0">Email</h6>
+</div>
+<div class="col-sm-9 text-secondary">
+<input type="text" class="form-control" value="john@example.com">
+</div>
+</div>
+<div class="row mb-3">
+<div class="col-sm-3">
+<h6 class="mb-0">Mobile</h6>
+</div>
+<div class="col-sm-9 text-secondary">
+<input type="text" class="form-control" value="(320) 380-4539">
+</div>
+</div>
+<div class="row mb-3">
+<div class="col-sm-3">
+<h6 class="mb-0">City</h6>
+</div>
+<div class="col-sm-9 text-secondary">
+<input type="text" class="form-control" value="Bay Area, San Francisco, CA">
+</div>
+</div>
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-9 text-secondary">
+<input type="button" style="background: #7e0814;" class="btn btn-primary px-4" value="Logout">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div class="card">
+<script src="./JavaScript/admin_nav.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+<script>
+    AOS.init();
+
+    // Hide the preloader when the page is loaded
+window.addEventListener("load", () => {
+    document.querySelector("body").classList.add("loaded");
+  });
+  
+</script>

@@ -1,4 +1,4 @@
-const baseURL="http://localhost:9168"
+const baseURL="https://long-blue-pronghorn-hat.cyclic.app"
 
 
 let search=document.getElementById("input");
@@ -15,7 +15,13 @@ search.addEventListener("keypress",(e)=>{
 async function fetchUsers(key,value){
     let res;
     if(key&&value){
-    res= await fetch(`${baseURL}/admin/allusers?${key}=${value}`);
+    res= await fetch(`${baseURL}/admin/allusers?${key}=${value}`,{
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("admin-login-token")
+        }
+    });
 
     }else{
          res= await fetch(`${baseURL}/admin/allusers`);

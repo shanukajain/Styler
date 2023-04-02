@@ -1,4 +1,18 @@
 const baseURL = "http://localhost:9168";
+logincheck()
+function logincheck(){
+  let adminLoginToken=localStorage.getItem("admin-login-token")
+
+  if(adminLoginToken===null){
+    alert("Your log-in session has expired. Login Again");
+    window.location.href="admin_login.html";
+    return;
+  }
+}
+
+
+
+
 
 fetchApps()
 async function fetchApps(){
@@ -16,6 +30,7 @@ if (day < 10) {
 }
 
 let formattedDate = year + "-" + month + "-" + day;
+console.log(formattedDate)
     let apps=await fetch(`${baseURL}/admin/All_appoints?status=Pendding&status=Apporved&date=${formattedDate}`);
     let data= await apps.json();
 

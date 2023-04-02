@@ -55,6 +55,12 @@
 
 <br>
 <p >Visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
+<h3>Project Members: </h3>
+<p>Shanuka Jain </p>
+<p>Soumya </p>
+<p>Ankit Singh </P>
+<p>Chetan Bhagat </P>
+<p>Chandan Kumar </p>
 
  <h3> Show your support 🙌</h3>
  <p> Give ⭐ , If you 🫶 like the project</P>

@@ -18,8 +18,7 @@
 <img src="https://camo.githubusercontent.com/72e92f69f36703548704a9eeda2a9889c2756b5e08f01a9aec6e658c148d014e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6f6e676f44422d3445413934423f7374796c653d666f722d7468652d6261646765266c6f676f3d6d6f6e676f6462266c6f676f436f6c6f723d7768697465">
 <img src="https://camo.githubusercontent.com/92407fc26e09271d8137b8aaf1585b266f04046b96f1564dfe5a69f146e21301/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a57542d3030303030303f7374796c653d666f722d7468652d6261646765266c6f676f3d4a534f4e253230776562253230746f6b656e73266c6f676f436f6c6f723d7768697465">
 </div>
-<br>
-<p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
+
 <br>
 <img align="center" width="1000" heigth:"500"  alt="project3" src="https://user-images.githubusercontent.com/113410376/229286014-6da59134-d9f6-47ba-9fde-1932547bd1ba.png">
 
@@ -44,6 +43,9 @@
 <img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/229286983-c882202c-6a9b-4a9b-81e3-b7333d95763c.png">
 <h3 align="center"> Layout of the Website</h3>
 <img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/214280786-77c1bafb-5b53-4fe6-b403-421b29660cc1.png">
+
+<br>
+<p >Click here to visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>
 
  <h3> Show your support 🙌</h3>
  <p> Give ⭐ , If you 🫶 like the project</P>

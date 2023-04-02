@@ -58,7 +58,7 @@
 <h3>Project Members: </h3>
 <ul> 
 <li>Shanuka Jain </li>
-<li>Soumya </li>
+<li>Soumya Adhya</li>
 <li>Ankit Singh </li>
 <li>Chetan Bhagat </li>
 <li>Chandan Kumar </li></ul>

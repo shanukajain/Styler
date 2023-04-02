@@ -51,7 +51,7 @@
 <h3 align="center"> System Design </h3>
 <img width="898" alt="layout" src="./Frontend/Image/High Level Design.png">
 <h3 align="center"> Layout of the Website</h3>
-<img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/214280786-77c1bafb-5b53-4fe6-b403-421b29660cc1.png">
+<img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/229354142-e35e748b-a50d-4cc5-b7c0-92b54923ca5b.png">
 
 <br>
 <p >Visit the site: <a href="https://green-basketapp.netlify.app/">https://green-basketapp.netlify.app/</a></p>

@@ -31,14 +31,14 @@ if (day < 10) {
 
 let formattedDate = year + "-" + month + "-" + day;
 console.log(formattedDate)
-    let apps=await fetch(`${baseURL}/admin/All_appoints?status=Pendding&status=Apporved&date=${formattedDate}`,{
-      method: "GET",
-      headers: {
-            "Content-Type": "application/json",
-            Authorization: localStorage.getItem("admin-login-token")
-          },
-    });
-    let data= await apps.json();
+    // let apps=await fetch(`${baseURL}/admin/All_appoints?status=Pendding&status=Apporved&date=${formattedDate}`,{
+    //   method: "GET",
+    //   headers: {
+    //         "Content-Type": "application/json",
+    //         Authorization: localStorage.getItem("admin-login-token")
+    //       },
+    // });
+    // let data= await apps.json();
 
     let dashRes=await  fetch(`${baseURL}/admin/All_appoints?date=${formattedDate}`,{
       method: "GET",
@@ -60,7 +60,7 @@ console.log(formattedDate)
     let cancled=cancledData.length; 
     console.log(totalApps,pendding,aprove,complete,cancled) 
     dashFun(totalApps,pendding,aprove,complete,cancled)
-    appsFun(data)
+    appsFun(dashData)
 }
 
 function dashFun(totalApps,pendding,aprove,complete,cancled){
@@ -72,9 +72,9 @@ function dashFun(totalApps,pendding,aprove,complete,cancled){
 }
 
 let mainDiv=document.getElementById("appointments-div")
-function appsFun(data){
+function appsFun(dashData){
   mainDiv.innerHTML=""
-    let allData=data.map((item)=>{
+    let allData=dashData.map((item)=>{
         if(item.status==="Pendding"){
             return `
             <div class="app-child-div" style="background: #ff9913;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
@@ -131,6 +131,66 @@ function appsFun(data){
                     <button class="cancle-btn" data-id=${item._id} style="display: block;">Cancel</button>
                     <button class="completed" data-id=${item._id} style="display: none;">Completed</button>
                     <button class="canceled" data-id=${item._id} style="display: none;">Canceled</button>
+                </div>
+            </div>
+            `
+        }
+       else if(item.status==="Complete"){
+            return `
+            <div class="app-child-div" style="background: #0f6e02;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
+                <div class="app-child-details">
+                    <table>
+                        <tr>
+                          <th class="point">Time Slot:</th>
+                          <td class="text">${item.slot}</td>
+                        </tr>
+                        <tr>
+                          <th class="point">Date:</th>
+                          <td class="text">${item.date}</td>
+                        </tr>
+                        <tr>
+                          <th class="point">Styler Name:</th>
+                          <td class="text">${item.Stylistname}</td>
+                        </tr>
+                      </table>
+                      
+                </div>
+                <div class="app-child-button">
+                    <button class="approve-btn" data-id=${item._id} style="display: none;" >Approved</button>
+                    <button class="complete-tbn" data-id=${item._id} style="display: none;">Complete</button>
+                    <button class="cancle-btn" data-id=${item._id} style="display: none;">Cancel</button>
+                    <button class="completed" data-id=${item._id} style="display: block;">Completed</button>
+                    <button class="canceled" data-id=${item._id} style="display: none;">Canceled</button>
+                </div>
+            </div>
+            `
+        }
+       else if(item.status==="Cancel"){
+            return `
+            <div class="app-child-div" style="background: #fc4828;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
+                <div class="app-child-details">
+                    <table>
+                        <tr>
+                          <th class="point">Time Slot:</th>
+                          <td class="text">${item.slot}</td>
+                        </tr>
+                        <tr>
+                          <th class="point">Date:</th>
+                          <td class="text">${item.date}</td>
+                        </tr>
+                        <tr>
+                          <th class="point">Styler Name:</th>
+                          <td class="text">${item.Stylistname}</td>
+                        </tr>
+                      </table>
+                      
+                </div>
+                <div class="app-child-button">
+                    <button class="approve-btn" data-id=${item._id} style="display: none;" >Approved</button>
+                    <button class="complete-tbn" data-id=${item._id} style="display: none;">Complete</button>
+                    <button class="cancle-btn" data-id=${item._id} style="display: none;">Cancel</button>
+                    <button class="completed" data-id=${item._id} style="display: none;">Completed</button>
+                    <button class="canceled" data-id=${item._id} style="display: block;">Canceled</button>
                 </div>
             </div>
             `

@@ -91,6 +91,7 @@ async function loginFun(event){
     if(datares.message==="Login Sucessfull"){
         console.log(datares.token)
         localStorage.setItem("token",datares.token)
+        localStorage.setItem("email",name)
             await  swal(
               "Welcome to Styler",
               "Lets Explore, Redirecting to Home page....",

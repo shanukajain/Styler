@@ -151,7 +151,7 @@ function appsFun(data){
         }
         else if(item.status==="Cancel"){
             return `
-            <div class="app-child-div" style="background: #ff0f11;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
+            <div class="app-child-div" style="background: #fc4828;" data-aos="fade-up" data-aos-duration="1000" data-id=${item._id}>
                 <div class="app-child-details">
                     <table>
                         <tr>

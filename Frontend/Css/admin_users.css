@@ -86,6 +86,68 @@ main{
 .clock-btn:hover{
     background: #B71C1C;
 }
+.footer{
+    background-color: rgb(230,222,227,0.9);
+    grid-template-columns:repeat(1,1fr)!important;
+    text-align: center;
+    padding-top:40px;
+    padding-bottom: 40px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.footer h1{
+  font-size: 40px;
+  font-weight: 600;
+}
+.footer p{
+    margin: 0px 0px 20px 0px
+}
+.footer-contact{
+    cursor: pointer;
+    font-size: 30px;
+}
+.logo2{
+    width: 200px;
+    height:150px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.facebook:hover{
+    color:blue
+}
+.twitter:hover{
+   color:blueviolet
+}
+.instagram:hover{
+    color:red
+}
+.adminLog{
+    width:95%;
+    display:flex;
+    justify-content: flex-end;
+    margin: auto;
+    margin-top: 20px;
+}
+.adminLog a{
+   text-decoration: none;
+   background-color: rgb(230,222,227,0.9);
+   color:black;
+   font-size: 15px;
+   font-weight: 600;
+   border-radius: 10%;
+   padding:7px
+}
+.adminLog a:hover{
+    color:black;
+    background-color: gray;
+}
+.last-para{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:10px;
+    font-weight: 600;
+}
 @media only screen and (max-width:1459px){
     .user-div div:nth-child(2){
     margin-left: 20px ;

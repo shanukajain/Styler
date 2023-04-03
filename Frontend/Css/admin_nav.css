@@ -64,6 +64,13 @@ nav{
     color: #11101b ;
     background-color: #fefefe;
 }
+#log-sign{
+    display: block;
+}
+
+#my-pro{
+    display: none;
+}
  @media only screen and (max-width:1320px){
     header{
         padding: 0 30px;

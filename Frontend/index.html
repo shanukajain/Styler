@@ -48,7 +48,8 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="./gents-salon-services.html">Services</a></li>
-            <li><a href="./login_signup.html">Signup/Login</a></li>
+            <li id="log-sign"><a href="./login_signup.html">Signup/Login</a></li>
+            <li id="my-pro" ><a href="./myProfile.html">My Profile</a></li>
           </ul>
        </nav>
     </header>                  
@@ -184,7 +185,7 @@
     <section id="footer" data-aos="fade-up" data-aos-duration="1000">
         <div class="footer">
             <div class="logo2">
-                <img src="../logo.png" alt="#">
+                <img src="./Image/logo.png" alt="#">
             </div>
                 <p>The Exclusive Unisex Salon in your town acquainted with world-class tools and professionals for stunning looks and absolute luxury.</p>
                 <div class="footer-contact">
@@ -211,5 +212,24 @@
 window.addEventListener("load", () => {
     document.querySelector("body").classList.add("loaded");
   });
-  
+  liFun()
+
+function liFun(){
+    let email=localStorage.getItem("email")
+    let token=localStorage.getItem("token");
+    console.log(email,token)
+    let myprofile= document.getElementById("my-pro")
+    let login_signup= document.getElementById("log-sign")
+
+    if(email===null ||token===null ){
+        login_signup.style.display="block"
+        myprofile.style.display="none"
+
+    }
+    else if(email!==null &&token!==null ){
+        login_signup.style.display="none"
+        myprofile.style.display="block"
+
+    }
+}
 </script>

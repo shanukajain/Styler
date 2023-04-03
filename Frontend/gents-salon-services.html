@@ -10,9 +10,12 @@
 
     <link rel="stylesheet" href="./Css/gents-salon-services.css">
     <link rel="stylesheet" href="./Css/admin_nav.css">
+
     <link rel="icon" href="https://www.linkpicture.com/q/WhatsApp-Image-2023-03-28-at-21.21.29.jpeg">
     <script src="https://kit.fontawesome.com/3f69d0abd1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./Css/index.css">
+    <script src="./JavaScript/index.js"></script>
+
 </head>
 
 <body>
@@ -59,7 +62,8 @@
              <li><a href="index.html">Home</a></li>
              <li><a href="#about">About Us</a></li>
              <li><a href="./gents-salon-services.html">Services</a></li>
-             <li><a href="./login_signup.html">Signup/Login</a></li>
+             <li id="log-sign"><a href="./login_signup.html">Signup/Login</a></li>
+             <li id="my-pro" ><a href="./myProfile.html">My Profile</a></li>
            </ul>
         </nav>
      </header> 
@@ -92,6 +96,8 @@
                             <option value="Hair Straightner">Straighten Your Hair</option>
                         </select>
                         <input type="date" placeholder="Preffered Date*" id="book-date" required>
+                        <!-- <input type="date" placeholder="Preferred Date*" id="book-date" required min="YYYY-MM-DD"> -->
+
                         <br><br>
                         <select name="city" id="city" required>
                             <option value="">City*</option>
@@ -275,7 +281,7 @@
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-<script src="./JavaScript/admin_nav.js"></script>
+<!-- <script src="./JavaScript/index.js"></script> -->
 <script src="./JavaScript/gents-salon-services.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
@@ -287,4 +293,33 @@
     window.addEventListener("load", () => {
         document.querySelector("body").classList.add("loaded");
     });
+    // function hamfun(){
+//         let humbarger=document.querySelector(".hamburger");
+// humbarger.addEventListener("click",hamFun)
+// function hamFun(){
+    // let navbar= document.querySelector(".nav-bar");
+    // navbar.classList.toggle("active")
+// }
+
+    // }
+    liFun()
+
+function liFun(){
+    let email=localStorage.getItem("email")
+    let token=localStorage.getItem("token");
+    console.log(email,token)
+    let myprofile= document.getElementById("my-pro")
+    let login_signup= document.getElementById("log-sign")
+
+    if(email===null ||token===null ){
+        login_signup.style.display="block"
+        myprofile.style.display="none"
+
+    }
+    else if(email!==null &&token!==null ){
+        login_signup.style.display="none"
+        myprofile.style.display="block"
+
+    }
+}
 </script>

@@ -169,9 +169,12 @@ table {
     gap: 20px 30px;
 }
 .app-child-div{
-    background-color: #5a76c1;
+    /* background-color: #5a76c1; */
+    background-color: rgb(198,130,0,0.7);
     /* background-color: #bedae8; */
     border-radius: 20px;
+    margin:10px;
+    margin-top: 20px;
     padding: 15px;
     display: flex;
     justify-content: space-between;

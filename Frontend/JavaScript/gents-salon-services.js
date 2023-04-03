@@ -16,6 +16,11 @@ console.log(LoginToken)
 }
 
 
+// Get the current date
+
+
+// Set the minimum date for the input field
+document.getElementById("book-date").setAttribute("min", nextDayFormatted);
 
 
 
@@ -29,6 +34,23 @@ let rightDiv=document.getElementById("right-div");
 
 appointmentForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    var today = new Date();
+
+// Add one day to the current date
+var nextDay = new Date(today);
+nextDay.setDate(today.getDate() );
+
+// Format the date in yyyy-mm-dd format
+var dd = nextDay.getDate();
+var mm = nextDay.getMonth() + 1;
+var yyyy = nextDay.getFullYear();
+if (dd < 10) {
+    dd = '0' + dd;
+} 
+if (mm < 10) {
+    mm = '0' + mm;
+} 
+var nextDayFormatted = yyyy + '-' + mm + '-' + dd;
     const serviceType = document.querySelector("#service-type").value;
     const bookDate = document.querySelector("#book-date").value;
     const city = document.querySelector("#city").value;
@@ -113,6 +135,7 @@ appointmentForm.addEventListener("submit", async (e) => {
                 if(bookRes.message==="Appointment booked"){
                     event.target.innerHTML = "Booked"
                      await swal("Appointment booked Successfully!", "You are now Registered!", "success");
+                     window.location.href="index.html";
                      return;
                     }
 

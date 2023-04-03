@@ -24,17 +24,20 @@ signupForm.addEventListener("submit", async (event) => {
                 });
                 let data = await res.json();
                 if(data.msg==="Email already registered"){
-                    return alert("Email already registered")
+                    return await swal("You Are Already Registered")
                 }
                 if (data.message === "Admin Register Sucessfull") {
-                    return alert("Register Successfully");
+                    return await swal("Register Successfully")
+
                 }else{
-                    return alert("Try Again Later");
+                    return await swal("Something Went Wrong.", "", "error");
+
                 }
 
   } catch (error) {
     console.log(error);
-    alert("An error occurred. Please try again later.");
+    return await swal("An error occurred. Please try again later..", "", "error");
+
   }
 });
 

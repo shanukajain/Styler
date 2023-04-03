@@ -82,7 +82,6 @@ function serviceData(data){
                 <h1 class="edit-heading" data-id=${item._id} contenteditable="false">${item.name}</h1>
                 <h2><span class="box">Price</span><span class="semi-colon">:</span>&#8377;<span data-id=${item._id} class="edit-price" contenteditable="false"> ${item.price}</span></h2>
                 <h2><span class="box">Category</span> <span class="semi-colon">:</span> <span class="edit-name" data-id=${item._id}  contenteditable="false">${item.category}</span> </h2>
-                <h2><span class="box">Currently</span> <span class="semi-colon">:</span> <span class="box"><i class="fa-solid fa-circle"></i>Available</span> </h2>
             </div>
             <div class="service-button-child-div">
                 <button data-id=${item._id} class="edit-button" >Edit</button>

@@ -33,6 +33,7 @@
 <ul>
   <li> Creative Landing Page </li>
   <li> Login/Signup for users </li>
+   <li> Authentication with otp </li>
   <li> Hasing the password of users and JWT Authentication</li>
   <li> Admin Page/Administration Page </li>
   <li>Add the styler and style in admin</li>

@@ -56,13 +56,15 @@
 
 <br>
 <p >Visit the site: <a href="https://styller.netlify.app/">https://styller.netlify.app/</a></p>
-<h3>Project Members: </h3>
-<ul> 
-<li>Shanuka Jain </li>
-<li>Soumya Adhya</li>
-<li>Ankit Singh </li>
-<li>Chetan Bhagat </li>
-<li>Chandan Kumar </li></ul>
+
+ ## Author
+
+- [@RAJKUMARSHRIVASH](https://github.com/RAJKUMARSHRIVASH)
+- [@chandan1506](https://github.com/chandan1506)
+- [@Dhaanu I](https://github.com/DhaanuI)
+- [@Chetandabli](https://github.com/chetandabli)
+- [@DheerajPal](https://github.com/Dheeraj-pal)
+
 
 
  <h3> Show your support 🙌</h3>

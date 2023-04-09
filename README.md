@@ -61,9 +61,9 @@
 
 - [@Shanukajain](https://github.com/shanukajain)
 - [@chandan1506](https://github.com/chandan1506)
-- [@Dhaanu I](https://github.com/DhaanuI)
-- [@Chetandabli](https://github.com/chetandabli)
-- [@DheerajPal](https://github.com/Dheeraj-pal)
+- [@SoumyaAdhya](https://github.com/SoumyaAdhya007)
+- [@Chetan-bhagat](https://github.com/Chetan-bhagat)
+- [@ankitsingh](https://github.com/ankitsingh711)
 
 
 

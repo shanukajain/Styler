@@ -1,6 +1,6 @@
 
 <div display:"flex" align="center"><h1 align="center"> Styler Hair Salon</h1> <img width="250" height="150" alt="stylerLogo" src="https://user-images.githubusercontent.com/113410376/229331252-8d035a7c-518b-4e17-8c2c-d68382c2aac8.png" > </div>
-<h2 align="center">It's Hair Salon website provide online booking services to customer. </h2>
+<h2 align="center">A Hair Salon website that provides online booking services to customer. </h2>
 <br>
 <p>Styler is the hair salon website specifically for booking the appointment online.The site is being developed on the basis on Low Level Design and system Design (Architecture). In the styler the costomer can see the available time slot and book the slot with the different stylers.In this web site the customer or user can see the availble stylers, time slot and charges for the haircuts over the website.
 </p>

@@ -59,7 +59,7 @@
 
  <h3>Author</h3>
 
-- [@RAJKUMARSHRIVASH](https://github.com/shanukajain)
+- [@Shanukajain](https://github.com/shanukajain)
 - [@chandan1506](https://github.com/chandan1506)
 - [@Dhaanu I](https://github.com/DhaanuI)
 - [@Chetandabli](https://github.com/chetandabli)

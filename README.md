@@ -32,8 +32,8 @@
 <h4>Other Functionalities: </h4>
 <ul>
   <li> Creative Landing Page </li>
-  <li> Login/Signup for users </li>
-   <li> Authentication with otp </li>
+  <li> Signup/Login for users </li>
+   <li> Authentication with OTP </li>
   <li> Hashing the password of users and JWT Authentication</li>
   <li> Admin Page/Administration Page </li>
   <li>Add the styler and style in admin</li>

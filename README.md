@@ -37,7 +37,7 @@
   <li> Hashing the password of users and JWT Authentication</li>
   <li> Admin Page/Administration Page </li>
   <li>Add the styler and style in admin</li>
-  <li>Book the Slot feature</li>
+  <li>Slot Booking feature</li>
    <li>Block the user in admin</li>
   <li> Responsiveness for different device</li>
 </ul> 

@@ -68,7 +68,7 @@
 
 
  <h3> Show your support 🙌</h3>
- <p> Give ⭐ , If you 🫶 like the project</P>
+ <p> Give ⭐ , If you like the project</P>
  
  
  

@@ -38,7 +38,7 @@
   <li> Admin Page/Administration Page </li>
   <li>Add the styler and style in admin</li>
   <li>Slot Booking feature</li>
-   <li>Block the user in admin</li>
+   <li>Block the users in admin</li>
   <li> Responsiveness for different devices</li>
 </ul> 
 <h3> Project Highlights: </h3>

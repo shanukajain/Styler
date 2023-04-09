@@ -39,7 +39,7 @@
   <li>Add the styler and style in admin</li>
   <li>Slot Booking feature</li>
    <li>Block the user in admin</li>
-  <li> Responsiveness for different device</li>
+  <li> Responsiveness for different devices</li>
 </ul> 
 <h3> Project Highlights: </h3>
 <div display:"flex" style="border: 2px solid black" >

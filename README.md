@@ -57,7 +57,7 @@
 <br>
 <p >Visit the site: <a href="https://styller.netlify.app/">https://styller.netlify.app/</a></p>
 
- <h3>Author</h3>
+ <h3>Authors</h3>
 
 - [@Shanukajain](https://github.com/shanukajain)
 - [@chandan1506](https://github.com/chandan1506)

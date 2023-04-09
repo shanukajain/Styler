@@ -57,7 +57,7 @@
 <br>
 <p >Visit the site: <a href="https://styller.netlify.app/">https://styller.netlify.app/</a></p>
 
- ## Author
+ <h3>Author</h3>
 
 - [@RAJKUMARSHRIVASH](https://github.com/RAJKUMARSHRIVASH)
 - [@chandan1506](https://github.com/chandan1506)

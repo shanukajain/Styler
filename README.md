@@ -55,7 +55,7 @@
 <img width="898" alt="layout" src="https://user-images.githubusercontent.com/113410376/229354142-e35e748b-a50d-4cc5-b7c0-92b54923ca5b.png">
 
 <br>
-<p >Visit the site: <a href="https://styller.netlify.app/">https://styller.netlify.app/</a></p>
+<p >Visit the site: <a href="https://stylerin.netlify.app/index.html">https://styller.netlify.app/</a></p>
 
  <h3>Authors</h3>
 
